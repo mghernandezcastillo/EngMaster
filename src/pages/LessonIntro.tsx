@@ -90,7 +90,7 @@ export function LessonIntro() {
                           alt="Context" 
                           className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay transition-transform duration-1000 group-hover:scale-110" 
                           onError={(e) => {
-                            (e.currentTarget as HTMLImageElement).src = '/images/app_logo_1786043294531.jpg';
+                            (e.currentTarget as HTMLImageElement).src = '/images/app_logo.jpg';
                           }}
                         />
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.5),transparent)] opacity-50 mix-blend-screen z-10" />

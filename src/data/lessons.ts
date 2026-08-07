@@ -1,13 +1,13 @@
 import { Lesson } from '../types';
 
-const defaultImage = '/icon-512.png';
+const defaultImage = '/images/app_logo.jpg';
 
 export const lessons: Lesson[] = [
   {
     "id": "lesson-1",
     "title": "Identity, Experience and Professional Growth",
     "subtitle": "Speak about who you are without sounding basic or rehearsed.",
-    "image": "/images/lesson_1_growth_1786043310723.jpg",
+    "image": "/images/growth.jpg",
     "text": "When I first entered the workforce, I assumed that competence meant having all the answers. In reality, I had to grow into roles that demanded patience, judgment and the ability to communicate under pressure. I gradually took on responsibilities that were outside my comfort zone, and although the learning curve was steep, those experiences helped me build up transferable skills that still shape the way I work today.\n\nWhen I look back on that period, what stands out is not a single achievement but the sustained effort behind it. I learned that credibility comes from being consistent, admitting what you do not know and following through on what you promise. Once I began to find my feet, I also became more willing to ask for feedback and reflect on my underlying strengths. That self-awareness helped me stand out without pretending to be someone I was not.\n\nWhat I have come to realize is that professional growth is less about collecting impressive titles than about becoming more articulate, adaptable and useful to others. Every demanding experience can broaden your perspective, provided that you learn from it and move forward with a clearer sense of your long-term potential.",
     "memoryMap": [
       "FIRST ROLE",
@@ -88,7 +88,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-2",
     "title": "Setbacks, Resilience and Recovery",
     "subtitle": "Explain difficulties with maturity instead of using simple problem-solution language.",
-    "image": "/images/tech_innovation_1786122432258.jpg",
+    "image": "/images/tech.jpg",
     "text": "Whenever I face a setback, my first reaction is not always productive. I may want to avoid the situation, blame external circumstances or rush into a solution. Yet difficult problems rarely disappear on their own. To deal with them effectively, I need to step back, identify the underlying cause and divide the situation into manageable parts.\n\nThis does not mean that disappointment can be switched off immediately. Some experiences take time to get over, particularly when considerable effort has been invested. However, I have learned to work through frustration instead of allowing it to shape every decision. Constructive feedback can be uncomfortable, but it often reveals the adjustment needed to turn around a negative situation.\n\nIn hindsight, a few of my most discouraging moments were a blessing in disguise. They forced me to reconsider unrealistic expectations, strengthen my emotional composure and learn from mistakes that success might have hidden. Resilience is not the ability to avoid failure; it is the capacity to bounce back, regain momentum and get back on track without repeating the same pattern. No matter how adverse the circumstances may seem, a setback can become a learning opportunity when it leads to a more thoughtful response.",
     "memoryMap": [
       "SETBACK",
@@ -169,7 +169,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-3",
     "title": "Decisions Under Uncertainty",
     "subtitle": "Compare options, acknowledge risk and justify a decision precisely.",
-    "image": "/images/culture_identity_1786122443902.jpg",
+    "image": "/images/decision.jpg",
     "text": "Making a difficult decision is rarely a matter of choosing between a clearly good option and a clearly bad one. More often, we have to weigh up competing priorities, incomplete information and potential drawbacks. A choice may be financially feasible but emotionally demanding, or personally attractive but likely to have far-reaching consequences for other people.\n\nBefore I go ahead with an important plan, I try to think through what could reasonably go wrong. This does not mean imagining every possible disaster. It means identifying the most relevant risks, deciding which ones can be reduced and determining whether an alternative course of action exists. I may rule out an option because the evidence against it is compelling, hold off until more information becomes available or fall back on a simpler plan if conditions change.\n\nThere is also a point at which endless analysis becomes another form of avoidance. You cannot sit on the fence forever and still expect progress. Sound judgment requires both caution and the willingness to take the plunge once the likely trade-offs are understood. An informed decision is not one that guarantees a perfect outcome; it is one made deliberately, with a clear rationale and an honest awareness of possible unintended consequences.",
     "memoryMap": [
       "OPTIONS",
@@ -250,7 +250,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-4",
     "title": "Leadership and Accountability",
     "subtitle": "Discuss leadership as behavior, not merely authority.",
-    "image": "/images/global_challenges_1786122456793.jpg",
+    "image": "/images/leader.jpg",
     "text": "Leadership becomes visible when circumstances are demanding and someone has to step up. A title may provide authority, but it does not automatically create trust. People are more likely to follow a leader who communicates transparently, behaves consistently and is willing to take ownership when results fall short.\n\nEffective leaders set out priorities clearly and align expectations before work begins. They know when to hand over responsibility, yet they do not abandon strategic oversight. Delegating effectively is not simply passing work to someone else; it is providing context, resources and a realistic standard. When a new person takes over a task, the leader should remain available without controlling every detail.\n\nThe strongest leaders also bring out qualities that people may not recognize in themselves. They address underperformance directly but respectfully, and they follow through on both promises and difficult decisions. Above all, they lead by example. They cannot demand accountability while avoiding it themselves. When leaders foster trust, team members are more willing to go the extra mile, speak honestly about risks and accept collective responsibility for the outcome. Leadership, therefore, is not a performance of confidence; it is the daily practice of creating clarity, enabling others and remaining answerable for what happens next.",
     "memoryMap": [
       "DIRECTION",
@@ -331,7 +331,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-5",
     "title": "Disagreeing Without Creating Conflict",
     "subtitle": "Challenge ideas while preserving respect and cooperation.",
-    "image": "/images/philosophy_ethics_1786122468021.jpg",
+    "image": "/images/ethics.jpg",
     "text": "Disagreement does not have to damage a relationship. In fact, a respectful objection can improve a decision by revealing assumptions that nobody has examined. The difficulty is learning how to bring up a concern without making the other person feel attacked. Before I challenge an idea, I try to acknowledge any valid point it contains and clarify the intention behind my response.\n\nI may point out that the evidence is incomplete, but I should also explain why that matters. Simply saying \"I disagree\" rarely gets across a nuanced position. A more diplomatic approach is to distinguish the person from the proposal: \"I can see where you are coming from; however, I am not convinced that this solution addresses the underlying issue.\"\n\nThere are moments when we need to speak up, especially if silence could lead to a poor outcome. Nevertheless, constructive disagreement is not about refusing to back down at any cost. Two people may never see eye to eye, yet they can still identify common ground, meet each other halfway and clear up a misinterpretation. What matters is not winning the exchange but ensuring that the final decision is well-founded, understood and workable for everyone involved.",
     "memoryMap": [
       "ACKNOWLEDGE",
@@ -412,7 +412,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-6",
     "title": "Technology: Convenience or Dependence?",
     "subtitle": "Develop a balanced argument about a familiar but complex topic.",
-    "image": "/images/future_work_1786122491605.jpg",
+    "image": "/images/future.jpg",
     "text": "Modern technology has made daily life remarkably convenient. Information is at our fingertips, routine processes are increasingly seamless and many people can work or study from almost anywhere. At the same time, the more we rely on digital tools, the easier it becomes to overlook the dependency they create.\n\nTechnology is often a double-edged sword. A notification may help us keep up with an urgent task, yet constant interruptions can produce cognitive overload. A personalized service may improve efficiency, while the data required to personalize it raises serious questions about privacy and ethical implications. Users should be able to opt out of unnecessary data collection, and organizations should phase out intrusive practices rather than treating consent as a formality.\n\nOn a personal level, digital literacy includes knowing when to connect and when to switch off. I may need to cut down on passive screen time, protect periods of uninterrupted attention and develop sustainable habits instead of depending on willpower alone. Whether technology improves our lives depends largely on whether it supports deliberate choices or quietly replaces them. Convenience is valuable, but it should not come at the cost of autonomy, concentration or meaningful human interaction.",
     "memoryMap": [
       "CONVENIENCE",
@@ -493,7 +493,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-7",
     "title": "How Advanced Learning Actually Works",
     "subtitle": "Describe learning processes with precise, reusable language.",
-    "image": "/images/science_discovery_1786122503072.jpg",
+    "image": "/images/tech.jpg",
     "text": "People often assume that repeated exposure automatically leads to mastery. They may read the same page several times, go over a list of words or listen to hours of English without checking what they can actually retrieve. Passive exposure is useful, but it does not guarantee retention.\n\nEffective learning requires a feedback loop. First, we need contextualized input that is challenging but understandable. Then we must take in the meaning, notice how expressions work together and test whether we can recall them without looking. We may pick up useful language naturally, but deliberate practice is what helps us put it into practice with accuracy.\n\nWhen progress slows, learners often believe they have reached a permanent plateau. In reality, they may simply need to brush up on weak areas, vary the task or increase the difficulty. The goal is not to repeat one paragraph forever. It is to reconstruct it, personalize it and use its structures in unfamiliar situations. If we keep at this process, advanced patterns gradually become second nature. We no longer have to assemble every sentence word by word because well-practiced combinations are available as complete units. That is how active recall can consolidate knowledge and turn memorized language into flexible speaking ability.",
     "memoryMap": [
       "INPUT",
@@ -574,7 +574,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-8",
     "title": "Why Communication Breaks Down",
     "subtitle": "Analyze misunderstandings beyond \"I did not understand.\"",
-    "image": "/images/art_creativity_1786122515531.jpg",
+    "image": "/images/decision.jpg",
     "text": "Communication usually breaks down not because people lack intelligence, but because they make different assumptions about the same message. One person may leave out information that seems obvious to them, while another may read into a brief reply and interpret an unintended tone. By the time both sides realize that they have got their wires crossed, frustration may already have replaced curiosity.\n\nClear communication is more than being concise. A message can be short yet ambiguous, detailed yet incoherent or technically accurate while failing to get through to the intended audience. When priorities conflict, people may also focus on different parts of the same conversation. One is thinking about speed; the other is concerned about quality or risk.\n\nThe most reliable response is to clarify rather than guess. I can reach out and ask what outcome is expected, summarize my understanding or suggest that we talk the issue over before acting. Sometimes we need to read between the lines, but implicit meaning should not replace explicit agreement when the consequences matter. Only by checking assumptions, clarifying expectations and paying attention to tone can we close a communication gap and build mutual understanding.",
     "memoryMap": [
       "MESSAGE",
@@ -655,7 +655,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-9",
     "title": "Time, Priorities and Sustainable Performance",
     "subtitle": "Talk about productivity without reducing it to \"being busy.\"",
-    "image": "/images/health_wellbeing_1786122527807.jpg",
+    "image": "/images/ethics.jpg",
     "text": "Being busy and being effective are not the same thing. When several demands compete for attention, I may put off the most difficult task and spend the day responding to minor requests. This creates the illusion of progress, but the important work remains on the back burner until I begin to run out of time.\n\nTo prioritize effectively, I need to distinguish between what is urgent and what is important. I set aside periods for focused work, cut back on activities that add little value and decide what can reasonably wait. A realistic workload also protects mental bandwidth. There is little point in completing more tasks today if exhaustion makes tomorrow's decisions worse.\n\nSustainable performance includes deliberate rest. When people constantly burn the candle at both ends, effort eventually produces diminishing returns. I may need to wind down without screens, sleep properly or leave enough space to think before the next demanding period. Catching up is sometimes necessary, but repeatedly using personal time to catch up on unfinished work is usually a sign that the system needs to change. Good time allocation is not about controlling every minute; it is about giving attention to what matters while maintaining a pace that can continue.",
     "memoryMap": [
       "DEMANDS",
@@ -736,7 +736,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-10",
     "title": "Change, Adaptability and Reinvention",
     "subtitle": "Explain how change happens and why people resist it.",
-    "image": "/images/economics_society_1786122572382.jpg",
+    "image": "/images/growth.jpg",
     "text": "Change can come about gradually or arrive suddenly enough to shake up an entire routine. In either case, resistance is natural. People are not always rejecting the new idea itself; they may be reacting to uncertainty, a loss of control or the fear that their existing skills will no longer be valued.\n\nSustainable change requires more than announcing a strategic shift. Leaders need to explain why it matters, provide support during the transition and allow people to settle into new expectations. Incremental change may be slower, but it often produces stronger commitment than forcing everyone to adjust at once. Once people understand the purpose and see measurable progress, they become more willing to let go of outdated assumptions.\n\nAdaptability also matters at an individual level. A person may branch out into a new field, turn over a new leaf or deliberately move out of their comfort zone. These choices can bring about valuable growth, provided that risk is managed rather than ignored. A flexible mindset does not mean accepting every trend. It means evaluating emerging opportunities, learning what the situation requires and adjusting without losing sight of long-term viability.",
     "memoryMap": [
       "TRIGGER",
@@ -817,7 +817,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-11",
     "title": "Information, Evidence and Critical Thinking",
     "subtitle": "Evaluate claims without sounding either naïve or cynical.",
-    "image": "/images/language_communication_1786122582318.jpg",
+    "image": "/images/future.jpg",
     "text": "In an environment where information travels quickly, it is tempting to take a claim at face value, especially when it confirms what we already believe. Critical thinking begins when we slow down and look into the source, the evidence and the context in which the claim was made.\n\nA credible source does not make every statement automatically correct, just as an unfamiliar source is not necessarily wrong. We need to sift through the available material, distinguish fact from opinion and ask whether important details have been left out. A chart may look authoritative while using a misleading scale, and a quotation may be accurate but stripped of the context needed to make out its original meaning.\n\nWe should call out misinformation when the evidence is clear, but we should also avoid turning uncertainty into an accusation that someone is trying to cover up the truth. What appears to be deliberate deception may be poor analysis, oversimplification or an honest mistake. Often, the issue boils down to whether the conclusion is well-substantiated and whether reasonable alternatives have been considered. A dramatic headline may be only the tip of the iceberg, but it may also exaggerate a minor issue. Information literacy is the ability to tell the difference.",
     "memoryMap": [
       "CLAIM",
@@ -898,7 +898,7 @@ export const lessons: Lesson[] = [
     "id": "lesson-12",
     "title": "Success, Values and Long-Term Direction",
     "subtitle": "End with an adaptable framework for abstract and personal questions.",
-    "image": "/images/success_values_1786122604020.jpg",
+    "image": "/images/leader.jpg",
     "text": "Success is often measured through visible achievements: income, recognition, qualifications or status. These outcomes may be meaningful, but they do not automatically create fulfillment. If our goals are based entirely on external validation, even impressive results may fail to live up to our expectations.\n\nA more sustainable approach is to aim for progress that aligns with personal values. This requires a long-term vision, but it does not mean that every stage can be predicted. We can map out a direction, identify a personal benchmark and still adjust when circumstances change. What matters is the ability to carry on with purpose rather than pursue a fixed image of success at any cost.\n\nMeaningful ambition also includes contribution. Some people want to give back through education, service, leadership or work that improves other people’s options. Others focus on creating something that will stand the test of time. Whatever form it takes, lasting impact usually depends on seeing commitments through. We need enough discipline to see a goal through and enough perspective to recognize when the goal no longer serves the bigger picture. At the end of the day, success is less about appearing accomplished than about building a life whose direction, effort and consequences we can respect.",
     "memoryMap": [
       "DEFINITION",

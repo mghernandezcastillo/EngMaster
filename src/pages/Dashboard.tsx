@@ -97,10 +97,10 @@ export function Dashboard() {
                   alt={lesson.title} 
                   className={cn("w-full h-full object-cover")}
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/images/app_logo_1786043294531.jpg';
+                    (e.currentTarget as HTMLImageElement).src = '/images/app_logo.jpg';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/30 to-transparent" />
                 <div className="absolute top-3 left-3 px-2 py-1 bg-black/50 backdrop-blur-md rounded-md text-[10px] font-bold text-teal-400 uppercase tracking-widest border border-teal-500/20">
                   {language === 'es' ? 'Módulo' : 'Module'} {currentIndex + 1}
                 </div>
