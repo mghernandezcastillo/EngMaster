@@ -98,13 +98,13 @@ export function Layout() {
       {/* Bottom Mobile Navigation */}
       <nav className="fixed bottom-0 z-50 w-full backdrop-blur-xl bg-white/70 dark:bg-[#0a0f1a]/70 border-t border-white/10 dark:border-white/5 pb-safe">
         <div className="max-w-md mx-auto flex justify-around items-center h-16">
-          <button onClick={() => navigate('/')} className={cn("flex flex-col items-center justify-center w-full h-full transition-colors", location.pathname === '/' ? "text-teal-500" : "text-slate-500")}>
+          <button onClick={() => navigate('/')} className={cn("flex flex-col items-center justify-center w-full h-full transition-colors cursor-pointer", location.pathname === '/' ? "text-teal-500" : "text-slate-500 hover:text-slate-300")}>
             <Home className="w-5 h-5" />
-            <span className="text-[10px] mt-1 font-medium">Home</span>
+            <span className="text-[10px] mt-1 font-medium">{language === 'es' ? 'Módulos' : 'Modules'}</span>
           </button>
-          <button onClick={() => navigate('/')} className={cn("flex flex-col items-center justify-center w-full h-full transition-colors", location.pathname !== '/' ? "text-teal-500" : "text-slate-500")}>
+          <button onClick={() => navigate('/vault')} className={cn("flex flex-col items-center justify-center w-full h-full transition-colors cursor-pointer", location.pathname === '/vault' ? "text-teal-500" : "text-slate-500 hover:text-slate-300")}>
             <BookOpen className="w-5 h-5" />
-            <span className="text-[10px] mt-1 font-medium">Learn</span>
+            <span className="text-[10px] mt-1 font-medium">{language === 'es' ? 'Bóveda C1' : 'Vault C1'}</span>
           </button>
         </div>
       </nav>
