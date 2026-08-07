@@ -1,0 +1,6 @@
+{
+  "name": "EngMaster",
+  "description": "Advanced C1 English Memorization and Fluency App",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
