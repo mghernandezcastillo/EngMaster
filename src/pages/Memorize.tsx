@@ -53,8 +53,29 @@ export function Memorize() {
   useEffect(() => {
     window.speechSynthesis.cancel();
     setIsPlayingFragment(false);
+    setIsPlaying(false);
+    setHighlightCharIndex(undefined);
     navigatingRef.current = false;
   }, [currentParagraph]);
+
+  useEffect(() => {
+    if (highlightCharIndex === undefined || !reviewScrollRef.current) return;
+
+    requestAnimationFrame(() => {
+      const spokenWord = document.getElementById('spoken-word');
+      const scrollContainer = reviewScrollRef.current;
+      if (!spokenWord || !scrollContainer) return;
+
+      const wordRect = spokenWord.getBoundingClientRect();
+      const containerRect = scrollContainer.getBoundingClientRect();
+      const targetTop = scrollContainer.scrollTop + wordRect.top - containerRect.top - (containerRect.height / 2) + (wordRect.height / 2);
+
+      scrollContainer.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth',
+      });
+    });
+  }, [highlightCharIndex]);
 
   if (!lesson) return <div>Lesson not found</div>;
 
@@ -100,13 +121,8 @@ export function Memorize() {
       utterance.rate = 0.88;
 
       utterance.onboundary = (event) => {
-        if (event.name === 'word') {
+        if (typeof event.charIndex === 'number') {
           setHighlightCharIndex(event.charIndex);
-          // Auto-scroll the review container to the highlighted word
-          const el = document.getElementById('spoken-word');
-          if (el && reviewScrollRef.current) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
         }
       };
       utterance.onend = () => {
@@ -228,7 +244,9 @@ export function Memorize() {
             drag={isReviewMode ? false : 'x'}
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.8}
+            dragDirectionLock
             onDragEnd={handleDragEnd}
+            style={{ touchAction: isReviewMode ? 'auto' : 'pan-y' }}
             className={cn(
               "absolute inset-0 mx-8 rounded-3xl shadow-2xl flex flex-col overflow-hidden",
               "bg-gradient-to-b from-slate-800/90 to-slate-900/90 border border-teal-500/30",
@@ -270,7 +288,7 @@ export function Memorize() {
 
             {/* ── REVIEW MODE ── */}
             {isReviewMode ? (
-              <div ref={reviewScrollRef} className="relative z-10 w-full h-full flex flex-col overflow-y-auto custom-scrollbar p-5">
+              <div ref={reviewScrollRef} className="relative z-10 w-full h-full flex flex-col overflow-y-auto custom-scrollbar p-5 scroll-smooth">
                 <div className="flex items-center justify-between mb-4 sticky top-0 bg-slate-800/95 backdrop-blur pb-2 z-20 border-b border-white/5">
                   <h3 className="text-xs font-bold text-teal-500 uppercase tracking-widest flex items-center gap-1.5">
                     <BookOpen className="w-3 h-3" />
@@ -301,7 +319,7 @@ export function Memorize() {
               </div>
             ) : !isHidden ? (
               /* ── NORMAL TEXT FRAGMENT ── */
-              <div className="relative z-10 w-full h-full flex flex-col overflow-y-auto custom-scrollbar p-5">
+              <div className="relative z-10 w-full h-full flex flex-col overflow-y-auto custom-scrollbar p-5 touch-pan-y">
                 <div className="flex items-center justify-between pb-2 border-b border-white/5 mb-3">
                   <span className="text-[10px] font-mono text-teal-400/80 uppercase tracking-widest">
                     {language === 'es' ? 'FRAGMENTO' : 'FRAGMENT'} {currentParagraph + 1}
