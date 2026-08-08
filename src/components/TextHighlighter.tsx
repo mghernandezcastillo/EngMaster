@@ -184,8 +184,8 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
               id={isSpoken ? "spoken-word" : undefined}
               onClick={(e) => handleWordClick(word, e)}
               className={cn(
-                "cursor-pointer rounded px-0.5 transition-colors duration-150",
-                isSpoken ? "bg-teal-500/50 text-white" : "hover:bg-slate-700/50 hover:text-teal-300"
+                "cursor-pointer rounded px-0.5",
+                isSpoken ? "bg-teal-400 text-slate-950 shadow-[0_0_12px_rgba(45,212,191,0.55)]" : "hover:bg-slate-700/50 hover:text-teal-300"
               )}
             >
               {word}
@@ -215,7 +215,7 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
           onClick={(e) => handleVocabClick(match.vocab, e)}
           className={cn(
             "inline-block relative cursor-pointer font-bold group",
-            isSpoken ? "text-white bg-teal-500/60 rounded px-1" : "text-teal-400"
+            isSpoken ? "text-slate-950 bg-teal-400 rounded px-1 shadow-[0_0_12px_rgba(45,212,191,0.55)]" : "text-teal-400"
           )}
         >
           <span className={cn("relative z-10", !isSpoken && "px-1 hover:text-teal-200 transition-colors")}>{matchedText}</span>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, MutableRefObject } from 'react';
 import { flushSync } from 'react-dom';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store/useStore';
@@ -32,6 +32,8 @@ type FragmentTranslation = {
   translatedText: string;
   vocabularyHighlights: { expression: string; translation: string }[];
 };
+
+const KARAOKE_SYNC_OFFSET_MS = -40;
 
 export function Memorize() {
   const { id } = useParams();
@@ -67,11 +69,20 @@ export function Memorize() {
   const karaokeBoundaryReceivedRef = useRef(false);
   const karaokeFallbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const karaokeFallbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const karaokeStartedAtRef = useRef(0);
+  const karaokeHighlightTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const cumulativeBoundaryReceivedRef = useRef(false);
   const cumulativeFallbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const cumulativeFallbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const cumulativeStartedAtRef = useRef(0);
+  const cumulativeHighlightTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const clearKaraokeFallback = () => {
+    if (karaokeHighlightTimeoutRef.current) {
+      clearTimeout(karaokeHighlightTimeoutRef.current);
+      karaokeHighlightTimeoutRef.current = null;
+    }
+
     if (karaokeFallbackTimeoutRef.current) {
       clearTimeout(karaokeFallbackTimeoutRef.current);
       karaokeFallbackTimeoutRef.current = null;
@@ -84,6 +95,11 @@ export function Memorize() {
   };
 
   const clearCumulativeFallback = () => {
+    if (cumulativeHighlightTimeoutRef.current) {
+      clearTimeout(cumulativeHighlightTimeoutRef.current);
+      cumulativeHighlightTimeoutRef.current = null;
+    }
+
     if (cumulativeFallbackTimeoutRef.current) {
       clearTimeout(cumulativeFallbackTimeoutRef.current);
       cumulativeFallbackTimeoutRef.current = null;
@@ -207,6 +223,25 @@ export function Memorize() {
       });
   };
 
+  const scheduleSyncedHighlight = (
+    event: SpeechSynthesisEvent,
+    startedAt: number,
+    setHighlight: (value: number) => void,
+    timeoutRef: MutableRefObject<ReturnType<typeof setTimeout> | null>
+  ) => {
+    const targetAt = startedAt + (event.elapsedTime * 1000) + KARAOKE_SYNC_OFFSET_MS;
+    const delay = Math.max(0, targetAt - performance.now());
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      flushSync(() => setHighlight(event.charIndex));
+      timeoutRef.current = null;
+    }, delay);
+  };
+
   const toggleFragmentLanguage = async () => {
     if (isReviewMode) return;
 
@@ -307,7 +342,7 @@ export function Memorize() {
         if (typeof event.charIndex === 'number') {
           karaokeBoundaryReceivedRef.current = true;
           clearKaraokeFallback();
-          flushSync(() => setHighlightCharIndex(event.charIndex));
+          scheduleSyncedHighlight(event, karaokeStartedAtRef.current, setHighlightCharIndex, karaokeHighlightTimeoutRef);
         }
       };
       utterance.onend = () => {
@@ -323,6 +358,7 @@ export function Memorize() {
 
       setIsPlaying(true);
       setHighlightCharIndex(0);
+      karaokeStartedAtRef.current = performance.now();
       window.speechSynthesis.speak(utterance);
 
       karaokeFallbackTimeoutRef.current = setTimeout(() => {
@@ -391,7 +427,7 @@ export function Memorize() {
       if (typeof event.charIndex === 'number') {
         cumulativeBoundaryReceivedRef.current = true;
         clearCumulativeFallback();
-        flushSync(() => setCumulativeHighlightCharIndex(event.charIndex));
+        scheduleSyncedHighlight(event, cumulativeStartedAtRef.current, setCumulativeHighlightCharIndex, cumulativeHighlightTimeoutRef);
       }
     };
     utterance.onend = () => {
@@ -407,6 +443,7 @@ export function Memorize() {
 
     setIsCumulativeReviewPlaying(true);
     setCumulativeHighlightCharIndex(0);
+    cumulativeStartedAtRef.current = performance.now();
     window.speechSynthesis.speak(utterance);
 
     cumulativeFallbackTimeoutRef.current = setTimeout(() => {
