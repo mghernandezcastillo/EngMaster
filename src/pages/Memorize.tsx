@@ -19,6 +19,10 @@ import {
   ChevronLeft,
   ChevronRight,
   Loader2,
+  X,
+  Repeat2,
+  Cpu,
+  Radio,
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { TextHighlighter } from '../components/TextHighlighter';
@@ -50,13 +54,21 @@ export function Memorize() {
   const [showSpanishFragment, setShowSpanishFragment] = useState(false);
   const [isTranslatingFragment, setIsTranslatingFragment] = useState(false);
   const [fragmentTranslations, setFragmentTranslations] = useState<Record<number, FragmentTranslation>>({});
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+  const [isCumulativeReviewPlaying, setIsCumulativeReviewPlaying] = useState(false);
+  const [hasCumulativeReviewFinished, setHasCumulativeReviewFinished] = useState(false);
+  const [cumulativeHighlightCharIndex, setCumulativeHighlightCharIndex] = useState<number | undefined>(undefined);
 
   // Ref to prevent rapid-click navigation blocking
   const navigatingRef = useRef(false);
   const reviewScrollRef = useRef<HTMLDivElement>(null);
+  const cumulativeReviewScrollRef = useRef<HTMLDivElement>(null);
   const karaokeBoundaryReceivedRef = useRef(false);
   const karaokeFallbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const karaokeFallbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const cumulativeBoundaryReceivedRef = useRef(false);
+  const cumulativeFallbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cumulativeFallbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const clearKaraokeFallback = () => {
     if (karaokeFallbackTimeoutRef.current) {
@@ -70,9 +82,22 @@ export function Memorize() {
     }
   };
 
+  const clearCumulativeFallback = () => {
+    if (cumulativeFallbackTimeoutRef.current) {
+      clearTimeout(cumulativeFallbackTimeoutRef.current);
+      cumulativeFallbackTimeoutRef.current = null;
+    }
+
+    if (cumulativeFallbackIntervalRef.current) {
+      clearInterval(cumulativeFallbackIntervalRef.current);
+      cumulativeFallbackIntervalRef.current = null;
+    }
+  };
+
   useEffect(() => {
     return () => {
       clearKaraokeFallback();
+      clearCumulativeFallback();
       window.speechSynthesis.cancel();
     };
   }, []);
@@ -82,9 +107,14 @@ export function Memorize() {
     window.speechSynthesis.cancel();
     setIsPlayingFragment(false);
     setIsPlaying(false);
+    setIsCumulativeReviewPlaying(false);
+    setHasCumulativeReviewFinished(false);
+    setIsReviewModalOpen(false);
     setHighlightCharIndex(undefined);
+    setCumulativeHighlightCharIndex(undefined);
     setShowSpanishFragment(false);
     clearKaraokeFallback();
+    clearCumulativeFallback();
     navigatingRef.current = false;
   }, [currentParagraph]);
 
@@ -107,11 +137,33 @@ export function Memorize() {
     });
   }, [highlightCharIndex]);
 
+  useEffect(() => {
+    if (cumulativeHighlightCharIndex === undefined || !cumulativeReviewScrollRef.current) return;
+
+    requestAnimationFrame(() => {
+      const spokenWord = document.getElementById('spoken-word');
+      const scrollContainer = cumulativeReviewScrollRef.current;
+      if (!spokenWord || !scrollContainer) return;
+
+      const wordRect = spokenWord.getBoundingClientRect();
+      const containerRect = scrollContainer.getBoundingClientRect();
+      const targetTop = scrollContainer.scrollTop + wordRect.top - containerRect.top - (containerRect.height / 2) + (wordRect.height / 2);
+
+      scrollContainer.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth',
+      });
+    });
+  }, [cumulativeHighlightCharIndex]);
+
   if (!lesson) return <div>Lesson not found</div>;
 
   const isReviewMode = currentParagraph === paragraphs.length;
   const currentText = isReviewMode ? lesson.text : paragraphs[currentParagraph];
   const currentTranslation = fragmentTranslations[currentParagraph];
+  const cumulativeParagraphCount = Math.min(currentParagraph + 1, paragraphs.length);
+  const cumulativeReviewText = paragraphs.slice(0, cumulativeParagraphCount).join('\n\n');
+  const cumulativeProgress = Math.round((cumulativeParagraphCount / paragraphs.length) * 100);
 
   const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -316,6 +368,85 @@ export function Memorize() {
       setIsPlayingFragment(true);
       window.speechSynthesis.speak(utterance);
     }
+  };
+
+  const playCumulativeReview = () => {
+    if (!cumulativeReviewText) return;
+
+    clearKaraokeFallback();
+    clearCumulativeFallback();
+    window.speechSynthesis.cancel();
+    setIsPlaying(false);
+    setIsPlayingFragment(false);
+    setHighlightCharIndex(undefined);
+    setCumulativeHighlightCharIndex(undefined);
+    setHasCumulativeReviewFinished(false);
+    cumulativeBoundaryReceivedRef.current = false;
+
+    const utterance = new SpeechSynthesisUtterance(cumulativeReviewText);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.88;
+    utterance.onboundary = (event) => {
+      if (typeof event.charIndex === 'number') {
+        cumulativeBoundaryReceivedRef.current = true;
+        clearCumulativeFallback();
+        setCumulativeHighlightCharIndex(event.charIndex);
+      }
+    };
+    utterance.onend = () => {
+      clearCumulativeFallback();
+      setIsCumulativeReviewPlaying(false);
+      setHasCumulativeReviewFinished(true);
+    };
+    utterance.onerror = () => {
+      clearCumulativeFallback();
+      setIsCumulativeReviewPlaying(false);
+      setHasCumulativeReviewFinished(true);
+    };
+
+    setIsCumulativeReviewPlaying(true);
+    setCumulativeHighlightCharIndex(0);
+    window.speechSynthesis.speak(utterance);
+
+    cumulativeFallbackTimeoutRef.current = setTimeout(() => {
+      if (cumulativeBoundaryReceivedRef.current) return;
+
+      const wordMatches = [...cumulativeReviewText.matchAll(/\b[\w'-]+\b/g)];
+      if (wordMatches.length === 0) return;
+
+      let wordIndex = 0;
+      const estimatedMsPerWord = Math.max(260, 430 / utterance.rate);
+      setCumulativeHighlightCharIndex(wordMatches[0].index ?? 0);
+
+      cumulativeFallbackIntervalRef.current = setInterval(() => {
+        if (cumulativeBoundaryReceivedRef.current) {
+          clearCumulativeFallback();
+          return;
+        }
+
+        wordIndex += 1;
+        if (wordIndex >= wordMatches.length) {
+          clearCumulativeFallback();
+          return;
+        }
+
+        setCumulativeHighlightCharIndex(wordMatches[wordIndex].index ?? 0);
+      }, estimatedMsPerWord);
+    }, 800);
+  };
+
+  const openCumulativeReview = () => {
+    setIsReviewModalOpen(true);
+    window.setTimeout(playCumulativeReview, 120);
+  };
+
+  const closeCumulativeReview = () => {
+    clearCumulativeFallback();
+    window.speechSynthesis.cancel();
+    setIsCumulativeReviewPlaying(false);
+    setHasCumulativeReviewFinished(false);
+    setCumulativeHighlightCharIndex(undefined);
+    setIsReviewModalOpen(false);
   };
 
   const handleNext = () => {
@@ -578,6 +709,134 @@ export function Memorize() {
         </AnimatePresence>
       </div>
 
+      <AnimatePresence>
+        {isReviewModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4"
+            onClick={closeCumulativeReview}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 24 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 24 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-md overflow-hidden rounded-3xl border border-cyan-400/30 bg-slate-900 shadow-[0_0_40px_rgba(34,211,238,0.18)]"
+            >
+              <div className="absolute inset-0 pointer-events-none">
+                <motion.div
+                  className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"
+                  animate={{ scale: [1, 1.25, 1], opacity: [0.35, 0.55, 0.35] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute left-1/2 top-16 h-52 w-52 -translate-x-1/2 rounded-full border border-dashed border-cyan-300/30"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
+                />
+                <motion.div
+                  className="absolute left-1/2 top-24 h-32 w-32 -translate-x-1/2 rounded-full border border-teal-300/20"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                />
+              </div>
+
+              <div className="relative z-10 p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/40 bg-cyan-400/10 text-cyan-300">
+                      <motion.div
+                        className="absolute inset-0 rounded-2xl border border-cyan-300/30"
+                        animate={{ boxShadow: ['0 0 0px transparent', '0 0 18px rgba(34,211,238,0.45)', '0 0 0px transparent'] }}
+                        transition={{ duration: 1.8, repeat: Infinity }}
+                      />
+                      <Cpu className="relative z-10 h-6 w-6" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-cyan-300/80">
+                        {language === 'es' ? 'Repaso acumulado' : 'Cumulative review'}
+                      </p>
+                      <h3 className="text-lg font-black text-white">
+                        {cumulativeProgress}% {language === 'es' ? 'de la lectura' : 'of the reading'}
+                      </h3>
+                    </div>
+                  </div>
+                  <button
+                    onClick={closeCumulativeReview}
+                    className="rounded-full border border-white/10 bg-slate-800/80 p-2 text-slate-400 transition-colors hover:text-white"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-white/10 bg-slate-950/50 p-4">
+                  <div className="mb-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-400">
+                    <span>{language === 'es' ? 'Fragmentos incluidos' : 'Included fragments'}</span>
+                    <span className="text-cyan-300">{cumulativeParagraphCount}/{paragraphs.length}</span>
+                  </div>
+                  <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: `${cumulativeProgress}%` }}
+                      className="h-full rounded-full bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400"
+                    />
+                  </div>
+                  <div
+                    ref={cumulativeReviewScrollRef}
+                    className="mt-4 max-h-56 overflow-y-auto custom-scrollbar rounded-xl bg-slate-950/35 p-3 scroll-smooth"
+                  >
+                    <TextHighlighter
+                      text={cumulativeReviewText}
+                      vocabulary={lesson.vocabulary}
+                      highlightCharIndex={cumulativeHighlightCharIndex}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-5 flex gap-2">
+                  <button
+                    onClick={() => {
+                      if (isCumulativeReviewPlaying) {
+                        clearCumulativeFallback();
+                        window.speechSynthesis.cancel();
+                        setIsCumulativeReviewPlaying(false);
+                        setCumulativeHighlightCharIndex(undefined);
+                        setHasCumulativeReviewFinished(true);
+                      } else {
+                        playCumulativeReview();
+                      }
+                    }}
+                    className={cn(
+                      "flex-1 rounded-2xl border py-3 text-sm font-bold transition-all active:scale-95 flex items-center justify-center gap-2",
+                      isCumulativeReviewPlaying
+                        ? "border-emerald-400/50 bg-emerald-400/15 text-emerald-200"
+                        : "border-cyan-400/40 bg-cyan-400/15 text-cyan-200 hover:bg-cyan-400/25"
+                    )}
+                  >
+                    {isCumulativeReviewPlaying ? <Square className="h-4 w-4" fill="currentColor" /> : <Volume2 className="h-4 w-4" />}
+                    {isCumulativeReviewPlaying
+                      ? (language === 'es' ? 'Detener' : 'Stop')
+                      : hasCumulativeReviewFinished
+                        ? (language === 'es' ? 'Repetir audio' : 'Repeat audio')
+                        : (language === 'es' ? 'Reproducir' : 'Play')}
+                  </button>
+                  <button
+                    onClick={playCumulativeReview}
+                    disabled={isCumulativeReviewPlaying}
+                    className="rounded-2xl border border-white/10 bg-slate-800/80 px-4 text-slate-300 transition-all hover:bg-slate-700 disabled:opacity-50 active:scale-95"
+                  >
+                    <Repeat2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Bottom Controls */}
       <div className="flex-none flex items-center gap-2 pt-1">
         {/* Back */}
@@ -617,6 +876,16 @@ export function Memorize() {
             )}
           >
             {isPlayingFragment ? <VolumeX className="w-5 h-5 text-emerald-400" /> : <Volume2 className="w-5 h-5 text-teal-400" />}
+          </button>
+        )}
+
+        {/* Cumulative memory review */}
+        {!isReviewMode && (
+          <button
+            onClick={openCumulativeReview}
+            className="p-3.5 rounded-2xl font-bold border transition-all active:scale-95 flex items-center justify-center shrink-0 bg-cyan-500/10 border-cyan-400/30 text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_12px_rgba(34,211,238,0.12)]"
+          >
+            <Radio className="w-5 h-5" />
           </button>
         )}
 
