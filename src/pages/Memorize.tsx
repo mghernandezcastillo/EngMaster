@@ -416,6 +416,8 @@ export function Memorize() {
         >
           {isReviewMode ? (
             <>{language === 'es' ? 'Evaluación' : 'Test'} <Check className="w-4 h-4" /></>
+          ) : currentParagraph === paragraphs.length - 1 ? (
+            <>{language === 'es' ? 'Lectura Karaoke' : 'Karaoke Reading'} <BookOpen className="w-4 h-4" /></>
           ) : (
             <>{language === 'es' ? 'Avanzar' : 'Next'} <ChevronRight className="w-4 h-4" /></>
           )}

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
 import { motion, AnimatePresence, PanInfo } from 'motion/react';
-import { BrainCircuit, ArrowRight, ChevronRight, ChevronLeft, ChevronDown, Cpu, Puzzle, Database, Network, Fingerprint, Sparkles, Activity, Zap, Volume2, VolumeX, BookOpen } from 'lucide-react';
+import { BrainCircuit, ArrowRight, ChevronRight, ChevronLeft, ChevronDown, Cpu, Puzzle, Database, Network, Fingerprint, Sparkles, Activity, Zap, Volume2, VolumeX } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export function LessonIntro() {
@@ -66,11 +66,6 @@ export function LessonIntro() {
   const handleStart = () => {
     updateProgress(lesson.id, 'intro');
     navigate(`/lesson/${lesson.id}/memorize`);
-  };
-
-  const handleKaraokeStart = () => {
-    updateProgress(lesson.id, 'intro');
-    navigate(`/lesson/${lesson.id}/memorize?mode=review`);
   };
 
   const paginateVocab = (newDirection: number) => {
@@ -380,16 +375,7 @@ export function LessonIntro() {
         </AnimatePresence>
       </div>
 
-      <div className="flex-none pt-4 pb-2 space-y-2">
-        <button 
-          onClick={handleKaraokeStart}
-          className="w-full relative overflow-hidden group bg-slate-800/80 border border-white/10 hover:border-teal-500/40 hover:bg-slate-700/80 text-teal-300 py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 text-xs"
-        >
-          <BookOpen className="w-4 h-4" />
-          {language === 'es' ? 'Practicar lectura karaoke' : 'Practice karaoke reading'}
-          <Volume2 className="w-4 h-4" />
-        </button>
-
+      <div className="flex-none pt-4 pb-2">
         <button 
           onClick={handleStart}
           className="w-full relative overflow-hidden group bg-teal-600/20 border border-teal-500/50 hover:bg-teal-500/30 text-teal-300 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-[0_0_20px_rgba(20,184,166,0.15)]"
