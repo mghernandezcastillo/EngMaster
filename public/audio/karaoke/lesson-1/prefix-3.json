@@ -1,0 +1,410 @@
+[
+  {
+    "word": "When",
+    "start": 0,
+    "end": 0.209,
+    "charIndex": 0
+  },
+  {
+    "word": "I",
+    "start": 0.255,
+    "end": 0.29,
+    "charIndex": 5
+  },
+  {
+    "word": "first",
+    "start": 0.406,
+    "end": 0.697,
+    "charIndex": 7
+  },
+  {
+    "word": "entered",
+    "start": 0.755,
+    "end": 1.01,
+    "charIndex": 13
+  },
+  {
+    "word": "the",
+    "start": 1.033,
+    "end": 1.103,
+    "charIndex": 21
+  },
+  {
+    "word": "workforce",
+    "start": 1.149,
+    "end": 1.73,
+    "charIndex": 25
+  },
+  {
+    "word": "I",
+    "start": 1.974,
+    "end": 2.043,
+    "charIndex": 36
+  },
+  {
+    "word": "assumed",
+    "start": 2.125,
+    "end": 2.461,
+    "charIndex": 38
+  },
+  {
+    "word": "that",
+    "start": 2.485,
+    "end": 2.612,
+    "charIndex": 46
+  },
+  {
+    "word": "competence",
+    "start": 2.682,
+    "end": 3.274,
+    "charIndex": 51
+  },
+  {
+    "word": "meant",
+    "start": 3.32,
+    "end": 3.506,
+    "charIndex": 62
+  },
+  {
+    "word": "having",
+    "start": 3.576,
+    "end": 3.866,
+    "charIndex": 68
+  },
+  {
+    "word": "all",
+    "start": 3.947,
+    "end": 4.145,
+    "charIndex": 75
+  },
+  {
+    "word": "the",
+    "start": 4.203,
+    "end": 4.284,
+    "charIndex": 79
+  },
+  {
+    "word": "answers",
+    "start": 4.365,
+    "end": 4.923,
+    "charIndex": 83
+  },
+  {
+    "word": "In",
+    "start": 5.433,
+    "end": 5.573,
+    "charIndex": 93
+  },
+  {
+    "word": "reality",
+    "start": 5.631,
+    "end": 6.165,
+    "charIndex": 96
+  },
+  {
+    "word": "I",
+    "start": 6.269,
+    "end": 6.327,
+    "charIndex": 105
+  },
+  {
+    "word": "had",
+    "start": 6.42,
+    "end": 6.548,
+    "charIndex": 107
+  },
+  {
+    "word": "to",
+    "start": 6.583,
+    "end": 6.641,
+    "charIndex": 111
+  },
+  {
+    "word": "grow",
+    "start": 6.711,
+    "end": 6.92,
+    "charIndex": 114
+  },
+  {
+    "word": "into",
+    "start": 6.966,
+    "end": 7.152,
+    "charIndex": 119
+  },
+  {
+    "word": "roles",
+    "start": 7.245,
+    "end": 7.57,
+    "charIndex": 124
+  },
+  {
+    "word": "that",
+    "start": 7.628,
+    "end": 7.767,
+    "charIndex": 130
+  },
+  {
+    "word": "demanded",
+    "start": 7.825,
+    "end": 8.29,
+    "charIndex": 135
+  },
+  {
+    "word": "patience",
+    "start": 8.371,
+    "end": 9.091,
+    "charIndex": 144
+  },
+  {
+    "word": "judgment",
+    "start": 9.381,
+    "end": 9.915,
+    "charIndex": 154
+  },
+  {
+    "word": "and",
+    "start": 10.159,
+    "end": 10.414,
+    "charIndex": 163
+  },
+  {
+    "word": "the",
+    "start": 10.461,
+    "end": 10.53,
+    "charIndex": 167
+  },
+  {
+    "word": "ability",
+    "start": 10.565,
+    "end": 10.96,
+    "charIndex": 171
+  },
+  {
+    "word": "to",
+    "start": 11.018,
+    "end": 11.088,
+    "charIndex": 179
+  },
+  {
+    "word": "communicate",
+    "start": 11.157,
+    "end": 11.889,
+    "charIndex": 182
+  },
+  {
+    "word": "under",
+    "start": 11.947,
+    "end": 12.26,
+    "charIndex": 194
+  },
+  {
+    "word": "pressure",
+    "start": 12.33,
+    "end": 12.91,
+    "charIndex": 200
+  },
+  {
+    "word": "I",
+    "start": 13.491,
+    "end": 13.549,
+    "charIndex": 211
+  },
+  {
+    "word": "gradually",
+    "start": 13.677,
+    "end": 14.141,
+    "charIndex": 213
+  },
+  {
+    "word": "took",
+    "start": 14.199,
+    "end": 14.396,
+    "charIndex": 223
+  },
+  {
+    "word": "on",
+    "start": 14.454,
+    "end": 14.547,
+    "charIndex": 228
+  },
+  {
+    "word": "responsibilities",
+    "start": 14.605,
+    "end": 15.534,
+    "charIndex": 231
+  },
+  {
+    "word": "that",
+    "start": 15.592,
+    "end": 15.732,
+    "charIndex": 248
+  },
+  {
+    "word": "were",
+    "start": 15.755,
+    "end": 15.906,
+    "charIndex": 253
+  },
+  {
+    "word": "outside",
+    "start": 15.964,
+    "end": 16.649,
+    "charIndex": 258
+  },
+  {
+    "word": "my",
+    "start": 16.707,
+    "end": 16.835,
+    "charIndex": 266
+  },
+  {
+    "word": "comfort",
+    "start": 16.916,
+    "end": 17.287,
+    "charIndex": 269
+  },
+  {
+    "word": "zone",
+    "start": 17.322,
+    "end": 17.694,
+    "charIndex": 277
+  },
+  {
+    "word": "and",
+    "start": 18.065,
+    "end": 18.216,
+    "charIndex": 283
+  },
+  {
+    "word": "although",
+    "start": 18.274,
+    "end": 18.541,
+    "charIndex": 287
+  },
+  {
+    "word": "the",
+    "start": 18.576,
+    "end": 18.646,
+    "charIndex": 296
+  },
+  {
+    "word": "learning",
+    "start": 18.715,
+    "end": 19.029,
+    "charIndex": 300
+  },
+  {
+    "word": "curve",
+    "start": 19.087,
+    "end": 19.366,
+    "charIndex": 309
+  },
+  {
+    "word": "was",
+    "start": 19.4,
+    "end": 19.517,
+    "charIndex": 315
+  },
+  {
+    "word": "steep",
+    "start": 19.575,
+    "end": 20.027,
+    "charIndex": 319
+  },
+  {
+    "word": "those",
+    "start": 20.387,
+    "end": 20.631,
+    "charIndex": 326
+  },
+  {
+    "word": "experiences",
+    "start": 20.678,
+    "end": 21.351,
+    "charIndex": 332
+  },
+  {
+    "word": "helped",
+    "start": 21.421,
+    "end": 21.688,
+    "charIndex": 344
+  },
+  {
+    "word": "me",
+    "start": 21.746,
+    "end": 21.839,
+    "charIndex": 351
+  },
+  {
+    "word": "build",
+    "start": 21.908,
+    "end": 22.152,
+    "charIndex": 354
+  },
+  {
+    "word": "up",
+    "start": 22.222,
+    "end": 22.349,
+    "charIndex": 360
+  },
+  {
+    "word": "transferable",
+    "start": 22.419,
+    "end": 23.29,
+    "charIndex": 363
+  },
+  {
+    "word": "skills",
+    "start": 23.325,
+    "end": 23.847,
+    "charIndex": 376
+  },
+  {
+    "word": "that",
+    "start": 24.091,
+    "end": 24.265,
+    "charIndex": 383
+  },
+  {
+    "word": "still",
+    "start": 24.323,
+    "end": 24.578,
+    "charIndex": 388
+  },
+  {
+    "word": "shape",
+    "start": 24.637,
+    "end": 24.915,
+    "charIndex": 394
+  },
+  {
+    "word": "the",
+    "start": 24.95,
+    "end": 25.02,
+    "charIndex": 400
+  },
+  {
+    "word": "way",
+    "start": 25.078,
+    "end": 25.24,
+    "charIndex": 404
+  },
+  {
+    "word": "I",
+    "start": 25.356,
+    "end": 25.449,
+    "charIndex": 408
+  },
+  {
+    "word": "work",
+    "start": 25.6,
+    "end": 25.856,
+    "charIndex": 410
+  },
+  {
+    "word": "today",
+    "start": 25.937,
+    "end": 26.424,
+    "charIndex": 415
+  }
+]

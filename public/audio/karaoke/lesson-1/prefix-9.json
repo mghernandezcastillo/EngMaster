@@ -1,0 +1,1178 @@
+[
+  {
+    "word": "When",
+    "start": 0,
+    "end": 0.197,
+    "charIndex": 0
+  },
+  {
+    "word": "I",
+    "start": 0.255,
+    "end": 0.29,
+    "charIndex": 5
+  },
+  {
+    "word": "first",
+    "start": 0.441,
+    "end": 0.755,
+    "charIndex": 7
+  },
+  {
+    "word": "entered",
+    "start": 0.813,
+    "end": 1.068,
+    "charIndex": 13
+  },
+  {
+    "word": "the",
+    "start": 1.091,
+    "end": 1.161,
+    "charIndex": 21
+  },
+  {
+    "word": "workforce",
+    "start": 1.219,
+    "end": 1.858,
+    "charIndex": 25
+  },
+  {
+    "word": "I",
+    "start": 2.113,
+    "end": 2.183,
+    "charIndex": 36
+  },
+  {
+    "word": "assumed",
+    "start": 2.264,
+    "end": 2.612,
+    "charIndex": 38
+  },
+  {
+    "word": "that",
+    "start": 2.647,
+    "end": 2.775,
+    "charIndex": 46
+  },
+  {
+    "word": "competence",
+    "start": 2.844,
+    "end": 3.495,
+    "charIndex": 51
+  },
+  {
+    "word": "meant",
+    "start": 3.553,
+    "end": 3.762,
+    "charIndex": 62
+  },
+  {
+    "word": "having",
+    "start": 3.831,
+    "end": 4.11,
+    "charIndex": 68
+  },
+  {
+    "word": "all",
+    "start": 4.18,
+    "end": 4.342,
+    "charIndex": 75
+  },
+  {
+    "word": "the",
+    "start": 4.4,
+    "end": 4.481,
+    "charIndex": 79
+  },
+  {
+    "word": "answers",
+    "start": 4.563,
+    "end": 5.178,
+    "charIndex": 83
+  },
+  {
+    "word": "In",
+    "start": 5.735,
+    "end": 5.886,
+    "charIndex": 93
+  },
+  {
+    "word": "reality",
+    "start": 5.944,
+    "end": 6.525,
+    "charIndex": 96
+  },
+  {
+    "word": "I",
+    "start": 6.861,
+    "end": 6.931,
+    "charIndex": 105
+  },
+  {
+    "word": "had",
+    "start": 7.012,
+    "end": 7.14,
+    "charIndex": 107
+  },
+  {
+    "word": "to",
+    "start": 7.175,
+    "end": 7.233,
+    "charIndex": 111
+  },
+  {
+    "word": "grow",
+    "start": 7.303,
+    "end": 7.523,
+    "charIndex": 114
+  },
+  {
+    "word": "into",
+    "start": 7.581,
+    "end": 7.767,
+    "charIndex": 119
+  },
+  {
+    "word": "roles",
+    "start": 7.86,
+    "end": 8.22,
+    "charIndex": 124
+  },
+  {
+    "word": "that",
+    "start": 8.266,
+    "end": 8.394,
+    "charIndex": 130
+  },
+  {
+    "word": "demanded",
+    "start": 8.44,
+    "end": 8.905,
+    "charIndex": 135
+  },
+  {
+    "word": "patience",
+    "start": 8.975,
+    "end": 9.671,
+    "charIndex": 144
+  },
+  {
+    "word": "judgment",
+    "start": 9.95,
+    "end": 10.507,
+    "charIndex": 154
+  },
+  {
+    "word": "and",
+    "start": 10.716,
+    "end": 10.995,
+    "charIndex": 163
+  },
+  {
+    "word": "the",
+    "start": 11.053,
+    "end": 11.122,
+    "charIndex": 167
+  },
+  {
+    "word": "ability",
+    "start": 11.169,
+    "end": 11.598,
+    "charIndex": 171
+  },
+  {
+    "word": "to",
+    "start": 11.656,
+    "end": 11.726,
+    "charIndex": 179
+  },
+  {
+    "word": "communicate",
+    "start": 11.796,
+    "end": 12.574,
+    "charIndex": 182
+  },
+  {
+    "word": "under",
+    "start": 12.666,
+    "end": 12.98,
+    "charIndex": 194
+  },
+  {
+    "word": "pressure",
+    "start": 13.061,
+    "end": 13.677,
+    "charIndex": 200
+  },
+  {
+    "word": "I",
+    "start": 14.245,
+    "end": 14.315,
+    "charIndex": 211
+  },
+  {
+    "word": "gradually",
+    "start": 14.466,
+    "end": 14.954,
+    "charIndex": 213
+  },
+  {
+    "word": "took",
+    "start": 15.012,
+    "end": 15.197,
+    "charIndex": 223
+  },
+  {
+    "word": "on",
+    "start": 15.267,
+    "end": 15.372,
+    "charIndex": 228
+  },
+  {
+    "word": "responsibilities",
+    "start": 15.442,
+    "end": 16.417,
+    "charIndex": 231
+  },
+  {
+    "word": "that",
+    "start": 16.487,
+    "end": 16.626,
+    "charIndex": 248
+  },
+  {
+    "word": "were",
+    "start": 16.661,
+    "end": 16.823,
+    "charIndex": 253
+  },
+  {
+    "word": "outside",
+    "start": 16.881,
+    "end": 17.59,
+    "charIndex": 258
+  },
+  {
+    "word": "my",
+    "start": 17.636,
+    "end": 17.764,
+    "charIndex": 266
+  },
+  {
+    "word": "comfort",
+    "start": 17.845,
+    "end": 18.24,
+    "charIndex": 269
+  },
+  {
+    "word": "zone",
+    "start": 18.286,
+    "end": 18.646,
+    "charIndex": 277
+  },
+  {
+    "word": "and",
+    "start": 19.076,
+    "end": 19.273,
+    "charIndex": 283
+  },
+  {
+    "word": "although",
+    "start": 19.331,
+    "end": 19.656,
+    "charIndex": 287
+  },
+  {
+    "word": "the",
+    "start": 19.691,
+    "end": 19.761,
+    "charIndex": 296
+  },
+  {
+    "word": "learning",
+    "start": 19.819,
+    "end": 20.12,
+    "charIndex": 300
+  },
+  {
+    "word": "curve",
+    "start": 20.179,
+    "end": 20.469,
+    "charIndex": 309
+  },
+  {
+    "word": "was",
+    "start": 20.504,
+    "end": 20.631,
+    "charIndex": 315
+  },
+  {
+    "word": "steep",
+    "start": 20.713,
+    "end": 21.235,
+    "charIndex": 319
+  },
+  {
+    "word": "those",
+    "start": 21.525,
+    "end": 21.792,
+    "charIndex": 326
+  },
+  {
+    "word": "experiences",
+    "start": 21.839,
+    "end": 22.593,
+    "charIndex": 332
+  },
+  {
+    "word": "helped",
+    "start": 22.663,
+    "end": 22.953,
+    "charIndex": 344
+  },
+  {
+    "word": "me",
+    "start": 23.011,
+    "end": 23.116,
+    "charIndex": 351
+  },
+  {
+    "word": "build",
+    "start": 23.186,
+    "end": 23.441,
+    "charIndex": 354
+  },
+  {
+    "word": "up",
+    "start": 23.511,
+    "end": 23.638,
+    "charIndex": 360
+  },
+  {
+    "word": "transferable",
+    "start": 23.696,
+    "end": 24.66,
+    "charIndex": 363
+  },
+  {
+    "word": "skills",
+    "start": 24.706,
+    "end": 25.182,
+    "charIndex": 376
+  },
+  {
+    "word": "that",
+    "start": 25.391,
+    "end": 25.566,
+    "charIndex": 383
+  },
+  {
+    "word": "still",
+    "start": 25.612,
+    "end": 25.856,
+    "charIndex": 388
+  },
+  {
+    "word": "shape",
+    "start": 25.914,
+    "end": 26.204,
+    "charIndex": 394
+  },
+  {
+    "word": "the",
+    "start": 26.239,
+    "end": 26.32,
+    "charIndex": 400
+  },
+  {
+    "word": "way",
+    "start": 26.39,
+    "end": 26.61,
+    "charIndex": 404
+  },
+  {
+    "word": "I",
+    "start": 26.727,
+    "end": 26.785,
+    "charIndex": 408
+  },
+  {
+    "word": "work",
+    "start": 26.936,
+    "end": 27.272,
+    "charIndex": 410
+  },
+  {
+    "word": "today",
+    "start": 27.365,
+    "end": 27.922,
+    "charIndex": 415
+  },
+  {
+    "word": "When",
+    "start": 28.561,
+    "end": 28.735,
+    "charIndex": 423
+  },
+  {
+    "word": "I",
+    "start": 28.782,
+    "end": 28.805,
+    "charIndex": 428
+  },
+  {
+    "word": "look",
+    "start": 28.886,
+    "end": 29.049,
+    "charIndex": 430
+  },
+  {
+    "word": "back",
+    "start": 29.107,
+    "end": 29.292,
+    "charIndex": 435
+  },
+  {
+    "word": "on",
+    "start": 29.35,
+    "end": 29.432,
+    "charIndex": 440
+  },
+  {
+    "word": "that",
+    "start": 29.49,
+    "end": 29.652,
+    "charIndex": 443
+  },
+  {
+    "word": "period",
+    "start": 29.722,
+    "end": 30.221,
+    "charIndex": 448
+  },
+  {
+    "word": "what",
+    "start": 30.419,
+    "end": 30.616,
+    "charIndex": 456
+  },
+  {
+    "word": "stands",
+    "start": 30.674,
+    "end": 31.011,
+    "charIndex": 461
+  },
+  {
+    "word": "out",
+    "start": 31.057,
+    "end": 31.254,
+    "charIndex": 468
+  },
+  {
+    "word": "is",
+    "start": 31.312,
+    "end": 31.405,
+    "charIndex": 472
+  },
+  {
+    "word": "not",
+    "start": 31.463,
+    "end": 31.603,
+    "charIndex": 475
+  },
+  {
+    "word": "a",
+    "start": 31.649,
+    "end": 31.672,
+    "charIndex": 479
+  },
+  {
+    "word": "single",
+    "start": 31.788,
+    "end": 32.241,
+    "charIndex": 481
+  },
+  {
+    "word": "achievement",
+    "start": 32.276,
+    "end": 33.007,
+    "charIndex": 488
+  },
+  {
+    "word": "but",
+    "start": 33.391,
+    "end": 33.658,
+    "charIndex": 500
+  },
+  {
+    "word": "the",
+    "start": 33.716,
+    "end": 33.809,
+    "charIndex": 504
+  },
+  {
+    "word": "sustained",
+    "start": 33.855,
+    "end": 34.401,
+    "charIndex": 508
+  },
+  {
+    "word": "effort",
+    "start": 34.494,
+    "end": 34.958,
+    "charIndex": 518
+  },
+  {
+    "word": "behind",
+    "start": 35.016,
+    "end": 35.422,
+    "charIndex": 525
+  },
+  {
+    "word": "it",
+    "start": 35.504,
+    "end": 35.701,
+    "charIndex": 532
+  },
+  {
+    "word": "I",
+    "start": 36.328,
+    "end": 36.386,
+    "charIndex": 537
+  },
+  {
+    "word": "learned",
+    "start": 36.479,
+    "end": 36.688,
+    "charIndex": 539
+  },
+  {
+    "word": "that",
+    "start": 36.711,
+    "end": 36.839,
+    "charIndex": 547
+  },
+  {
+    "word": "credibility",
+    "start": 36.897,
+    "end": 37.605,
+    "charIndex": 552
+  },
+  {
+    "word": "comes",
+    "start": 37.675,
+    "end": 37.965,
+    "charIndex": 564
+  },
+  {
+    "word": "from",
+    "start": 38.035,
+    "end": 38.197,
+    "charIndex": 570
+  },
+  {
+    "word": "being",
+    "start": 38.267,
+    "end": 38.511,
+    "charIndex": 575
+  },
+  {
+    "word": "consistent",
+    "start": 38.592,
+    "end": 39.463,
+    "charIndex": 581
+  },
+  {
+    "word": "admitting",
+    "start": 39.857,
+    "end": 40.368,
+    "charIndex": 593
+  },
+  {
+    "word": "what",
+    "start": 40.415,
+    "end": 40.542,
+    "charIndex": 603
+  },
+  {
+    "word": "you",
+    "start": 40.589,
+    "end": 40.658,
+    "charIndex": 608
+  },
+  {
+    "word": "do",
+    "start": 40.728,
+    "end": 40.809,
+    "charIndex": 612
+  },
+  {
+    "word": "not",
+    "start": 40.925,
+    "end": 41.111,
+    "charIndex": 615
+  },
+  {
+    "word": "know",
+    "start": 41.158,
+    "end": 41.401,
+    "charIndex": 619
+  },
+  {
+    "word": "and",
+    "start": 41.576,
+    "end": 41.761,
+    "charIndex": 624
+  },
+  {
+    "word": "following",
+    "start": 41.843,
+    "end": 42.191,
+    "charIndex": 628
+  },
+  {
+    "word": "through",
+    "start": 42.249,
+    "end": 42.597,
+    "charIndex": 638
+  },
+  {
+    "word": "on",
+    "start": 42.713,
+    "end": 42.888,
+    "charIndex": 646
+  },
+  {
+    "word": "what",
+    "start": 42.946,
+    "end": 43.097,
+    "charIndex": 649
+  },
+  {
+    "word": "you",
+    "start": 43.155,
+    "end": 43.247,
+    "charIndex": 654
+  },
+  {
+    "word": "promise",
+    "start": 43.34,
+    "end": 43.944,
+    "charIndex": 658
+  },
+  {
+    "word": "Once",
+    "start": 44.501,
+    "end": 44.745,
+    "charIndex": 668
+  },
+  {
+    "word": "I",
+    "start": 44.792,
+    "end": 44.815,
+    "charIndex": 673
+  },
+  {
+    "word": "began",
+    "start": 44.896,
+    "end": 45.14,
+    "charIndex": 675
+  },
+  {
+    "word": "to",
+    "start": 45.198,
+    "end": 45.244,
+    "charIndex": 681
+  },
+  {
+    "word": "find",
+    "start": 45.314,
+    "end": 45.5,
+    "charIndex": 684
+  },
+  {
+    "word": "my",
+    "start": 45.569,
+    "end": 45.674,
+    "charIndex": 689
+  },
+  {
+    "word": "feet",
+    "start": 45.767,
+    "end": 46.138,
+    "charIndex": 692
+  },
+  {
+    "word": "I",
+    "start": 46.533,
+    "end": 46.591,
+    "charIndex": 698
+  },
+  {
+    "word": "also",
+    "start": 46.684,
+    "end": 46.916,
+    "charIndex": 700
+  },
+  {
+    "word": "became",
+    "start": 46.986,
+    "end": 47.299,
+    "charIndex": 705
+  },
+  {
+    "word": "more",
+    "start": 47.346,
+    "end": 47.497,
+    "charIndex": 712
+  },
+  {
+    "word": "willing",
+    "start": 47.532,
+    "end": 47.775,
+    "charIndex": 717
+  },
+  {
+    "word": "to",
+    "start": 47.834,
+    "end": 47.892,
+    "charIndex": 725
+  },
+  {
+    "word": "ask",
+    "start": 47.973,
+    "end": 48.193,
+    "charIndex": 728
+  },
+  {
+    "word": "for",
+    "start": 48.251,
+    "end": 48.368,
+    "charIndex": 732
+  },
+  {
+    "word": "feedback",
+    "start": 48.437,
+    "end": 48.971,
+    "charIndex": 736
+  },
+  {
+    "word": "and",
+    "start": 49.215,
+    "end": 49.424,
+    "charIndex": 745
+  },
+  {
+    "word": "reflect",
+    "start": 49.494,
+    "end": 49.912,
+    "charIndex": 749
+  },
+  {
+    "word": "on",
+    "start": 49.958,
+    "end": 50.028,
+    "charIndex": 757
+  },
+  {
+    "word": "my",
+    "start": 50.086,
+    "end": 50.19,
+    "charIndex": 760
+  },
+  {
+    "word": "underlying",
+    "start": 50.318,
+    "end": 50.864,
+    "charIndex": 763
+  },
+  {
+    "word": "strengths",
+    "start": 50.945,
+    "end": 51.537,
+    "charIndex": 774
+  },
+  {
+    "word": "That",
+    "start": 52.222,
+    "end": 52.431,
+    "charIndex": 786
+  },
+  {
+    "word": "self-awareness",
+    "start": 52.512,
+    "end": 53.279,
+    "charIndex": 791
+  },
+  {
+    "word": "helped",
+    "start": 53.337,
+    "end": 53.592,
+    "charIndex": 806
+  },
+  {
+    "word": "me",
+    "start": 53.65,
+    "end": 53.755,
+    "charIndex": 813
+  },
+  {
+    "word": "stand",
+    "start": 53.824,
+    "end": 54.196,
+    "charIndex": 816
+  },
+  {
+    "word": "out",
+    "start": 54.265,
+    "end": 54.544,
+    "charIndex": 822
+  },
+  {
+    "word": "without",
+    "start": 54.718,
+    "end": 55.067,
+    "charIndex": 826
+  },
+  {
+    "word": "pretending",
+    "start": 55.113,
+    "end": 55.659,
+    "charIndex": 834
+  },
+  {
+    "word": "to",
+    "start": 55.728,
+    "end": 55.798,
+    "charIndex": 845
+  },
+  {
+    "word": "be",
+    "start": 55.856,
+    "end": 55.96,
+    "charIndex": 848
+  },
+  {
+    "word": "someone",
+    "start": 56.019,
+    "end": 56.355,
+    "charIndex": 851
+  },
+  {
+    "word": "I",
+    "start": 56.425,
+    "end": 56.483,
+    "charIndex": 859
+  },
+  {
+    "word": "was",
+    "start": 56.576,
+    "end": 56.704,
+    "charIndex": 861
+  },
+  {
+    "word": "not",
+    "start": 56.82,
+    "end": 57.191,
+    "charIndex": 865
+  },
+  {
+    "word": "What",
+    "start": 57.83,
+    "end": 58.027,
+    "charIndex": 871
+  },
+  {
+    "word": "I",
+    "start": 58.085,
+    "end": 58.12,
+    "charIndex": 876
+  },
+  {
+    "word": "have",
+    "start": 58.19,
+    "end": 58.306,
+    "charIndex": 878
+  },
+  {
+    "word": "come",
+    "start": 58.341,
+    "end": 58.526,
+    "charIndex": 883
+  },
+  {
+    "word": "to",
+    "start": 58.561,
+    "end": 58.631,
+    "charIndex": 888
+  },
+  {
+    "word": "realize",
+    "start": 58.724,
+    "end": 59.211,
+    "charIndex": 891
+  },
+  {
+    "word": "is",
+    "start": 59.258,
+    "end": 59.327,
+    "charIndex": 899
+  },
+  {
+    "word": "that",
+    "start": 59.374,
+    "end": 59.502,
+    "charIndex": 902
+  },
+  {
+    "word": "professional",
+    "start": 59.536,
+    "end": 60.094,
+    "charIndex": 907
+  },
+  {
+    "word": "growth",
+    "start": 60.187,
+    "end": 60.582,
+    "charIndex": 920
+  },
+  {
+    "word": "is",
+    "start": 60.651,
+    "end": 60.744,
+    "charIndex": 927
+  },
+  {
+    "word": "less",
+    "start": 60.802,
+    "end": 61,
+    "charIndex": 930
+  },
+  {
+    "word": "about",
+    "start": 61.034,
+    "end": 61.29,
+    "charIndex": 935
+  },
+  {
+    "word": "collecting",
+    "start": 61.348,
+    "end": 61.917,
+    "charIndex": 941
+  },
+  {
+    "word": "impressive",
+    "start": 61.975,
+    "end": 62.544,
+    "charIndex": 952
+  },
+  {
+    "word": "titles",
+    "start": 62.59,
+    "end": 63.171,
+    "charIndex": 963
+  },
+  {
+    "word": "than",
+    "start": 63.414,
+    "end": 63.577,
+    "charIndex": 970
+  },
+  {
+    "word": "about",
+    "start": 63.612,
+    "end": 63.856,
+    "charIndex": 975
+  },
+  {
+    "word": "becoming",
+    "start": 63.902,
+    "end": 64.274,
+    "charIndex": 981
+  },
+  {
+    "word": "more",
+    "start": 64.343,
+    "end": 64.529,
+    "charIndex": 990
+  },
+  {
+    "word": "articulate",
+    "start": 64.575,
+    "end": 65.469,
+    "charIndex": 995
+  },
+  {
+    "word": "adaptable",
+    "start": 65.586,
+    "end": 66.421,
+    "charIndex": 1007
+  },
+  {
+    "word": "and",
+    "start": 66.479,
+    "end": 66.7,
+    "charIndex": 1017
+  },
+  {
+    "word": "useful",
+    "start": 66.793,
+    "end": 67.211,
+    "charIndex": 1021
+  },
+  {
+    "word": "to",
+    "start": 67.281,
+    "end": 67.35,
+    "charIndex": 1028
+  },
+  {
+    "word": "others",
+    "start": 67.443,
+    "end": 67.919,
+    "charIndex": 1031
+  },
+  {
+    "word": "Every",
+    "start": 68.639,
+    "end": 68.964,
+    "charIndex": 1040
+  },
+  {
+    "word": "demanding",
+    "start": 69.045,
+    "end": 69.684,
+    "charIndex": 1046
+  },
+  {
+    "word": "experience",
+    "start": 69.753,
+    "end": 70.438,
+    "charIndex": 1056
+  },
+  {
+    "word": "can",
+    "start": 70.473,
+    "end": 70.624,
+    "charIndex": 1067
+  },
+  {
+    "word": "broaden",
+    "start": 70.717,
+    "end": 71.135,
+    "charIndex": 1071
+  },
+  {
+    "word": "your",
+    "start": 71.193,
+    "end": 71.309,
+    "charIndex": 1079
+  },
+  {
+    "word": "perspective",
+    "start": 71.356,
+    "end": 72.145,
+    "charIndex": 1084
+  },
+  {
+    "word": "provided",
+    "start": 72.47,
+    "end": 73.016,
+    "charIndex": 1097
+  },
+  {
+    "word": "that",
+    "start": 73.051,
+    "end": 73.167,
+    "charIndex": 1106
+  },
+  {
+    "word": "you",
+    "start": 73.213,
+    "end": 73.306,
+    "charIndex": 1111
+  },
+  {
+    "word": "learn",
+    "start": 73.422,
+    "end": 73.678,
+    "charIndex": 1115
+  },
+  {
+    "word": "from",
+    "start": 73.736,
+    "end": 73.887,
+    "charIndex": 1121
+  },
+  {
+    "word": "it",
+    "start": 73.945,
+    "end": 74.107,
+    "charIndex": 1126
+  },
+  {
+    "word": "and",
+    "start": 74.316,
+    "end": 74.525,
+    "charIndex": 1129
+  },
+  {
+    "word": "move",
+    "start": 74.595,
+    "end": 74.781,
+    "charIndex": 1133
+  },
+  {
+    "word": "forward",
+    "start": 74.827,
+    "end": 75.152,
+    "charIndex": 1138
+  },
+  {
+    "word": "with",
+    "start": 75.199,
+    "end": 75.338,
+    "charIndex": 1146
+  },
+  {
+    "word": "a",
+    "start": 75.373,
+    "end": 75.408,
+    "charIndex": 1151
+  },
+  {
+    "word": "clearer",
+    "start": 75.5,
+    "end": 75.884,
+    "charIndex": 1153
+  },
+  {
+    "word": "sense",
+    "start": 75.942,
+    "end": 76.255,
+    "charIndex": 1161
+  },
+  {
+    "word": "of",
+    "start": 76.325,
+    "end": 76.418,
+    "charIndex": 1167
+  },
+  {
+    "word": "your",
+    "start": 76.476,
+    "end": 76.615,
+    "charIndex": 1170
+  },
+  {
+    "word": "long-term",
+    "start": 76.708,
+    "end": 77.3,
+    "charIndex": 1175
+  },
+  {
+    "word": "potential",
+    "start": 77.37,
+    "end": 78.066,
+    "charIndex": 1185
+  }
+]

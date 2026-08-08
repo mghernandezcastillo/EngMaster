@@ -1,0 +1,1232 @@
+[
+  {
+    "word": "People",
+    "start": 0,
+    "end": 0.383,
+    "charIndex": 0
+  },
+  {
+    "word": "often",
+    "start": 0.418,
+    "end": 0.65,
+    "charIndex": 7
+  },
+  {
+    "word": "assume",
+    "start": 0.685,
+    "end": 1.033,
+    "charIndex": 13
+  },
+  {
+    "word": "that",
+    "start": 1.068,
+    "end": 1.196,
+    "charIndex": 20
+  },
+  {
+    "word": "repeated",
+    "start": 1.254,
+    "end": 1.741,
+    "charIndex": 25
+  },
+  {
+    "word": "exposure",
+    "start": 1.8,
+    "end": 2.461,
+    "charIndex": 34
+  },
+  {
+    "word": "automatically",
+    "start": 2.531,
+    "end": 3.39,
+    "charIndex": 43
+  },
+  {
+    "word": "leads",
+    "start": 3.46,
+    "end": 3.715,
+    "charIndex": 57
+  },
+  {
+    "word": "to",
+    "start": 3.773,
+    "end": 3.866,
+    "charIndex": 63
+  },
+  {
+    "word": "mastery",
+    "start": 3.959,
+    "end": 4.621,
+    "charIndex": 66
+  },
+  {
+    "word": "They",
+    "start": 5.039,
+    "end": 5.213,
+    "charIndex": 75
+  },
+  {
+    "word": "may",
+    "start": 5.271,
+    "end": 5.41,
+    "charIndex": 80
+  },
+  {
+    "word": "read",
+    "start": 5.526,
+    "end": 5.747,
+    "charIndex": 84
+  },
+  {
+    "word": "the",
+    "start": 5.805,
+    "end": 5.875,
+    "charIndex": 89
+  },
+  {
+    "word": "same",
+    "start": 5.933,
+    "end": 6.188,
+    "charIndex": 93
+  },
+  {
+    "word": "page",
+    "start": 6.246,
+    "end": 6.618,
+    "charIndex": 98
+  },
+  {
+    "word": "several",
+    "start": 6.653,
+    "end": 6.978,
+    "charIndex": 103
+  },
+  {
+    "word": "times",
+    "start": 7.036,
+    "end": 7.523,
+    "charIndex": 111
+  },
+  {
+    "word": "go",
+    "start": 7.848,
+    "end": 7.976,
+    "charIndex": 118
+  },
+  {
+    "word": "over",
+    "start": 8.057,
+    "end": 8.243,
+    "charIndex": 121
+  },
+  {
+    "word": "a",
+    "start": 8.301,
+    "end": 8.324,
+    "charIndex": 126
+  },
+  {
+    "word": "list",
+    "start": 8.382,
+    "end": 8.568,
+    "charIndex": 128
+  },
+  {
+    "word": "of",
+    "start": 8.626,
+    "end": 8.684,
+    "charIndex": 133
+  },
+  {
+    "word": "words",
+    "start": 8.766,
+    "end": 9.172,
+    "charIndex": 136
+  },
+  {
+    "word": "or",
+    "start": 9.265,
+    "end": 9.392,
+    "charIndex": 142
+  },
+  {
+    "word": "listen",
+    "start": 9.451,
+    "end": 9.683,
+    "charIndex": 145
+  },
+  {
+    "word": "to",
+    "start": 9.729,
+    "end": 9.799,
+    "charIndex": 152
+  },
+  {
+    "word": "hours",
+    "start": 9.892,
+    "end": 10.24,
+    "charIndex": 155
+  },
+  {
+    "word": "of",
+    "start": 10.286,
+    "end": 10.344,
+    "charIndex": 161
+  },
+  {
+    "word": "English",
+    "start": 10.414,
+    "end": 10.786,
+    "charIndex": 164
+  },
+  {
+    "word": "without",
+    "start": 10.96,
+    "end": 11.308,
+    "charIndex": 172
+  },
+  {
+    "word": "checking",
+    "start": 11.366,
+    "end": 11.761,
+    "charIndex": 180
+  },
+  {
+    "word": "what",
+    "start": 11.819,
+    "end": 11.958,
+    "charIndex": 189
+  },
+  {
+    "word": "they",
+    "start": 11.993,
+    "end": 12.109,
+    "charIndex": 194
+  },
+  {
+    "word": "can",
+    "start": 12.156,
+    "end": 12.283,
+    "charIndex": 199
+  },
+  {
+    "word": "actually",
+    "start": 12.353,
+    "end": 12.783,
+    "charIndex": 203
+  },
+  {
+    "word": "retrieve",
+    "start": 12.852,
+    "end": 13.572,
+    "charIndex": 212
+  },
+  {
+    "word": "Passive",
+    "start": 14.187,
+    "end": 14.582,
+    "charIndex": 222
+  },
+  {
+    "word": "exposure",
+    "start": 14.617,
+    "end": 15.197,
+    "charIndex": 230
+  },
+  {
+    "word": "is",
+    "start": 15.267,
+    "end": 15.441,
+    "charIndex": 239
+  },
+  {
+    "word": "useful",
+    "start": 15.557,
+    "end": 16.068,
+    "charIndex": 242
+  },
+  {
+    "word": "but",
+    "start": 16.358,
+    "end": 16.509,
+    "charIndex": 250
+  },
+  {
+    "word": "it",
+    "start": 16.544,
+    "end": 16.614,
+    "charIndex": 254
+  },
+  {
+    "word": "does",
+    "start": 16.66,
+    "end": 16.811,
+    "charIndex": 257
+  },
+  {
+    "word": "not",
+    "start": 16.892,
+    "end": 17.09,
+    "charIndex": 262
+  },
+  {
+    "word": "guarantee",
+    "start": 17.148,
+    "end": 17.659,
+    "charIndex": 266
+  },
+  {
+    "word": "retention",
+    "start": 17.728,
+    "end": 18.436,
+    "charIndex": 276
+  },
+  {
+    "word": "Effective",
+    "start": 19.098,
+    "end": 19.644,
+    "charIndex": 288
+  },
+  {
+    "word": "learning",
+    "start": 19.679,
+    "end": 19.981,
+    "charIndex": 298
+  },
+  {
+    "word": "requires",
+    "start": 20.05,
+    "end": 20.457,
+    "charIndex": 307
+  },
+  {
+    "word": "a",
+    "start": 20.503,
+    "end": 20.538,
+    "charIndex": 316
+  },
+  {
+    "word": "feedback",
+    "start": 20.631,
+    "end": 21.165,
+    "charIndex": 318
+  },
+  {
+    "word": "loop",
+    "start": 21.258,
+    "end": 21.548,
+    "charIndex": 327
+  },
+  {
+    "word": "First",
+    "start": 22.024,
+    "end": 22.43,
+    "charIndex": 333
+  },
+  {
+    "word": "we",
+    "start": 22.512,
+    "end": 22.628,
+    "charIndex": 340
+  },
+  {
+    "word": "need",
+    "start": 22.686,
+    "end": 22.86,
+    "charIndex": 343
+  },
+  {
+    "word": "contextualized",
+    "start": 22.918,
+    "end": 23.893,
+    "charIndex": 348
+  },
+  {
+    "word": "input",
+    "start": 23.974,
+    "end": 24.427,
+    "charIndex": 363
+  },
+  {
+    "word": "that",
+    "start": 24.601,
+    "end": 24.752,
+    "charIndex": 369
+  },
+  {
+    "word": "is",
+    "start": 24.799,
+    "end": 24.868,
+    "charIndex": 374
+  },
+  {
+    "word": "challenging",
+    "start": 24.95,
+    "end": 25.472,
+    "charIndex": 377
+  },
+  {
+    "word": "but",
+    "start": 25.542,
+    "end": 25.716,
+    "charIndex": 389
+  },
+  {
+    "word": "understandable",
+    "start": 25.797,
+    "end": 26.842,
+    "charIndex": 393
+  },
+  {
+    "word": "Then",
+    "start": 27.272,
+    "end": 27.539,
+    "charIndex": 409
+  },
+  {
+    "word": "we",
+    "start": 27.608,
+    "end": 27.724,
+    "charIndex": 414
+  },
+  {
+    "word": "must",
+    "start": 27.782,
+    "end": 27.968,
+    "charIndex": 417
+  },
+  {
+    "word": "take",
+    "start": 28.003,
+    "end": 28.224,
+    "charIndex": 422
+  },
+  {
+    "word": "in",
+    "start": 28.27,
+    "end": 28.351,
+    "charIndex": 427
+  },
+  {
+    "word": "the",
+    "start": 28.398,
+    "end": 28.467,
+    "charIndex": 430
+  },
+  {
+    "word": "meaning",
+    "start": 28.56,
+    "end": 29.025,
+    "charIndex": 434
+  },
+  {
+    "word": "notice",
+    "start": 29.443,
+    "end": 29.803,
+    "charIndex": 443
+  },
+  {
+    "word": "how",
+    "start": 29.838,
+    "end": 29.942,
+    "charIndex": 450
+  },
+  {
+    "word": "expressions",
+    "start": 30.012,
+    "end": 30.604,
+    "charIndex": 454
+  },
+  {
+    "word": "work",
+    "start": 30.685,
+    "end": 30.941,
+    "charIndex": 466
+  },
+  {
+    "word": "together",
+    "start": 30.999,
+    "end": 31.451,
+    "charIndex": 471
+  },
+  {
+    "word": "and",
+    "start": 31.695,
+    "end": 31.927,
+    "charIndex": 480
+  },
+  {
+    "word": "test",
+    "start": 31.986,
+    "end": 32.253,
+    "charIndex": 484
+  },
+  {
+    "word": "whether",
+    "start": 32.299,
+    "end": 32.531,
+    "charIndex": 489
+  },
+  {
+    "word": "we",
+    "start": 32.578,
+    "end": 32.659,
+    "charIndex": 497
+  },
+  {
+    "word": "can",
+    "start": 32.705,
+    "end": 32.821,
+    "charIndex": 500
+  },
+  {
+    "word": "recall",
+    "start": 32.879,
+    "end": 33.228,
+    "charIndex": 504
+  },
+  {
+    "word": "them",
+    "start": 33.297,
+    "end": 33.437,
+    "charIndex": 511
+  },
+  {
+    "word": "without",
+    "start": 33.483,
+    "end": 33.843,
+    "charIndex": 516
+  },
+  {
+    "word": "looking",
+    "start": 33.901,
+    "end": 34.319,
+    "charIndex": 524
+  },
+  {
+    "word": "We",
+    "start": 34.934,
+    "end": 35.074,
+    "charIndex": 533
+  },
+  {
+    "word": "may",
+    "start": 35.132,
+    "end": 35.271,
+    "charIndex": 536
+  },
+  {
+    "word": "pick",
+    "start": 35.329,
+    "end": 35.515,
+    "charIndex": 540
+  },
+  {
+    "word": "up",
+    "start": 35.573,
+    "end": 35.701,
+    "charIndex": 545
+  },
+  {
+    "word": "useful",
+    "start": 35.794,
+    "end": 36.188,
+    "charIndex": 548
+  },
+  {
+    "word": "language",
+    "start": 36.258,
+    "end": 36.688,
+    "charIndex": 555
+  },
+  {
+    "word": "naturally",
+    "start": 36.746,
+    "end": 37.314,
+    "charIndex": 564
+  },
+  {
+    "word": "but",
+    "start": 37.698,
+    "end": 37.86,
+    "charIndex": 575
+  },
+  {
+    "word": "deliberate",
+    "start": 37.918,
+    "end": 38.406,
+    "charIndex": 579
+  },
+  {
+    "word": "practice",
+    "start": 38.452,
+    "end": 38.975,
+    "charIndex": 590
+  },
+  {
+    "word": "is",
+    "start": 39.021,
+    "end": 39.149,
+    "charIndex": 599
+  },
+  {
+    "word": "what",
+    "start": 39.195,
+    "end": 39.323,
+    "charIndex": 602
+  },
+  {
+    "word": "helps",
+    "start": 39.381,
+    "end": 39.648,
+    "charIndex": 607
+  },
+  {
+    "word": "us",
+    "start": 39.706,
+    "end": 39.811,
+    "charIndex": 613
+  },
+  {
+    "word": "put",
+    "start": 39.869,
+    "end": 40.031,
+    "charIndex": 616
+  },
+  {
+    "word": "it",
+    "start": 40.078,
+    "end": 40.159,
+    "charIndex": 620
+  },
+  {
+    "word": "into",
+    "start": 40.229,
+    "end": 40.449,
+    "charIndex": 623
+  },
+  {
+    "word": "practice",
+    "start": 40.542,
+    "end": 41.181,
+    "charIndex": 628
+  },
+  {
+    "word": "with",
+    "start": 41.227,
+    "end": 41.424,
+    "charIndex": 637
+  },
+  {
+    "word": "accuracy",
+    "start": 41.506,
+    "end": 42.295,
+    "charIndex": 642
+  },
+  {
+    "word": "When",
+    "start": 42.91,
+    "end": 43.119,
+    "charIndex": 653
+  },
+  {
+    "word": "progress",
+    "start": 43.201,
+    "end": 43.677,
+    "charIndex": 658
+  },
+  {
+    "word": "slows",
+    "start": 43.7,
+    "end": 44.211,
+    "charIndex": 667
+  },
+  {
+    "word": "learners",
+    "start": 44.536,
+    "end": 44.873,
+    "charIndex": 674
+  },
+  {
+    "word": "often",
+    "start": 44.919,
+    "end": 45.14,
+    "charIndex": 683
+  },
+  {
+    "word": "believe",
+    "start": 45.186,
+    "end": 45.558,
+    "charIndex": 689
+  },
+  {
+    "word": "they",
+    "start": 45.604,
+    "end": 45.732,
+    "charIndex": 697
+  },
+  {
+    "word": "have",
+    "start": 45.778,
+    "end": 45.918,
+    "charIndex": 702
+  },
+  {
+    "word": "reached",
+    "start": 45.976,
+    "end": 46.278,
+    "charIndex": 707
+  },
+  {
+    "word": "a",
+    "start": 46.324,
+    "end": 46.359,
+    "charIndex": 715
+  },
+  {
+    "word": "permanent",
+    "start": 46.475,
+    "end": 46.997,
+    "charIndex": 717
+  },
+  {
+    "word": "plateau",
+    "start": 47.044,
+    "end": 47.624,
+    "charIndex": 727
+  },
+  {
+    "word": "In",
+    "start": 48.216,
+    "end": 48.356,
+    "charIndex": 736
+  },
+  {
+    "word": "reality",
+    "start": 48.414,
+    "end": 48.948,
+    "charIndex": 739
+  },
+  {
+    "word": "they",
+    "start": 49.215,
+    "end": 49.354,
+    "charIndex": 748
+  },
+  {
+    "word": "may",
+    "start": 49.401,
+    "end": 49.528,
+    "charIndex": 753
+  },
+  {
+    "word": "simply",
+    "start": 49.586,
+    "end": 49.9,
+    "charIndex": 757
+  },
+  {
+    "word": "need",
+    "start": 49.946,
+    "end": 50.109,
+    "charIndex": 764
+  },
+  {
+    "word": "to",
+    "start": 50.144,
+    "end": 50.213,
+    "charIndex": 769
+  },
+  {
+    "word": "brush",
+    "start": 50.283,
+    "end": 50.573,
+    "charIndex": 772
+  },
+  {
+    "word": "up",
+    "start": 50.643,
+    "end": 50.771,
+    "charIndex": 778
+  },
+  {
+    "word": "on",
+    "start": 50.84,
+    "end": 50.945,
+    "charIndex": 781
+  },
+  {
+    "word": "weak",
+    "start": 51.026,
+    "end": 51.258,
+    "charIndex": 784
+  },
+  {
+    "word": "areas",
+    "start": 51.328,
+    "end": 51.804,
+    "charIndex": 789
+  },
+  {
+    "word": "vary",
+    "start": 52.001,
+    "end": 52.35,
+    "charIndex": 796
+  },
+  {
+    "word": "the",
+    "start": 52.408,
+    "end": 52.477,
+    "charIndex": 801
+  },
+  {
+    "word": "task",
+    "start": 52.535,
+    "end": 52.942,
+    "charIndex": 805
+  },
+  {
+    "word": "or",
+    "start": 53.023,
+    "end": 53.186,
+    "charIndex": 810
+  },
+  {
+    "word": "increase",
+    "start": 53.244,
+    "end": 53.662,
+    "charIndex": 813
+  },
+  {
+    "word": "the",
+    "start": 53.708,
+    "end": 53.778,
+    "charIndex": 822
+  },
+  {
+    "word": "difficulty",
+    "start": 53.824,
+    "end": 54.451,
+    "charIndex": 826
+  },
+  {
+    "word": "The",
+    "start": 55.043,
+    "end": 55.159,
+    "charIndex": 838
+  },
+  {
+    "word": "goal",
+    "start": 55.217,
+    "end": 55.473,
+    "charIndex": 842
+  },
+  {
+    "word": "is",
+    "start": 55.566,
+    "end": 55.682,
+    "charIndex": 847
+  },
+  {
+    "word": "not",
+    "start": 55.798,
+    "end": 56.007,
+    "charIndex": 850
+  },
+  {
+    "word": "to",
+    "start": 56.053,
+    "end": 56.123,
+    "charIndex": 854
+  },
+  {
+    "word": "repeat",
+    "start": 56.204,
+    "end": 56.541,
+    "charIndex": 857
+  },
+  {
+    "word": "one",
+    "start": 56.622,
+    "end": 56.843,
+    "charIndex": 864
+  },
+  {
+    "word": "paragraph",
+    "start": 56.889,
+    "end": 57.481,
+    "charIndex": 868
+  },
+  {
+    "word": "forever",
+    "start": 57.528,
+    "end": 58.062,
+    "charIndex": 878
+  },
+  {
+    "word": "It",
+    "start": 58.561,
+    "end": 58.7,
+    "charIndex": 887
+  },
+  {
+    "word": "is",
+    "start": 58.747,
+    "end": 58.828,
+    "charIndex": 890
+  },
+  {
+    "word": "to",
+    "start": 58.874,
+    "end": 58.944,
+    "charIndex": 893
+  },
+  {
+    "word": "reconstruct",
+    "start": 59.06,
+    "end": 59.873,
+    "charIndex": 896
+  },
+  {
+    "word": "it",
+    "start": 59.942,
+    "end": 60.105,
+    "charIndex": 908
+  },
+  {
+    "word": "personalize",
+    "start": 60.407,
+    "end": 61.127,
+    "charIndex": 912
+  },
+  {
+    "word": "it",
+    "start": 61.173,
+    "end": 61.335,
+    "charIndex": 924
+  },
+  {
+    "word": "and",
+    "start": 61.579,
+    "end": 61.788,
+    "charIndex": 927
+  },
+  {
+    "word": "use",
+    "start": 61.881,
+    "end": 62.102,
+    "charIndex": 931
+  },
+  {
+    "word": "its",
+    "start": 62.137,
+    "end": 62.264,
+    "charIndex": 935
+  },
+  {
+    "word": "structures",
+    "start": 62.299,
+    "end": 62.822,
+    "charIndex": 939
+  },
+  {
+    "word": "in",
+    "start": 62.903,
+    "end": 63.031,
+    "charIndex": 950
+  },
+  {
+    "word": "unfamiliar",
+    "start": 63.181,
+    "end": 63.843,
+    "charIndex": 953
+  },
+  {
+    "word": "situations",
+    "start": 63.901,
+    "end": 64.795,
+    "charIndex": 964
+  },
+  {
+    "word": "If",
+    "start": 65.457,
+    "end": 65.62,
+    "charIndex": 976
+  },
+  {
+    "word": "we",
+    "start": 65.678,
+    "end": 65.805,
+    "charIndex": 979
+  },
+  {
+    "word": "keep",
+    "start": 65.887,
+    "end": 66.096,
+    "charIndex": 982
+  },
+  {
+    "word": "at",
+    "start": 66.142,
+    "end": 66.223,
+    "charIndex": 987
+  },
+  {
+    "word": "this",
+    "start": 66.281,
+    "end": 66.479,
+    "charIndex": 990
+  },
+  {
+    "word": "process",
+    "start": 66.572,
+    "end": 67.21,
+    "charIndex": 995
+  },
+  {
+    "word": "advanced",
+    "start": 67.535,
+    "end": 68.046,
+    "charIndex": 1004
+  },
+  {
+    "word": "patterns",
+    "start": 68.104,
+    "end": 68.522,
+    "charIndex": 1013
+  },
+  {
+    "word": "gradually",
+    "start": 68.603,
+    "end": 69.091,
+    "charIndex": 1022
+  },
+  {
+    "word": "become",
+    "start": 69.137,
+    "end": 69.497,
+    "charIndex": 1032
+  },
+  {
+    "word": "second",
+    "start": 69.59,
+    "end": 69.973,
+    "charIndex": 1039
+  },
+  {
+    "word": "nature",
+    "start": 70.043,
+    "end": 70.565,
+    "charIndex": 1046
+  },
+  {
+    "word": "We",
+    "start": 71.053,
+    "end": 71.181,
+    "charIndex": 1054
+  },
+  {
+    "word": "no",
+    "start": 71.25,
+    "end": 71.332,
+    "charIndex": 1057
+  },
+  {
+    "word": "longer",
+    "start": 71.413,
+    "end": 71.668,
+    "charIndex": 1060
+  },
+  {
+    "word": "have",
+    "start": 71.726,
+    "end": 71.877,
+    "charIndex": 1067
+  },
+  {
+    "word": "to",
+    "start": 71.912,
+    "end": 71.959,
+    "charIndex": 1072
+  },
+  {
+    "word": "assemble",
+    "start": 72.04,
+    "end": 72.493,
+    "charIndex": 1075
+  },
+  {
+    "word": "every",
+    "start": 72.562,
+    "end": 72.887,
+    "charIndex": 1084
+  },
+  {
+    "word": "sentence",
+    "start": 72.957,
+    "end": 73.468,
+    "charIndex": 1090
+  },
+  {
+    "word": "word",
+    "start": 73.514,
+    "end": 73.805,
+    "charIndex": 1099
+  },
+  {
+    "word": "by",
+    "start": 73.863,
+    "end": 74.048,
+    "charIndex": 1104
+  },
+  {
+    "word": "word",
+    "start": 74.141,
+    "end": 74.582,
+    "charIndex": 1107
+  },
+  {
+    "word": "because",
+    "start": 74.861,
+    "end": 75.163,
+    "charIndex": 1112
+  },
+  {
+    "word": "well-practiced",
+    "start": 75.198,
+    "end": 75.871,
+    "charIndex": 1120
+  },
+  {
+    "word": "combinations",
+    "start": 75.917,
+    "end": 76.695,
+    "charIndex": 1135
+  },
+  {
+    "word": "are",
+    "start": 76.765,
+    "end": 76.962,
+    "charIndex": 1148
+  },
+  {
+    "word": "available",
+    "start": 76.997,
+    "end": 77.508,
+    "charIndex": 1152
+  },
+  {
+    "word": "as",
+    "start": 77.566,
+    "end": 77.752,
+    "charIndex": 1162
+  },
+  {
+    "word": "complete",
+    "start": 77.833,
+    "end": 78.367,
+    "charIndex": 1165
+  },
+  {
+    "word": "units",
+    "start": 78.46,
+    "end": 78.948,
+    "charIndex": 1174
+  },
+  {
+    "word": "That",
+    "start": 79.389,
+    "end": 79.563,
+    "charIndex": 1181
+  },
+  {
+    "word": "is",
+    "start": 79.609,
+    "end": 79.691,
+    "charIndex": 1186
+  },
+  {
+    "word": "how",
+    "start": 79.749,
+    "end": 79.876,
+    "charIndex": 1189
+  },
+  {
+    "word": "active",
+    "start": 79.969,
+    "end": 80.376,
+    "charIndex": 1193
+  },
+  {
+    "word": "recall",
+    "start": 80.434,
+    "end": 80.817,
+    "charIndex": 1200
+  },
+  {
+    "word": "can",
+    "start": 80.887,
+    "end": 81.014,
+    "charIndex": 1207
+  },
+  {
+    "word": "consolidate",
+    "start": 81.084,
+    "end": 81.815,
+    "charIndex": 1211
+  },
+  {
+    "word": "knowledge",
+    "start": 81.862,
+    "end": 82.326,
+    "charIndex": 1223
+  },
+  {
+    "word": "and",
+    "start": 82.535,
+    "end": 82.744,
+    "charIndex": 1233
+  },
+  {
+    "word": "turn",
+    "start": 82.802,
+    "end": 83.011,
+    "charIndex": 1237
+  },
+  {
+    "word": "memorized",
+    "start": 83.069,
+    "end": 83.557,
+    "charIndex": 1242
+  },
+  {
+    "word": "language",
+    "start": 83.592,
+    "end": 84.01,
+    "charIndex": 1252
+  },
+  {
+    "word": "into",
+    "start": 84.056,
+    "end": 84.265,
+    "charIndex": 1261
+  },
+  {
+    "word": "flexible",
+    "start": 84.381,
+    "end": 84.95,
+    "charIndex": 1266
+  },
+  {
+    "word": "speaking",
+    "start": 84.996,
+    "end": 85.426,
+    "charIndex": 1275
+  },
+  {
+    "word": "ability",
+    "start": 85.472,
+    "end": 86.053,
+    "charIndex": 1284
+  }
+]

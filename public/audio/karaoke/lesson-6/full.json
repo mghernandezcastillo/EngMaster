@@ -1,0 +1,1172 @@
+[
+  {
+    "word": "Modern",
+    "start": 0,
+    "end": 0.372,
+    "charIndex": 0
+  },
+  {
+    "word": "technology",
+    "start": 0.418,
+    "end": 1.033,
+    "charIndex": 7
+  },
+  {
+    "word": "has",
+    "start": 1.091,
+    "end": 1.219,
+    "charIndex": 18
+  },
+  {
+    "word": "made",
+    "start": 1.289,
+    "end": 1.498,
+    "charIndex": 22
+  },
+  {
+    "word": "daily",
+    "start": 1.556,
+    "end": 1.869,
+    "charIndex": 27
+  },
+  {
+    "word": "life",
+    "start": 1.939,
+    "end": 2.171,
+    "charIndex": 33
+  },
+  {
+    "word": "remarkably",
+    "start": 2.218,
+    "end": 2.833,
+    "charIndex": 38
+  },
+  {
+    "word": "convenient",
+    "start": 2.891,
+    "end": 3.657,
+    "charIndex": 49
+  },
+  {
+    "word": "Information",
+    "start": 4.098,
+    "end": 4.725,
+    "charIndex": 61
+  },
+  {
+    "word": "is",
+    "start": 4.772,
+    "end": 4.853,
+    "charIndex": 73
+  },
+  {
+    "word": "at",
+    "start": 4.911,
+    "end": 4.992,
+    "charIndex": 76
+  },
+  {
+    "word": "our",
+    "start": 5.05,
+    "end": 5.166,
+    "charIndex": 79
+  },
+  {
+    "word": "fingertips",
+    "start": 5.224,
+    "end": 5.898,
+    "charIndex": 83
+  },
+  {
+    "word": "routine",
+    "start": 6.223,
+    "end": 6.629,
+    "charIndex": 95
+  },
+  {
+    "word": "processes",
+    "start": 6.676,
+    "end": 7.256,
+    "charIndex": 103
+  },
+  {
+    "word": "are",
+    "start": 7.326,
+    "end": 7.523,
+    "charIndex": 113
+  },
+  {
+    "word": "increasingly",
+    "start": 7.581,
+    "end": 8.324,
+    "charIndex": 117
+  },
+  {
+    "word": "seamless",
+    "start": 8.394,
+    "end": 8.963,
+    "charIndex": 130
+  },
+  {
+    "word": "and",
+    "start": 9.346,
+    "end": 9.567,
+    "charIndex": 139
+  },
+  {
+    "word": "many",
+    "start": 9.625,
+    "end": 9.81,
+    "charIndex": 143
+  },
+  {
+    "word": "people",
+    "start": 9.868,
+    "end": 10.159,
+    "charIndex": 148
+  },
+  {
+    "word": "can",
+    "start": 10.194,
+    "end": 10.344,
+    "charIndex": 155
+  },
+  {
+    "word": "work",
+    "start": 10.403,
+    "end": 10.704,
+    "charIndex": 159
+  },
+  {
+    "word": "or",
+    "start": 10.786,
+    "end": 10.89,
+    "charIndex": 164
+  },
+  {
+    "word": "study",
+    "start": 10.96,
+    "end": 11.331,
+    "charIndex": 167
+  },
+  {
+    "word": "from",
+    "start": 11.401,
+    "end": 11.564,
+    "charIndex": 173
+  },
+  {
+    "word": "almost",
+    "start": 11.622,
+    "end": 11.981,
+    "charIndex": 178
+  },
+  {
+    "word": "anywhere",
+    "start": 12.051,
+    "end": 12.643,
+    "charIndex": 185
+  },
+  {
+    "word": "At",
+    "start": 13.212,
+    "end": 13.34,
+    "charIndex": 195
+  },
+  {
+    "word": "the",
+    "start": 13.386,
+    "end": 13.456,
+    "charIndex": 198
+  },
+  {
+    "word": "same",
+    "start": 13.514,
+    "end": 13.746,
+    "charIndex": 202
+  },
+  {
+    "word": "time",
+    "start": 13.781,
+    "end": 14.199,
+    "charIndex": 207
+  },
+  {
+    "word": "the",
+    "start": 14.396,
+    "end": 14.489,
+    "charIndex": 213
+  },
+  {
+    "word": "more",
+    "start": 14.536,
+    "end": 14.687,
+    "charIndex": 217
+  },
+  {
+    "word": "we",
+    "start": 14.721,
+    "end": 14.802,
+    "charIndex": 222
+  },
+  {
+    "word": "rely",
+    "start": 14.884,
+    "end": 15.174,
+    "charIndex": 225
+  },
+  {
+    "word": "on",
+    "start": 15.255,
+    "end": 15.336,
+    "charIndex": 230
+  },
+  {
+    "word": "digital",
+    "start": 15.418,
+    "end": 15.859,
+    "charIndex": 233
+  },
+  {
+    "word": "tools",
+    "start": 15.929,
+    "end": 16.358,
+    "charIndex": 241
+  },
+  {
+    "word": "the",
+    "start": 16.556,
+    "end": 16.672,
+    "charIndex": 248
+  },
+  {
+    "word": "easier",
+    "start": 16.788,
+    "end": 17.194,
+    "charIndex": 252
+  },
+  {
+    "word": "it",
+    "start": 17.241,
+    "end": 17.299,
+    "charIndex": 259
+  },
+  {
+    "word": "becomes",
+    "start": 17.345,
+    "end": 17.693,
+    "charIndex": 262
+  },
+  {
+    "word": "to",
+    "start": 17.74,
+    "end": 17.821,
+    "charIndex": 270
+  },
+  {
+    "word": "overlook",
+    "start": 17.902,
+    "end": 18.309,
+    "charIndex": 273
+  },
+  {
+    "word": "the",
+    "start": 18.367,
+    "end": 18.436,
+    "charIndex": 282
+  },
+  {
+    "word": "dependency",
+    "start": 18.483,
+    "end": 19.191,
+    "charIndex": 286
+  },
+  {
+    "word": "they",
+    "start": 19.249,
+    "end": 19.412,
+    "charIndex": 297
+  },
+  {
+    "word": "create",
+    "start": 19.481,
+    "end": 20.062,
+    "charIndex": 302
+  },
+  {
+    "word": "Technology",
+    "start": 20.689,
+    "end": 21.35,
+    "charIndex": 311
+  },
+  {
+    "word": "is",
+    "start": 21.42,
+    "end": 21.525,
+    "charIndex": 322
+  },
+  {
+    "word": "often",
+    "start": 21.583,
+    "end": 21.826,
+    "charIndex": 325
+  },
+  {
+    "word": "a",
+    "start": 21.885,
+    "end": 21.931,
+    "charIndex": 331
+  },
+  {
+    "word": "double-edged",
+    "start": 22.047,
+    "end": 22.79,
+    "charIndex": 333
+  },
+  {
+    "word": "sword",
+    "start": 22.871,
+    "end": 23.382,
+    "charIndex": 346
+  },
+  {
+    "word": "A",
+    "start": 23.823,
+    "end": 23.905,
+    "charIndex": 353
+  },
+  {
+    "word": "notification",
+    "start": 23.974,
+    "end": 24.706,
+    "charIndex": 355
+  },
+  {
+    "word": "may",
+    "start": 24.764,
+    "end": 24.892,
+    "charIndex": 368
+  },
+  {
+    "word": "help",
+    "start": 24.95,
+    "end": 25.135,
+    "charIndex": 372
+  },
+  {
+    "word": "us",
+    "start": 25.205,
+    "end": 25.309,
+    "charIndex": 377
+  },
+  {
+    "word": "keep",
+    "start": 25.379,
+    "end": 25.588,
+    "charIndex": 380
+  },
+  {
+    "word": "up",
+    "start": 25.646,
+    "end": 25.762,
+    "charIndex": 385
+  },
+  {
+    "word": "with",
+    "start": 25.809,
+    "end": 25.948,
+    "charIndex": 388
+  },
+  {
+    "word": "an",
+    "start": 25.994,
+    "end": 26.064,
+    "charIndex": 393
+  },
+  {
+    "word": "urgent",
+    "start": 26.157,
+    "end": 26.587,
+    "charIndex": 396
+  },
+  {
+    "word": "task",
+    "start": 26.645,
+    "end": 27.097,
+    "charIndex": 403
+  },
+  {
+    "word": "yet",
+    "start": 27.515,
+    "end": 27.701,
+    "charIndex": 409
+  },
+  {
+    "word": "constant",
+    "start": 27.794,
+    "end": 28.293,
+    "charIndex": 413
+  },
+  {
+    "word": "interruptions",
+    "start": 28.34,
+    "end": 29.036,
+    "charIndex": 422
+  },
+  {
+    "word": "can",
+    "start": 29.106,
+    "end": 29.234,
+    "charIndex": 436
+  },
+  {
+    "word": "produce",
+    "start": 29.28,
+    "end": 29.675,
+    "charIndex": 440
+  },
+  {
+    "word": "cognitive",
+    "start": 29.756,
+    "end": 30.395,
+    "charIndex": 448
+  },
+  {
+    "word": "overload",
+    "start": 30.464,
+    "end": 31.161,
+    "charIndex": 458
+  },
+  {
+    "word": "A",
+    "start": 31.765,
+    "end": 31.846,
+    "charIndex": 468
+  },
+  {
+    "word": "personalized",
+    "start": 31.939,
+    "end": 32.543,
+    "charIndex": 470
+  },
+  {
+    "word": "service",
+    "start": 32.566,
+    "end": 32.937,
+    "charIndex": 483
+  },
+  {
+    "word": "may",
+    "start": 32.972,
+    "end": 33.1,
+    "charIndex": 491
+  },
+  {
+    "word": "improve",
+    "start": 33.146,
+    "end": 33.483,
+    "charIndex": 495
+  },
+  {
+    "word": "efficiency",
+    "start": 33.518,
+    "end": 34.238,
+    "charIndex": 503
+  },
+  {
+    "word": "while",
+    "start": 34.563,
+    "end": 34.772,
+    "charIndex": 515
+  },
+  {
+    "word": "the",
+    "start": 34.795,
+    "end": 34.865,
+    "charIndex": 521
+  },
+  {
+    "word": "data",
+    "start": 34.911,
+    "end": 35.225,
+    "charIndex": 525
+  },
+  {
+    "word": "required",
+    "start": 35.294,
+    "end": 35.701,
+    "charIndex": 530
+  },
+  {
+    "word": "to",
+    "start": 35.735,
+    "end": 35.793,
+    "charIndex": 539
+  },
+  {
+    "word": "personalize",
+    "start": 35.886,
+    "end": 36.548,
+    "charIndex": 542
+  },
+  {
+    "word": "it",
+    "start": 36.606,
+    "end": 36.78,
+    "charIndex": 554
+  },
+  {
+    "word": "raises",
+    "start": 37.105,
+    "end": 37.477,
+    "charIndex": 557
+  },
+  {
+    "word": "serious",
+    "start": 37.547,
+    "end": 38.023,
+    "charIndex": 564
+  },
+  {
+    "word": "questions",
+    "start": 38.092,
+    "end": 38.696,
+    "charIndex": 572
+  },
+  {
+    "word": "about",
+    "start": 38.742,
+    "end": 39.009,
+    "charIndex": 582
+  },
+  {
+    "word": "privacy",
+    "start": 39.079,
+    "end": 39.729,
+    "charIndex": 588
+  },
+  {
+    "word": "and",
+    "start": 39.973,
+    "end": 40.194,
+    "charIndex": 596
+  },
+  {
+    "word": "ethical",
+    "start": 40.321,
+    "end": 40.774,
+    "charIndex": 600
+  },
+  {
+    "word": "implications",
+    "start": 40.867,
+    "end": 41.819,
+    "charIndex": 608
+  },
+  {
+    "word": "Users",
+    "start": 42.667,
+    "end": 43.05,
+    "charIndex": 622
+  },
+  {
+    "word": "should",
+    "start": 43.085,
+    "end": 43.259,
+    "charIndex": 628
+  },
+  {
+    "word": "be",
+    "start": 43.293,
+    "end": 43.375,
+    "charIndex": 635
+  },
+  {
+    "word": "able",
+    "start": 43.421,
+    "end": 43.711,
+    "charIndex": 638
+  },
+  {
+    "word": "to",
+    "start": 43.746,
+    "end": 43.816,
+    "charIndex": 643
+  },
+  {
+    "word": "opt",
+    "start": 43.909,
+    "end": 44.106,
+    "charIndex": 646
+  },
+  {
+    "word": "out",
+    "start": 44.153,
+    "end": 44.315,
+    "charIndex": 650
+  },
+  {
+    "word": "of",
+    "start": 44.362,
+    "end": 44.431,
+    "charIndex": 654
+  },
+  {
+    "word": "unnecessary",
+    "start": 44.582,
+    "end": 45.372,
+    "charIndex": 657
+  },
+  {
+    "word": "data",
+    "start": 45.43,
+    "end": 45.743,
+    "charIndex": 669
+  },
+  {
+    "word": "collection",
+    "start": 45.789,
+    "end": 46.358,
+    "charIndex": 674
+  },
+  {
+    "word": "and",
+    "start": 46.753,
+    "end": 46.985,
+    "charIndex": 686
+  },
+  {
+    "word": "organizations",
+    "start": 47.055,
+    "end": 47.891,
+    "charIndex": 690
+  },
+  {
+    "word": "should",
+    "start": 47.949,
+    "end": 48.158,
+    "charIndex": 704
+  },
+  {
+    "word": "phase",
+    "start": 48.204,
+    "end": 48.495,
+    "charIndex": 711
+  },
+  {
+    "word": "out",
+    "start": 48.529,
+    "end": 48.704,
+    "charIndex": 717
+  },
+  {
+    "word": "intrusive",
+    "start": 48.762,
+    "end": 49.296,
+    "charIndex": 721
+  },
+  {
+    "word": "practices",
+    "start": 49.342,
+    "end": 50.015,
+    "charIndex": 731
+  },
+  {
+    "word": "rather",
+    "start": 50.132,
+    "end": 50.422,
+    "charIndex": 741
+  },
+  {
+    "word": "than",
+    "start": 50.468,
+    "end": 50.608,
+    "charIndex": 748
+  },
+  {
+    "word": "treating",
+    "start": 50.666,
+    "end": 51.049,
+    "charIndex": 753
+  },
+  {
+    "word": "consent",
+    "start": 51.107,
+    "end": 51.629,
+    "charIndex": 762
+  },
+  {
+    "word": "as",
+    "start": 51.699,
+    "end": 51.885,
+    "charIndex": 770
+  },
+  {
+    "word": "a",
+    "start": 51.966,
+    "end": 52.012,
+    "charIndex": 773
+  },
+  {
+    "word": "formality",
+    "start": 52.105,
+    "end": 52.86,
+    "charIndex": 775
+  },
+  {
+    "word": "On",
+    "start": 53.475,
+    "end": 53.615,
+    "charIndex": 787
+  },
+  {
+    "word": "a",
+    "start": 53.649,
+    "end": 53.673,
+    "charIndex": 790
+  },
+  {
+    "word": "personal",
+    "start": 53.754,
+    "end": 54.242,
+    "charIndex": 792
+  },
+  {
+    "word": "level",
+    "start": 54.288,
+    "end": 54.601,
+    "charIndex": 801
+  },
+  {
+    "word": "digital",
+    "start": 54.95,
+    "end": 55.356,
+    "charIndex": 808
+  },
+  {
+    "word": "literacy",
+    "start": 55.402,
+    "end": 55.832,
+    "charIndex": 816
+  },
+  {
+    "word": "includes",
+    "start": 55.89,
+    "end": 56.32,
+    "charIndex": 825
+  },
+  {
+    "word": "knowing",
+    "start": 56.378,
+    "end": 56.645,
+    "charIndex": 834
+  },
+  {
+    "word": "when",
+    "start": 56.714,
+    "end": 56.889,
+    "charIndex": 842
+  },
+  {
+    "word": "to",
+    "start": 56.947,
+    "end": 57.016,
+    "charIndex": 847
+  },
+  {
+    "word": "connect",
+    "start": 57.074,
+    "end": 57.562,
+    "charIndex": 850
+  },
+  {
+    "word": "and",
+    "start": 57.632,
+    "end": 57.841,
+    "charIndex": 858
+  },
+  {
+    "word": "when",
+    "start": 57.922,
+    "end": 58.108,
+    "charIndex": 862
+  },
+  {
+    "word": "to",
+    "start": 58.166,
+    "end": 58.235,
+    "charIndex": 867
+  },
+  {
+    "word": "switch",
+    "start": 58.293,
+    "end": 58.595,
+    "charIndex": 870
+  },
+  {
+    "word": "off",
+    "start": 58.665,
+    "end": 58.874,
+    "charIndex": 877
+  },
+  {
+    "word": "I",
+    "start": 59.559,
+    "end": 59.64,
+    "charIndex": 882
+  },
+  {
+    "word": "may",
+    "start": 59.756,
+    "end": 59.884,
+    "charIndex": 884
+  },
+  {
+    "word": "need",
+    "start": 59.942,
+    "end": 60.116,
+    "charIndex": 888
+  },
+  {
+    "word": "to",
+    "start": 60.163,
+    "end": 60.232,
+    "charIndex": 893
+  },
+  {
+    "word": "cut",
+    "start": 60.302,
+    "end": 60.523,
+    "charIndex": 896
+  },
+  {
+    "word": "down",
+    "start": 60.592,
+    "end": 60.883,
+    "charIndex": 900
+  },
+  {
+    "word": "on",
+    "start": 60.999,
+    "end": 61.219,
+    "charIndex": 905
+  },
+  {
+    "word": "passive",
+    "start": 61.336,
+    "end": 61.8,
+    "charIndex": 908
+  },
+  {
+    "word": "screen",
+    "start": 61.823,
+    "end": 62.125,
+    "charIndex": 916
+  },
+  {
+    "word": "time",
+    "start": 62.183,
+    "end": 62.589,
+    "charIndex": 923
+  },
+  {
+    "word": "protect",
+    "start": 62.833,
+    "end": 63.251,
+    "charIndex": 929
+  },
+  {
+    "word": "periods",
+    "start": 63.321,
+    "end": 63.704,
+    "charIndex": 937
+  },
+  {
+    "word": "of",
+    "start": 63.75,
+    "end": 63.82,
+    "charIndex": 945
+  },
+  {
+    "word": "uninterrupted",
+    "start": 63.936,
+    "end": 64.714,
+    "charIndex": 948
+  },
+  {
+    "word": "attention",
+    "start": 64.76,
+    "end": 65.329,
+    "charIndex": 962
+  },
+  {
+    "word": "and",
+    "start": 65.573,
+    "end": 65.782,
+    "charIndex": 972
+  },
+  {
+    "word": "develop",
+    "start": 65.852,
+    "end": 66.2,
+    "charIndex": 976
+  },
+  {
+    "word": "sustainable",
+    "start": 66.27,
+    "end": 66.978,
+    "charIndex": 984
+  },
+  {
+    "word": "habits",
+    "start": 67.024,
+    "end": 67.477,
+    "charIndex": 996
+  },
+  {
+    "word": "instead",
+    "start": 67.86,
+    "end": 68.209,
+    "charIndex": 1003
+  },
+  {
+    "word": "of",
+    "start": 68.243,
+    "end": 68.29,
+    "charIndex": 1011
+  },
+  {
+    "word": "depending",
+    "start": 68.348,
+    "end": 68.847,
+    "charIndex": 1014
+  },
+  {
+    "word": "on",
+    "start": 68.94,
+    "end": 69.126,
+    "charIndex": 1024
+  },
+  {
+    "word": "willpower",
+    "start": 69.207,
+    "end": 69.834,
+    "charIndex": 1027
+  },
+  {
+    "word": "alone",
+    "start": 69.915,
+    "end": 70.496,
+    "charIndex": 1037
+  },
+  {
+    "word": "Whether",
+    "start": 71.065,
+    "end": 71.355,
+    "charIndex": 1044
+  },
+  {
+    "word": "technology",
+    "start": 71.413,
+    "end": 72.052,
+    "charIndex": 1052
+  },
+  {
+    "word": "improves",
+    "start": 72.11,
+    "end": 72.597,
+    "charIndex": 1063
+  },
+  {
+    "word": "our",
+    "start": 72.655,
+    "end": 72.783,
+    "charIndex": 1072
+  },
+  {
+    "word": "lives",
+    "start": 72.853,
+    "end": 73.189,
+    "charIndex": 1076
+  },
+  {
+    "word": "depends",
+    "start": 73.271,
+    "end": 73.677,
+    "charIndex": 1082
+  },
+  {
+    "word": "largely",
+    "start": 73.747,
+    "end": 74.13,
+    "charIndex": 1090
+  },
+  {
+    "word": "on",
+    "start": 74.199,
+    "end": 74.281,
+    "charIndex": 1098
+  },
+  {
+    "word": "whether",
+    "start": 74.315,
+    "end": 74.571,
+    "charIndex": 1101
+  },
+  {
+    "word": "it",
+    "start": 74.629,
+    "end": 74.699,
+    "charIndex": 1109
+  },
+  {
+    "word": "supports",
+    "start": 74.745,
+    "end": 75.197,
+    "charIndex": 1112
+  },
+  {
+    "word": "deliberate",
+    "start": 75.255,
+    "end": 75.708,
+    "charIndex": 1121
+  },
+  {
+    "word": "choices",
+    "start": 75.755,
+    "end": 76.347,
+    "charIndex": 1132
+  },
+  {
+    "word": "or",
+    "start": 76.672,
+    "end": 76.834,
+    "charIndex": 1140
+  },
+  {
+    "word": "quietly",
+    "start": 76.916,
+    "end": 77.392,
+    "charIndex": 1143
+  },
+  {
+    "word": "replaces",
+    "start": 77.473,
+    "end": 78.007,
+    "charIndex": 1151
+  },
+  {
+    "word": "them",
+    "start": 78.053,
+    "end": 78.239,
+    "charIndex": 1160
+  },
+  {
+    "word": "Convenience",
+    "start": 78.866,
+    "end": 79.516,
+    "charIndex": 1166
+  },
+  {
+    "word": "is",
+    "start": 79.563,
+    "end": 79.656,
+    "charIndex": 1178
+  },
+  {
+    "word": "valuable",
+    "start": 79.749,
+    "end": 80.445,
+    "charIndex": 1181
+  },
+  {
+    "word": "but",
+    "start": 80.643,
+    "end": 80.793,
+    "charIndex": 1191
+  },
+  {
+    "word": "it",
+    "start": 80.84,
+    "end": 80.898,
+    "charIndex": 1195
+  },
+  {
+    "word": "should",
+    "start": 80.933,
+    "end": 81.13,
+    "charIndex": 1198
+  },
+  {
+    "word": "not",
+    "start": 81.2,
+    "end": 81.374,
+    "charIndex": 1205
+  },
+  {
+    "word": "come",
+    "start": 81.444,
+    "end": 81.711,
+    "charIndex": 1209
+  },
+  {
+    "word": "at",
+    "start": 81.745,
+    "end": 81.815,
+    "charIndex": 1214
+  },
+  {
+    "word": "the",
+    "start": 81.85,
+    "end": 81.92,
+    "charIndex": 1217
+  },
+  {
+    "word": "cost",
+    "start": 81.966,
+    "end": 82.256,
+    "charIndex": 1221
+  },
+  {
+    "word": "of",
+    "start": 82.303,
+    "end": 82.372,
+    "charIndex": 1226
+  },
+  {
+    "word": "autonomy",
+    "start": 82.43,
+    "end": 83.115,
+    "charIndex": 1229
+  },
+  {
+    "word": "concentration",
+    "start": 83.382,
+    "end": 84.381,
+    "charIndex": 1239
+  },
+  {
+    "word": "or",
+    "start": 84.625,
+    "end": 84.822,
+    "charIndex": 1253
+  },
+  {
+    "word": "meaningful",
+    "start": 84.892,
+    "end": 85.368,
+    "charIndex": 1256
+  },
+  {
+    "word": "human",
+    "start": 85.449,
+    "end": 85.821,
+    "charIndex": 1267
+  },
+  {
+    "word": "interaction",
+    "start": 85.902,
+    "end": 86.691,
+    "charIndex": 1273
+  }
+]

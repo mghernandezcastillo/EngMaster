@@ -4,6 +4,7 @@ import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
 import { fragmentTranslations as localFragmentTranslations } from '../data/fragmentTranslations';
+import { loadLocalKaraokeAsset } from '../data/karaokeAssets';
 import { motion, AnimatePresence, PanInfo } from 'motion/react';
 import {
   Brain,
@@ -27,6 +28,7 @@ import {
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { TextHighlighter } from '../components/TextHighlighter';
+import { KaraokePayload, KaraokeWord } from '../lib/karaoke';
 
 type FragmentTranslation = {
   translatedText: string;
@@ -42,10 +44,23 @@ export function Memorize() {
   const { language, updateProgress } = useStore();
 
   const lesson = lessons.find(l => l.id === id);
-  const paragraphs = lesson?.text
-    .match(/[^.?!]+[.?!]+(?:\s+|$)|.+/g)
-    ?.map(s => s.trim())
-    .filter(s => s.length > 0) || [];
+  const paragraphRanges = lesson?.text
+    ? [...lesson.text.matchAll(/[^.?!]+[.?!]+(?:\s+|$)|.+/g)]
+        .map(match => {
+          const raw = match[0];
+          const leadingWhitespace = raw.match(/^\s*/)?.[0].length || 0;
+          const trailingWhitespace = raw.match(/\s*$/)?.[0].length || 0;
+          const start = (match.index || 0) + leadingWhitespace;
+          const end = (match.index || 0) + raw.length - trailingWhitespace;
+          return {
+            text: lesson.text.slice(start, end),
+            start,
+            end,
+          };
+        })
+        .filter(item => item.text.length > 0)
+    : [];
+  const paragraphs = paragraphRanges.map(item => item.text);
   const startsInReviewMode = searchParams.get('mode') === 'review' && paragraphs.length > 0;
 
   const [currentParagraph, setCurrentParagraph] = useState(startsInReviewMode ? paragraphs.length : 0);
@@ -61,11 +76,19 @@ export function Memorize() {
   const [isCumulativeReviewPlaying, setIsCumulativeReviewPlaying] = useState(false);
   const [hasCumulativeReviewFinished, setHasCumulativeReviewFinished] = useState(false);
   const [cumulativeHighlightCharIndex, setCumulativeHighlightCharIndex] = useState<number | undefined>(undefined);
+  const [fullReviewKaraoke, setFullReviewKaraoke] = useState<KaraokePayload | null>(null);
+  const [cumulativeKaraoke, setCumulativeKaraoke] = useState<KaraokePayload | null>(null);
+  const [isLoadingFullKaraoke, setIsLoadingFullKaraoke] = useState(false);
+  const [isLoadingCumulativeKaraoke, setIsLoadingCumulativeKaraoke] = useState(false);
 
   // Ref to prevent rapid-click navigation blocking
   const navigatingRef = useRef(false);
   const reviewScrollRef = useRef<HTMLDivElement>(null);
   const cumulativeReviewScrollRef = useRef<HTMLDivElement>(null);
+  const fullReviewAudioRef = useRef<HTMLAudioElement>(null);
+  const cumulativeAudioRef = useRef<HTMLAudioElement>(null);
+  const fullReviewRafRef = useRef<number | null>(null);
+  const cumulativeRafRef = useRef<number | null>(null);
   const karaokeBoundaryReceivedRef = useRef(false);
   const karaokeFallbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const karaokeFallbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -78,6 +101,11 @@ export function Memorize() {
   const cumulativeHighlightTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const clearKaraokeFallback = () => {
+    if (fullReviewRafRef.current) {
+      cancelAnimationFrame(fullReviewRafRef.current);
+      fullReviewRafRef.current = null;
+    }
+
     if (karaokeHighlightTimeoutRef.current) {
       clearTimeout(karaokeHighlightTimeoutRef.current);
       karaokeHighlightTimeoutRef.current = null;
@@ -95,6 +123,11 @@ export function Memorize() {
   };
 
   const clearCumulativeFallback = () => {
+    if (cumulativeRafRef.current) {
+      cancelAnimationFrame(cumulativeRafRef.current);
+      cumulativeRafRef.current = null;
+    }
+
     if (cumulativeHighlightTimeoutRef.current) {
       clearTimeout(cumulativeHighlightTimeoutRef.current);
       cumulativeHighlightTimeoutRef.current = null;
@@ -130,6 +163,7 @@ export function Memorize() {
     setHighlightCharIndex(undefined);
     setCumulativeHighlightCharIndex(undefined);
     setShowSpanishFragment(false);
+    setCumulativeKaraoke(null);
     clearKaraokeFallback();
     clearCumulativeFallback();
     navigatingRef.current = false;
@@ -179,7 +213,8 @@ export function Memorize() {
   const currentText = isReviewMode ? lesson.text : paragraphs[currentParagraph];
   const currentTranslation = fragmentTranslations[currentParagraph];
   const cumulativeParagraphCount = Math.min(currentParagraph + 1, paragraphs.length);
-  const cumulativeReviewText = paragraphs.slice(0, cumulativeParagraphCount).join('\n\n');
+  const cumulativeEndCharIndex = paragraphRanges[Math.max(0, cumulativeParagraphCount - 1)]?.end ?? currentText.length;
+  const cumulativeReviewText = lesson.text.slice(0, cumulativeEndCharIndex).trim();
   const cumulativeProgress = Math.round((cumulativeParagraphCount / paragraphs.length) * 100);
 
   const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -240,6 +275,70 @@ export function Memorize() {
       flushSync(() => setHighlight(event.charIndex));
       timeoutRef.current = null;
     }, delay);
+  };
+
+  const fetchKaraokePayload = async (text: string, localAssetKey?: string) => {
+    if (localAssetKey) {
+      const localAsset = await loadLocalKaraokeAsset(localAssetKey);
+      if (localAsset) return localAsset;
+    }
+
+    const response = await fetch('/api/tts-karaoke', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`TTS karaoke failed: ${response.status}`);
+    }
+
+    return await response.json() as KaraokePayload;
+  };
+
+  const findActiveKaraokeWord = (words: KaraokeWord[], currentTime: number) => {
+    const active = words.find(word => currentTime >= word.start && currentTime < word.end);
+    if (active) return active;
+
+    for (let i = words.length - 1; i >= 0; i -= 1) {
+      if (currentTime >= words[i].start) return words[i];
+    }
+
+    return undefined;
+  };
+
+  const runAudioKaraokeSync = (
+    audio: HTMLAudioElement,
+    words: KaraokeWord[],
+    setHighlight: (value: number | undefined) => void,
+    rafRef: MutableRefObject<number | null>,
+    stopAt?: number,
+    onStopAt?: () => void
+  ) => {
+    const tick = () => {
+      if (typeof stopAt === 'number' && audio.currentTime >= stopAt) {
+        audio.pause();
+        audio.currentTime = stopAt;
+        onStopAt?.();
+        rafRef.current = null;
+        return;
+      }
+
+      const activeWord = findActiveKaraokeWord(words, audio.currentTime);
+      if (activeWord) {
+        setHighlight(activeWord.charIndex);
+      }
+
+      if (!audio.paused && !audio.ended) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+
+    rafRef.current = requestAnimationFrame(tick);
   };
 
   const toggleFragmentLanguage = async () => {
@@ -323,69 +422,95 @@ export function Memorize() {
     }
   };
 
+  const playBrowserKaraoke = () => {
+    clearKaraokeFallback();
+    window.speechSynthesis.cancel();
+    karaokeBoundaryReceivedRef.current = false;
+    const utterance = new SpeechSynthesisUtterance(lesson.text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.88;
+
+    utterance.onboundary = (event) => {
+      if (typeof event.charIndex === 'number') {
+        karaokeBoundaryReceivedRef.current = true;
+        clearKaraokeFallback();
+        scheduleSyncedHighlight(event, karaokeStartedAtRef.current, setHighlightCharIndex, karaokeHighlightTimeoutRef);
+      }
+    };
+    utterance.onend = () => {
+      clearKaraokeFallback();
+      setIsPlaying(false);
+      setHighlightCharIndex(undefined);
+    };
+    utterance.onerror = () => {
+      clearKaraokeFallback();
+      setIsPlaying(false);
+      setHighlightCharIndex(undefined);
+    };
+
+    setIsPlaying(true);
+    setHighlightCharIndex(0);
+    karaokeStartedAtRef.current = performance.now();
+    window.speechSynthesis.speak(utterance);
+
+    karaokeFallbackTimeoutRef.current = setTimeout(() => {
+      if (karaokeBoundaryReceivedRef.current) return;
+
+      const wordMatches = [...lesson.text.matchAll(/\b[\w'-]+\b/g)];
+      if (wordMatches.length === 0) return;
+
+      let wordIndex = 0;
+      const estimatedMsPerWord = Math.max(260, 430 / utterance.rate);
+      flushSync(() => setHighlightCharIndex(wordMatches[0].index ?? 0));
+
+      karaokeFallbackIntervalRef.current = setInterval(() => {
+        if (karaokeBoundaryReceivedRef.current) {
+          clearKaraokeFallback();
+          return;
+        }
+
+        wordIndex += 1;
+        if (wordIndex >= wordMatches.length) {
+          clearKaraokeFallback();
+          return;
+        }
+
+        flushSync(() => setHighlightCharIndex(wordMatches[wordIndex].index ?? 0));
+      }, estimatedMsPerWord);
+    }, 800);
+  };
+
   // Karaoke for full review
-  const toggleKaraoke = () => {
+  const toggleKaraoke = async () => {
     if (isPlaying) {
       clearKaraokeFallback();
+      fullReviewAudioRef.current?.pause();
       window.speechSynthesis.cancel();
       setIsPlaying(false);
       setHighlightCharIndex(undefined);
     } else {
-      clearKaraokeFallback();
-      window.speechSynthesis.cancel();
-      karaokeBoundaryReceivedRef.current = false;
-      const utterance = new SpeechSynthesisUtterance(lesson.text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.88;
-
-      utterance.onboundary = (event) => {
-        if (typeof event.charIndex === 'number') {
-          karaokeBoundaryReceivedRef.current = true;
-          clearKaraokeFallback();
-          scheduleSyncedHighlight(event, karaokeStartedAtRef.current, setHighlightCharIndex, karaokeHighlightTimeoutRef);
-        }
-      };
-      utterance.onend = () => {
+      try {
         clearKaraokeFallback();
-        setIsPlaying(false);
-        setHighlightCharIndex(undefined);
-      };
-      utterance.onerror = () => {
-        clearKaraokeFallback();
-        setIsPlaying(false);
-        setHighlightCharIndex(undefined);
-      };
+        window.speechSynthesis.cancel();
+        setIsLoadingFullKaraoke(true);
+        const payload = fullReviewKaraoke || await fetchKaraokePayload(lesson.text, `${lesson.id}:full`);
+        setFullReviewKaraoke(payload);
+        setHighlightCharIndex(0);
+        setIsPlaying(true);
 
-      setIsPlaying(true);
-      setHighlightCharIndex(0);
-      karaokeStartedAtRef.current = performance.now();
-      window.speechSynthesis.speak(utterance);
-
-      karaokeFallbackTimeoutRef.current = setTimeout(() => {
-        if (karaokeBoundaryReceivedRef.current) return;
-
-        const wordMatches = [...lesson.text.matchAll(/\b[\w'-]+\b/g)];
-        if (wordMatches.length === 0) return;
-
-        let wordIndex = 0;
-        const estimatedMsPerWord = Math.max(260, 430 / utterance.rate);
-        flushSync(() => setHighlightCharIndex(wordMatches[0].index ?? 0));
-
-        karaokeFallbackIntervalRef.current = setInterval(() => {
-          if (karaokeBoundaryReceivedRef.current) {
-            clearKaraokeFallback();
-            return;
-          }
-
-          wordIndex += 1;
-          if (wordIndex >= wordMatches.length) {
-            clearKaraokeFallback();
-            return;
-          }
-
-          flushSync(() => setHighlightCharIndex(wordMatches[wordIndex].index ?? 0));
-        }, estimatedMsPerWord);
-      }, 800);
+        requestAnimationFrame(async () => {
+          const audio = fullReviewAudioRef.current;
+          if (!audio) return;
+          audio.currentTime = 0;
+          await audio.play();
+          runAudioKaraokeSync(audio, payload.words, setHighlightCharIndex, fullReviewRafRef);
+        });
+      } catch (error) {
+        console.error(error);
+        playBrowserKaraoke();
+      } finally {
+        setIsLoadingFullKaraoke(false);
+      }
     }
   };
 
@@ -407,7 +532,7 @@ export function Memorize() {
     }
   };
 
-  const playCumulativeReview = () => {
+  const playBrowserCumulativeReview = () => {
     if (!cumulativeReviewText) return;
 
     clearKaraokeFallback();
@@ -473,6 +598,59 @@ export function Memorize() {
     }, 800);
   };
 
+  const playCumulativeReview = async () => {
+    if (!cumulativeReviewText) return;
+
+    try {
+      clearKaraokeFallback();
+      clearCumulativeFallback();
+      window.speechSynthesis.cancel();
+      setIsLoadingCumulativeKaraoke(true);
+      setIsPlaying(false);
+      setIsPlayingFragment(false);
+      setHighlightCharIndex(undefined);
+      setCumulativeHighlightCharIndex(0);
+      setHasCumulativeReviewFinished(false);
+
+      let payload = cumulativeKaraoke;
+      let stopAt: number | null = null;
+
+      if (!payload) {
+        const fullAsset = await loadLocalKaraokeAsset(`${lesson.id}:full`);
+        if (fullAsset) {
+          const words = fullAsset.words.filter(word => word.charIndex < cumulativeReviewText.length);
+          const lastWord = words[words.length - 1];
+          stopAt = lastWord?.end ?? null;
+          payload = {
+            audioUrl: fullAsset.audioUrl,
+            words,
+          };
+        } else {
+          payload = await fetchKaraokePayload(cumulativeReviewText, `${lesson.id}:prefix-${cumulativeParagraphCount}`);
+        }
+      }
+
+      setCumulativeKaraoke(payload);
+      setIsCumulativeReviewPlaying(true);
+
+      requestAnimationFrame(async () => {
+        const audio = cumulativeAudioRef.current;
+        if (!audio) return;
+        audio.currentTime = 0;
+        await audio.play();
+        runAudioKaraokeSync(audio, payload.words, setCumulativeHighlightCharIndex, cumulativeRafRef, stopAt ?? undefined, () => {
+          setIsCumulativeReviewPlaying(false);
+          setHasCumulativeReviewFinished(true);
+        });
+      });
+    } catch (error) {
+      console.error(error);
+      playBrowserCumulativeReview();
+    } finally {
+      setIsLoadingCumulativeKaraoke(false);
+    }
+  };
+
   const openCumulativeReview = () => {
     setIsReviewModalOpen(true);
     window.setTimeout(playCumulativeReview, 120);
@@ -480,6 +658,7 @@ export function Memorize() {
 
   const closeCumulativeReview = () => {
     clearCumulativeFallback();
+    cumulativeAudioRef.current?.pause();
     window.speechSynthesis.cancel();
     setIsCumulativeReviewPlaying(false);
     setHasCumulativeReviewFinished(false);
@@ -626,15 +805,18 @@ export function Memorize() {
                   </h3>
                   <button
                     onClick={toggleKaraoke}
+                    disabled={isLoadingFullKaraoke}
                     className={cn(
-                      "flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all border shadow-md active:scale-95",
+                      "flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all border shadow-md active:scale-95 disabled:opacity-70",
                       isPlaying
                         ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50 animate-pulse shadow-[0_0_12px_rgba(16,185,129,0.3)]"
                         : "bg-teal-500/15 text-teal-300 border-teal-500/30 hover:bg-teal-500/25"
                     )}
                   >
-                    {isPlaying ? <Square className="w-3.5 h-3.5" fill="currentColor" /> : <Play className="w-3.5 h-3.5" fill="currentColor" />}
-                    {isPlaying
+                    {isLoadingFullKaraoke ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : isPlaying ? <Square className="w-3.5 h-3.5" fill="currentColor" /> : <Play className="w-3.5 h-3.5" fill="currentColor" />}
+                    {isLoadingFullKaraoke
+                      ? (language === 'es' ? 'Preparando' : 'Preparing')
+                      : isPlaying
                       ? (language === 'es' ? 'Detener' : 'Stop')
                       : (language === 'es' ? 'Escuchar Karaoke' : 'Listen Karaoke')}
                   </button>
@@ -644,6 +826,17 @@ export function Memorize() {
                   {lesson.subtitle && <p className="text-sm text-teal-500/80 mt-1">{lesson.subtitle}</p>}
                 </div>
                 <div className="pb-10">
+                  {fullReviewKaraoke && (
+                    <audio
+                      ref={fullReviewAudioRef}
+                      src={fullReviewKaraoke.audioUrl}
+                      onEnded={() => {
+                        clearKaraokeFallback();
+                        setIsPlaying(false);
+                        setHighlightCharIndex(undefined);
+                      }}
+                    />
+                  )}
                   <TextHighlighter text={currentText} vocabulary={lesson.vocabulary} highlightCharIndex={highlightCharIndex} />
                 </div>
               </div>
@@ -826,6 +1019,17 @@ export function Memorize() {
                     ref={cumulativeReviewScrollRef}
                     className="mt-4 max-h-56 overflow-y-auto custom-scrollbar rounded-xl bg-slate-950/35 p-3"
                   >
+                    {cumulativeKaraoke && (
+                      <audio
+                        ref={cumulativeAudioRef}
+                        src={cumulativeKaraoke.audioUrl}
+                        onEnded={() => {
+                          clearCumulativeFallback();
+                          setIsCumulativeReviewPlaying(false);
+                          setHasCumulativeReviewFinished(true);
+                        }}
+                      />
+                    )}
                     <TextHighlighter
                       text={cumulativeReviewText}
                       vocabulary={lesson.vocabulary}
@@ -839,6 +1043,7 @@ export function Memorize() {
                     onClick={() => {
                       if (isCumulativeReviewPlaying) {
                         clearCumulativeFallback();
+                        cumulativeAudioRef.current?.pause();
                         window.speechSynthesis.cancel();
                         setIsCumulativeReviewPlaying(false);
                         setCumulativeHighlightCharIndex(undefined);
@@ -853,9 +1058,12 @@ export function Memorize() {
                         ? "border-emerald-400/50 bg-emerald-400/15 text-emerald-200"
                         : "border-cyan-400/40 bg-cyan-400/15 text-cyan-200 hover:bg-cyan-400/25"
                     )}
+                    disabled={isLoadingCumulativeKaraoke}
                   >
-                    {isCumulativeReviewPlaying ? <Square className="h-4 w-4" fill="currentColor" /> : <Volume2 className="h-4 w-4" />}
-                    {isCumulativeReviewPlaying
+                    {isLoadingCumulativeKaraoke ? <Loader2 className="h-4 w-4 animate-spin" /> : isCumulativeReviewPlaying ? <Square className="h-4 w-4" fill="currentColor" /> : <Volume2 className="h-4 w-4" />}
+                    {isLoadingCumulativeKaraoke
+                      ? (language === 'es' ? 'Preparando' : 'Preparing')
+                      : isCumulativeReviewPlaying
                       ? (language === 'es' ? 'Detener' : 'Stop')
                       : hasCumulativeReviewFinished
                         ? (language === 'es' ? 'Repetir audio' : 'Repeat audio')
@@ -863,7 +1071,7 @@ export function Memorize() {
                   </button>
                   <button
                     onClick={playCumulativeReview}
-                    disabled={isCumulativeReviewPlaying}
+                    disabled={isCumulativeReviewPlaying || isLoadingCumulativeKaraoke}
                     className="rounded-2xl border border-white/10 bg-slate-800/80 px-4 text-slate-300 transition-all hover:bg-slate-700 disabled:opacity-50 active:scale-95"
                   >
                     <Repeat2 className="h-5 w-5" />

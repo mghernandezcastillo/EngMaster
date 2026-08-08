@@ -1,0 +1,1184 @@
+[
+  {
+    "word": "Disagreement",
+    "start": 0,
+    "end": 0.708,
+    "charIndex": 0
+  },
+  {
+    "word": "does",
+    "start": 0.755,
+    "end": 0.906,
+    "charIndex": 13
+  },
+  {
+    "word": "not",
+    "start": 0.987,
+    "end": 1.196,
+    "charIndex": 18
+  },
+  {
+    "word": "have",
+    "start": 1.254,
+    "end": 1.44,
+    "charIndex": 22
+  },
+  {
+    "word": "to",
+    "start": 1.474,
+    "end": 1.544,
+    "charIndex": 27
+  },
+  {
+    "word": "damage",
+    "start": 1.66,
+    "end": 2.136,
+    "charIndex": 30
+  },
+  {
+    "word": "a",
+    "start": 2.183,
+    "end": 2.241,
+    "charIndex": 37
+  },
+  {
+    "word": "relationship",
+    "start": 2.322,
+    "end": 3.135,
+    "charIndex": 39
+  },
+  {
+    "word": "In",
+    "start": 3.669,
+    "end": 3.808,
+    "charIndex": 53
+  },
+  {
+    "word": "fact",
+    "start": 3.878,
+    "end": 4.191,
+    "charIndex": 56
+  },
+  {
+    "word": "a",
+    "start": 4.261,
+    "end": 4.319,
+    "charIndex": 62
+  },
+  {
+    "word": "respectful",
+    "start": 4.4,
+    "end": 4.911,
+    "charIndex": 64
+  },
+  {
+    "word": "objection",
+    "start": 4.957,
+    "end": 5.608,
+    "charIndex": 75
+  },
+  {
+    "word": "can",
+    "start": 5.677,
+    "end": 5.828,
+    "charIndex": 85
+  },
+  {
+    "word": "improve",
+    "start": 5.875,
+    "end": 6.374,
+    "charIndex": 89
+  },
+  {
+    "word": "a",
+    "start": 6.409,
+    "end": 6.432,
+    "charIndex": 97
+  },
+  {
+    "word": "decision",
+    "start": 6.49,
+    "end": 6.931,
+    "charIndex": 99
+  },
+  {
+    "word": "by",
+    "start": 7.105,
+    "end": 7.268,
+    "charIndex": 108
+  },
+  {
+    "word": "revealing",
+    "start": 7.338,
+    "end": 7.767,
+    "charIndex": 111
+  },
+  {
+    "word": "assumptions",
+    "start": 7.814,
+    "end": 8.406,
+    "charIndex": 121
+  },
+  {
+    "word": "that",
+    "start": 8.452,
+    "end": 8.603,
+    "charIndex": 133
+  },
+  {
+    "word": "nobody",
+    "start": 8.719,
+    "end": 9.195,
+    "charIndex": 138
+  },
+  {
+    "word": "has",
+    "start": 9.265,
+    "end": 9.439,
+    "charIndex": 145
+  },
+  {
+    "word": "examined",
+    "start": 9.509,
+    "end": 10.17,
+    "charIndex": 149
+  },
+  {
+    "word": "The",
+    "start": 10.786,
+    "end": 10.902,
+    "charIndex": 159
+  },
+  {
+    "word": "difficulty",
+    "start": 10.948,
+    "end": 11.447,
+    "charIndex": 163
+  },
+  {
+    "word": "is",
+    "start": 11.494,
+    "end": 11.575,
+    "charIndex": 174
+  },
+  {
+    "word": "learning",
+    "start": 11.645,
+    "end": 11.935,
+    "charIndex": 177
+  },
+  {
+    "word": "how",
+    "start": 11.981,
+    "end": 12.086,
+    "charIndex": 186
+  },
+  {
+    "word": "to",
+    "start": 12.144,
+    "end": 12.214,
+    "charIndex": 190
+  },
+  {
+    "word": "bring",
+    "start": 12.295,
+    "end": 12.504,
+    "charIndex": 193
+  },
+  {
+    "word": "up",
+    "start": 12.562,
+    "end": 12.678,
+    "charIndex": 199
+  },
+  {
+    "word": "a",
+    "start": 12.725,
+    "end": 12.748,
+    "charIndex": 202
+  },
+  {
+    "word": "concern",
+    "start": 12.806,
+    "end": 13.444,
+    "charIndex": 204
+  },
+  {
+    "word": "without",
+    "start": 13.618,
+    "end": 13.967,
+    "charIndex": 212
+  },
+  {
+    "word": "making",
+    "start": 14.025,
+    "end": 14.338,
+    "charIndex": 220
+  },
+  {
+    "word": "the",
+    "start": 14.385,
+    "end": 14.455,
+    "charIndex": 227
+  },
+  {
+    "word": "other",
+    "start": 14.536,
+    "end": 14.78,
+    "charIndex": 231
+  },
+  {
+    "word": "person",
+    "start": 14.838,
+    "end": 15.232,
+    "charIndex": 237
+  },
+  {
+    "word": "feel",
+    "start": 15.314,
+    "end": 15.499,
+    "charIndex": 244
+  },
+  {
+    "word": "attacked",
+    "start": 15.546,
+    "end": 16.138,
+    "charIndex": 249
+  },
+  {
+    "word": "Before",
+    "start": 16.823,
+    "end": 17.136,
+    "charIndex": 259
+  },
+  {
+    "word": "I",
+    "start": 17.183,
+    "end": 17.218,
+    "charIndex": 266
+  },
+  {
+    "word": "challenge",
+    "start": 17.334,
+    "end": 17.752,
+    "charIndex": 268
+  },
+  {
+    "word": "an",
+    "start": 17.775,
+    "end": 17.845,
+    "charIndex": 278
+  },
+  {
+    "word": "idea",
+    "start": 17.903,
+    "end": 18.309,
+    "charIndex": 281
+  },
+  {
+    "word": "I",
+    "start": 18.657,
+    "end": 18.704,
+    "charIndex": 287
+  },
+  {
+    "word": "try",
+    "start": 18.797,
+    "end": 18.971,
+    "charIndex": 289
+  },
+  {
+    "word": "to",
+    "start": 19.029,
+    "end": 19.087,
+    "charIndex": 293
+  },
+  {
+    "word": "acknowledge",
+    "start": 19.145,
+    "end": 19.575,
+    "charIndex": 296
+  },
+  {
+    "word": "any",
+    "start": 19.621,
+    "end": 19.784,
+    "charIndex": 308
+  },
+  {
+    "word": "valid",
+    "start": 19.876,
+    "end": 20.26,
+    "charIndex": 312
+  },
+  {
+    "word": "point",
+    "start": 20.329,
+    "end": 20.608,
+    "charIndex": 318
+  },
+  {
+    "word": "it",
+    "start": 20.666,
+    "end": 20.736,
+    "charIndex": 324
+  },
+  {
+    "word": "contains",
+    "start": 20.782,
+    "end": 21.421,
+    "charIndex": 327
+  },
+  {
+    "word": "and",
+    "start": 21.664,
+    "end": 21.862,
+    "charIndex": 336
+  },
+  {
+    "word": "clarify",
+    "start": 21.92,
+    "end": 22.373,
+    "charIndex": 340
+  },
+  {
+    "word": "the",
+    "start": 22.442,
+    "end": 22.512,
+    "charIndex": 348
+  },
+  {
+    "word": "intention",
+    "start": 22.558,
+    "end": 23.208,
+    "charIndex": 352
+  },
+  {
+    "word": "behind",
+    "start": 23.278,
+    "end": 23.592,
+    "charIndex": 362
+  },
+  {
+    "word": "my",
+    "start": 23.673,
+    "end": 23.777,
+    "charIndex": 369
+  },
+  {
+    "word": "response",
+    "start": 23.859,
+    "end": 24.578,
+    "charIndex": 372
+  },
+  {
+    "word": "I",
+    "start": 25.136,
+    "end": 25.205,
+    "charIndex": 383
+  },
+  {
+    "word": "may",
+    "start": 25.321,
+    "end": 25.461,
+    "charIndex": 385
+  },
+  {
+    "word": "point",
+    "start": 25.542,
+    "end": 25.786,
+    "charIndex": 389
+  },
+  {
+    "word": "out",
+    "start": 25.856,
+    "end": 26.03,
+    "charIndex": 395
+  },
+  {
+    "word": "that",
+    "start": 26.076,
+    "end": 26.204,
+    "charIndex": 399
+  },
+  {
+    "word": "the",
+    "start": 26.239,
+    "end": 26.32,
+    "charIndex": 404
+  },
+  {
+    "word": "evidence",
+    "start": 26.413,
+    "end": 26.924,
+    "charIndex": 408
+  },
+  {
+    "word": "is",
+    "start": 26.993,
+    "end": 27.156,
+    "charIndex": 417
+  },
+  {
+    "word": "incomplete",
+    "start": 27.272,
+    "end": 28.294,
+    "charIndex": 420
+  },
+  {
+    "word": "but",
+    "start": 28.619,
+    "end": 28.758,
+    "charIndex": 432
+  },
+  {
+    "word": "I",
+    "start": 28.804,
+    "end": 28.828,
+    "charIndex": 436
+  },
+  {
+    "word": "should",
+    "start": 28.886,
+    "end": 29.071,
+    "charIndex": 438
+  },
+  {
+    "word": "also",
+    "start": 29.106,
+    "end": 29.35,
+    "charIndex": 445
+  },
+  {
+    "word": "explain",
+    "start": 29.42,
+    "end": 29.826,
+    "charIndex": 450
+  },
+  {
+    "word": "why",
+    "start": 29.896,
+    "end": 30.093,
+    "charIndex": 458
+  },
+  {
+    "word": "that",
+    "start": 30.174,
+    "end": 30.325,
+    "charIndex": 462
+  },
+  {
+    "word": "matters",
+    "start": 30.395,
+    "end": 30.941,
+    "charIndex": 467
+  },
+  {
+    "word": "Simply",
+    "start": 31.602,
+    "end": 31.962,
+    "charIndex": 476
+  },
+  {
+    "word": "saying",
+    "start": 32.02,
+    "end": 32.369,
+    "charIndex": 483
+  },
+  {
+    "word": "I",
+    "start": 32.508,
+    "end": 32.601,
+    "charIndex": 491
+  },
+  {
+    "word": "disagree",
+    "start": 32.752,
+    "end": 33.483,
+    "charIndex": 493
+  },
+  {
+    "word": "rarely",
+    "start": 33.785,
+    "end": 34.087,
+    "charIndex": 503
+  },
+  {
+    "word": "gets",
+    "start": 34.145,
+    "end": 34.354,
+    "charIndex": 510
+  },
+  {
+    "word": "across",
+    "start": 34.4,
+    "end": 34.725,
+    "charIndex": 515
+  },
+  {
+    "word": "a",
+    "start": 34.772,
+    "end": 34.795,
+    "charIndex": 522
+  },
+  {
+    "word": "nuanced",
+    "start": 34.911,
+    "end": 35.376,
+    "charIndex": 524
+  },
+  {
+    "word": "position",
+    "start": 35.434,
+    "end": 35.979,
+    "charIndex": 532
+  },
+  {
+    "word": "A",
+    "start": 36.571,
+    "end": 36.641,
+    "charIndex": 542
+  },
+  {
+    "word": "more",
+    "start": 36.722,
+    "end": 36.873,
+    "charIndex": 544
+  },
+  {
+    "word": "diplomatic",
+    "start": 36.92,
+    "end": 37.558,
+    "charIndex": 549
+  },
+  {
+    "word": "approach",
+    "start": 37.605,
+    "end": 38.023,
+    "charIndex": 560
+  },
+  {
+    "word": "is",
+    "start": 38.104,
+    "end": 38.266,
+    "charIndex": 569
+  },
+  {
+    "word": "to",
+    "start": 38.313,
+    "end": 38.383,
+    "charIndex": 572
+  },
+  {
+    "word": "distinguish",
+    "start": 38.441,
+    "end": 39.009,
+    "charIndex": 575
+  },
+  {
+    "word": "the",
+    "start": 39.056,
+    "end": 39.126,
+    "charIndex": 587
+  },
+  {
+    "word": "person",
+    "start": 39.184,
+    "end": 39.578,
+    "charIndex": 591
+  },
+  {
+    "word": "from",
+    "start": 39.66,
+    "end": 39.799,
+    "charIndex": 598
+  },
+  {
+    "word": "the",
+    "start": 39.845,
+    "end": 39.915,
+    "charIndex": 603
+  },
+  {
+    "word": "proposal",
+    "start": 39.962,
+    "end": 40.623,
+    "charIndex": 607
+  },
+  {
+    "word": "I",
+    "start": 41.39,
+    "end": 41.482,
+    "charIndex": 618
+  },
+  {
+    "word": "can",
+    "start": 41.599,
+    "end": 41.738,
+    "charIndex": 620
+  },
+  {
+    "word": "see",
+    "start": 41.796,
+    "end": 41.97,
+    "charIndex": 624
+  },
+  {
+    "word": "where",
+    "start": 42.005,
+    "end": 42.156,
+    "charIndex": 628
+  },
+  {
+    "word": "you",
+    "start": 42.191,
+    "end": 42.26,
+    "charIndex": 634
+  },
+  {
+    "word": "are",
+    "start": 42.307,
+    "end": 42.4,
+    "charIndex": 638
+  },
+  {
+    "word": "coming",
+    "start": 42.446,
+    "end": 42.713,
+    "charIndex": 642
+  },
+  {
+    "word": "from",
+    "start": 42.783,
+    "end": 43.05,
+    "charIndex": 649
+  },
+  {
+    "word": "however",
+    "start": 43.259,
+    "end": 43.677,
+    "charIndex": 655
+  },
+  {
+    "word": "I",
+    "start": 43.758,
+    "end": 43.804,
+    "charIndex": 664
+  },
+  {
+    "word": "am",
+    "start": 43.874,
+    "end": 43.967,
+    "charIndex": 666
+  },
+  {
+    "word": "not",
+    "start": 44.025,
+    "end": 44.153,
+    "charIndex": 669
+  },
+  {
+    "word": "convinced",
+    "start": 44.211,
+    "end": 44.698,
+    "charIndex": 673
+  },
+  {
+    "word": "that",
+    "start": 44.733,
+    "end": 44.861,
+    "charIndex": 683
+  },
+  {
+    "word": "this",
+    "start": 44.896,
+    "end": 45.047,
+    "charIndex": 688
+  },
+  {
+    "word": "solution",
+    "start": 45.093,
+    "end": 45.534,
+    "charIndex": 693
+  },
+  {
+    "word": "addresses",
+    "start": 45.581,
+    "end": 46.045,
+    "charIndex": 702
+  },
+  {
+    "word": "the",
+    "start": 46.103,
+    "end": 46.231,
+    "charIndex": 712
+  },
+  {
+    "word": "underlying",
+    "start": 46.347,
+    "end": 46.974,
+    "charIndex": 716
+  },
+  {
+    "word": "issue",
+    "start": 47.067,
+    "end": 47.601,
+    "charIndex": 727
+  },
+  {
+    "word": "There",
+    "start": 48.054,
+    "end": 48.286,
+    "charIndex": 736
+  },
+  {
+    "word": "are",
+    "start": 48.332,
+    "end": 48.472,
+    "charIndex": 742
+  },
+  {
+    "word": "moments",
+    "start": 48.518,
+    "end": 48.89,
+    "charIndex": 746
+  },
+  {
+    "word": "when",
+    "start": 48.936,
+    "end": 49.075,
+    "charIndex": 754
+  },
+  {
+    "word": "we",
+    "start": 49.11,
+    "end": 49.192,
+    "charIndex": 759
+  },
+  {
+    "word": "need",
+    "start": 49.25,
+    "end": 49.435,
+    "charIndex": 762
+  },
+  {
+    "word": "to",
+    "start": 49.47,
+    "end": 49.528,
+    "charIndex": 767
+  },
+  {
+    "word": "speak",
+    "start": 49.586,
+    "end": 49.877,
+    "charIndex": 770
+  },
+  {
+    "word": "up",
+    "start": 49.969,
+    "end": 50.178,
+    "charIndex": 776
+  },
+  {
+    "word": "especially",
+    "start": 50.469,
+    "end": 50.968,
+    "charIndex": 780
+  },
+  {
+    "word": "if",
+    "start": 51.014,
+    "end": 51.084,
+    "charIndex": 791
+  },
+  {
+    "word": "silence",
+    "start": 51.154,
+    "end": 51.664,
+    "charIndex": 794
+  },
+  {
+    "word": "could",
+    "start": 51.699,
+    "end": 51.873,
+    "charIndex": 802
+  },
+  {
+    "word": "lead",
+    "start": 51.92,
+    "end": 52.094,
+    "charIndex": 808
+  },
+  {
+    "word": "to",
+    "start": 52.14,
+    "end": 52.21,
+    "charIndex": 813
+  },
+  {
+    "word": "a",
+    "start": 52.291,
+    "end": 52.326,
+    "charIndex": 816
+  },
+  {
+    "word": "poor",
+    "start": 52.396,
+    "end": 52.686,
+    "charIndex": 818
+  },
+  {
+    "word": "outcome",
+    "start": 52.767,
+    "end": 53.394,
+    "charIndex": 823
+  },
+  {
+    "word": "Nevertheless",
+    "start": 53.917,
+    "end": 54.706,
+    "charIndex": 832
+  },
+  {
+    "word": "constructive",
+    "start": 54.857,
+    "end": 55.542,
+    "charIndex": 846
+  },
+  {
+    "word": "disagreement",
+    "start": 55.577,
+    "end": 56.274,
+    "charIndex": 859
+  },
+  {
+    "word": "is",
+    "start": 56.332,
+    "end": 56.506,
+    "charIndex": 872
+  },
+  {
+    "word": "not",
+    "start": 56.622,
+    "end": 56.831,
+    "charIndex": 875
+  },
+  {
+    "word": "about",
+    "start": 56.877,
+    "end": 57.121,
+    "charIndex": 879
+  },
+  {
+    "word": "refusing",
+    "start": 57.168,
+    "end": 57.609,
+    "charIndex": 885
+  },
+  {
+    "word": "to",
+    "start": 57.667,
+    "end": 57.736,
+    "charIndex": 894
+  },
+  {
+    "word": "back",
+    "start": 57.806,
+    "end": 58.004,
+    "charIndex": 897
+  },
+  {
+    "word": "down",
+    "start": 58.062,
+    "end": 58.364,
+    "charIndex": 902
+  },
+  {
+    "word": "at",
+    "start": 58.445,
+    "end": 58.608,
+    "charIndex": 907
+  },
+  {
+    "word": "any",
+    "start": 58.677,
+    "end": 58.863,
+    "charIndex": 910
+  },
+  {
+    "word": "cost",
+    "start": 58.944,
+    "end": 59.42,
+    "charIndex": 914
+  },
+  {
+    "word": "Two",
+    "start": 59.931,
+    "end": 60.163,
+    "charIndex": 920
+  },
+  {
+    "word": "people",
+    "start": 60.256,
+    "end": 60.57,
+    "charIndex": 924
+  },
+  {
+    "word": "may",
+    "start": 60.616,
+    "end": 60.744,
+    "charIndex": 931
+  },
+  {
+    "word": "never",
+    "start": 60.837,
+    "end": 61.069,
+    "charIndex": 935
+  },
+  {
+    "word": "see",
+    "start": 61.139,
+    "end": 61.359,
+    "charIndex": 941
+  },
+  {
+    "word": "eye",
+    "start": 61.429,
+    "end": 61.615,
+    "charIndex": 945
+  },
+  {
+    "word": "to",
+    "start": 61.661,
+    "end": 61.742,
+    "charIndex": 949
+  },
+  {
+    "word": "eye",
+    "start": 61.824,
+    "end": 62.137,
+    "charIndex": 952
+  },
+  {
+    "word": "yet",
+    "start": 62.381,
+    "end": 62.532,
+    "charIndex": 957
+  },
+  {
+    "word": "they",
+    "start": 62.567,
+    "end": 62.683,
+    "charIndex": 961
+  },
+  {
+    "word": "can",
+    "start": 62.729,
+    "end": 62.857,
+    "charIndex": 966
+  },
+  {
+    "word": "still",
+    "start": 62.915,
+    "end": 63.136,
+    "charIndex": 970
+  },
+  {
+    "word": "identify",
+    "start": 63.194,
+    "end": 63.763,
+    "charIndex": 976
+  },
+  {
+    "word": "common",
+    "start": 63.844,
+    "end": 64.146,
+    "charIndex": 985
+  },
+  {
+    "word": "ground",
+    "start": 64.215,
+    "end": 64.703,
+    "charIndex": 992
+  },
+  {
+    "word": "meet",
+    "start": 65.028,
+    "end": 65.225,
+    "charIndex": 1000
+  },
+  {
+    "word": "each",
+    "start": 65.272,
+    "end": 65.423,
+    "charIndex": 1005
+  },
+  {
+    "word": "other",
+    "start": 65.458,
+    "end": 65.643,
+    "charIndex": 1010
+  },
+  {
+    "word": "halfway",
+    "start": 65.725,
+    "end": 66.305,
+    "charIndex": 1016
+  },
+  {
+    "word": "and",
+    "start": 66.514,
+    "end": 66.723,
+    "charIndex": 1024
+  },
+  {
+    "word": "clear",
+    "start": 66.804,
+    "end": 67.06,
+    "charIndex": 1028
+  },
+  {
+    "word": "up",
+    "start": 67.118,
+    "end": 67.222,
+    "charIndex": 1034
+  },
+  {
+    "word": "a",
+    "start": 67.269,
+    "end": 67.292,
+    "charIndex": 1037
+  },
+  {
+    "word": "misinterpretation",
+    "start": 67.35,
+    "end": 68.453,
+    "charIndex": 1039
+  },
+  {
+    "word": "What",
+    "start": 69.08,
+    "end": 69.277,
+    "charIndex": 1058
+  },
+  {
+    "word": "matters",
+    "start": 69.37,
+    "end": 69.765,
+    "charIndex": 1063
+  },
+  {
+    "word": "is",
+    "start": 69.823,
+    "end": 69.916,
+    "charIndex": 1071
+  },
+  {
+    "word": "not",
+    "start": 69.985,
+    "end": 70.125,
+    "charIndex": 1074
+  },
+  {
+    "word": "winning",
+    "start": 70.183,
+    "end": 70.473,
+    "charIndex": 1078
+  },
+  {
+    "word": "the",
+    "start": 70.52,
+    "end": 70.589,
+    "charIndex": 1086
+  },
+  {
+    "word": "exchange",
+    "start": 70.659,
+    "end": 71.39,
+    "charIndex": 1090
+  },
+  {
+    "word": "but",
+    "start": 71.634,
+    "end": 71.797,
+    "charIndex": 1099
+  },
+  {
+    "word": "ensuring",
+    "start": 71.843,
+    "end": 72.296,
+    "charIndex": 1103
+  },
+  {
+    "word": "that",
+    "start": 72.342,
+    "end": 72.447,
+    "charIndex": 1112
+  },
+  {
+    "word": "the",
+    "start": 72.482,
+    "end": 72.551,
+    "charIndex": 1117
+  },
+  {
+    "word": "final",
+    "start": 72.644,
+    "end": 73.004,
+    "charIndex": 1121
+  },
+  {
+    "word": "decision",
+    "start": 73.074,
+    "end": 73.468,
+    "charIndex": 1127
+  },
+  {
+    "word": "is",
+    "start": 73.55,
+    "end": 73.689,
+    "charIndex": 1136
+  },
+  {
+    "word": "well-founded",
+    "start": 73.77,
+    "end": 74.595,
+    "charIndex": 1139
+  },
+  {
+    "word": "understood",
+    "start": 74.862,
+    "end": 75.43,
+    "charIndex": 1153
+  },
+  {
+    "word": "and",
+    "start": 75.512,
+    "end": 75.663,
+    "charIndex": 1164
+  },
+  {
+    "word": "workable",
+    "start": 75.744,
+    "end": 76.266,
+    "charIndex": 1168
+  },
+  {
+    "word": "for",
+    "start": 76.313,
+    "end": 76.441,
+    "charIndex": 1177
+  },
+  {
+    "word": "everyone",
+    "start": 76.522,
+    "end": 76.963,
+    "charIndex": 1181
+  },
+  {
+    "word": "involved",
+    "start": 76.998,
+    "end": 77.578,
+    "charIndex": 1190
+  }
+]

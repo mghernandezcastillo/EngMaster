@@ -1,0 +1,74 @@
+[
+  {
+    "word": "Whenever",
+    "start": 0,
+    "end": 0.395,
+    "charIndex": 0
+  },
+  {
+    "word": "I",
+    "start": 0.464,
+    "end": 0.499,
+    "charIndex": 9
+  },
+  {
+    "word": "face",
+    "start": 0.615,
+    "end": 0.882,
+    "charIndex": 11
+  },
+  {
+    "word": "a",
+    "start": 0.929,
+    "end": 0.952,
+    "charIndex": 16
+  },
+  {
+    "word": "setback",
+    "start": 1.022,
+    "end": 1.544,
+    "charIndex": 18
+  },
+  {
+    "word": "my",
+    "start": 1.753,
+    "end": 1.881,
+    "charIndex": 27
+  },
+  {
+    "word": "first",
+    "start": 1.962,
+    "end": 2.206,
+    "charIndex": 30
+  },
+  {
+    "word": "reaction",
+    "start": 2.252,
+    "end": 2.67,
+    "charIndex": 36
+  },
+  {
+    "word": "is",
+    "start": 2.728,
+    "end": 2.821,
+    "charIndex": 45
+  },
+  {
+    "word": "not",
+    "start": 2.914,
+    "end": 3.088,
+    "charIndex": 48
+  },
+  {
+    "word": "always",
+    "start": 3.146,
+    "end": 3.46,
+    "charIndex": 52
+  },
+  {
+    "word": "productive",
+    "start": 3.518,
+    "end": 4.296,
+    "charIndex": 59
+  }
+]

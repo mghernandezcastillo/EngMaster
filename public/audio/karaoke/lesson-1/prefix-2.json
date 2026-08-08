@@ -1,0 +1,206 @@
+[
+  {
+    "word": "When",
+    "start": 0,
+    "end": 0.221,
+    "charIndex": 0
+  },
+  {
+    "word": "I",
+    "start": 0.29,
+    "end": 0.325,
+    "charIndex": 5
+  },
+  {
+    "word": "first",
+    "start": 0.476,
+    "end": 0.778,
+    "charIndex": 7
+  },
+  {
+    "word": "entered",
+    "start": 0.836,
+    "end": 1.103,
+    "charIndex": 13
+  },
+  {
+    "word": "the",
+    "start": 1.126,
+    "end": 1.196,
+    "charIndex": 21
+  },
+  {
+    "word": "workforce",
+    "start": 1.242,
+    "end": 1.892,
+    "charIndex": 25
+  },
+  {
+    "word": "I",
+    "start": 2.136,
+    "end": 2.206,
+    "charIndex": 36
+  },
+  {
+    "word": "assumed",
+    "start": 2.299,
+    "end": 2.647,
+    "charIndex": 38
+  },
+  {
+    "word": "that",
+    "start": 2.67,
+    "end": 2.798,
+    "charIndex": 46
+  },
+  {
+    "word": "competence",
+    "start": 2.856,
+    "end": 3.483,
+    "charIndex": 51
+  },
+  {
+    "word": "meant",
+    "start": 3.529,
+    "end": 3.715,
+    "charIndex": 62
+  },
+  {
+    "word": "having",
+    "start": 3.785,
+    "end": 4.075,
+    "charIndex": 68
+  },
+  {
+    "word": "all",
+    "start": 4.156,
+    "end": 4.354,
+    "charIndex": 75
+  },
+  {
+    "word": "the",
+    "start": 4.412,
+    "end": 4.481,
+    "charIndex": 79
+  },
+  {
+    "word": "answers",
+    "start": 4.563,
+    "end": 5.143,
+    "charIndex": 83
+  },
+  {
+    "word": "In",
+    "start": 5.7,
+    "end": 5.863,
+    "charIndex": 93
+  },
+  {
+    "word": "reality",
+    "start": 5.933,
+    "end": 6.525,
+    "charIndex": 96
+  },
+  {
+    "word": "I",
+    "start": 6.827,
+    "end": 6.885,
+    "charIndex": 105
+  },
+  {
+    "word": "had",
+    "start": 6.966,
+    "end": 7.082,
+    "charIndex": 107
+  },
+  {
+    "word": "to",
+    "start": 7.129,
+    "end": 7.187,
+    "charIndex": 111
+  },
+  {
+    "word": "grow",
+    "start": 7.256,
+    "end": 7.454,
+    "charIndex": 114
+  },
+  {
+    "word": "into",
+    "start": 7.5,
+    "end": 7.686,
+    "charIndex": 119
+  },
+  {
+    "word": "roles",
+    "start": 7.767,
+    "end": 8.081,
+    "charIndex": 124
+  },
+  {
+    "word": "that",
+    "start": 8.127,
+    "end": 8.255,
+    "charIndex": 130
+  },
+  {
+    "word": "demanded",
+    "start": 8.313,
+    "end": 8.812,
+    "charIndex": 135
+  },
+  {
+    "word": "patience",
+    "start": 8.893,
+    "end": 9.625,
+    "charIndex": 144
+  },
+  {
+    "word": "judgment",
+    "start": 9.834,
+    "end": 10.379,
+    "charIndex": 154
+  },
+  {
+    "word": "and",
+    "start": 10.623,
+    "end": 10.855,
+    "charIndex": 163
+  },
+  {
+    "word": "the",
+    "start": 10.902,
+    "end": 10.971,
+    "charIndex": 167
+  },
+  {
+    "word": "ability",
+    "start": 11.006,
+    "end": 11.413,
+    "charIndex": 171
+  },
+  {
+    "word": "to",
+    "start": 11.482,
+    "end": 11.552,
+    "charIndex": 179
+  },
+  {
+    "word": "communicate",
+    "start": 11.622,
+    "end": 12.388,
+    "charIndex": 182
+  },
+  {
+    "word": "under",
+    "start": 12.481,
+    "end": 12.771,
+    "charIndex": 194
+  },
+  {
+    "word": "pressure",
+    "start": 12.841,
+    "end": 13.421,
+    "charIndex": 200
+  }
+]

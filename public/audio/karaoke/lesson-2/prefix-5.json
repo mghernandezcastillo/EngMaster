@@ -1,0 +1,404 @@
+[
+  {
+    "word": "Whenever",
+    "start": 0,
+    "end": 0.441,
+    "charIndex": 0
+  },
+  {
+    "word": "I",
+    "start": 0.522,
+    "end": 0.569,
+    "charIndex": 9
+  },
+  {
+    "word": "face",
+    "start": 0.72,
+    "end": 0.987,
+    "charIndex": 11
+  },
+  {
+    "word": "a",
+    "start": 1.01,
+    "end": 1.033,
+    "charIndex": 16
+  },
+  {
+    "word": "setback",
+    "start": 1.103,
+    "end": 1.614,
+    "charIndex": 18
+  },
+  {
+    "word": "my",
+    "start": 1.881,
+    "end": 1.997,
+    "charIndex": 27
+  },
+  {
+    "word": "first",
+    "start": 2.067,
+    "end": 2.322,
+    "charIndex": 30
+  },
+  {
+    "word": "reaction",
+    "start": 2.38,
+    "end": 2.81,
+    "charIndex": 36
+  },
+  {
+    "word": "is",
+    "start": 2.868,
+    "end": 2.949,
+    "charIndex": 45
+  },
+  {
+    "word": "not",
+    "start": 3.065,
+    "end": 3.251,
+    "charIndex": 48
+  },
+  {
+    "word": "always",
+    "start": 3.297,
+    "end": 3.634,
+    "charIndex": 52
+  },
+  {
+    "word": "productive",
+    "start": 3.704,
+    "end": 4.516,
+    "charIndex": 59
+  },
+  {
+    "word": "I",
+    "start": 4.911,
+    "end": 4.981,
+    "charIndex": 72
+  },
+  {
+    "word": "may",
+    "start": 5.074,
+    "end": 5.19,
+    "charIndex": 74
+  },
+  {
+    "word": "want",
+    "start": 5.248,
+    "end": 5.433,
+    "charIndex": 78
+  },
+  {
+    "word": "to",
+    "start": 5.48,
+    "end": 5.538,
+    "charIndex": 83
+  },
+  {
+    "word": "avoid",
+    "start": 5.619,
+    "end": 6.014,
+    "charIndex": 86
+  },
+  {
+    "word": "the",
+    "start": 6.06,
+    "end": 6.13,
+    "charIndex": 92
+  },
+  {
+    "word": "situation",
+    "start": 6.177,
+    "end": 6.931,
+    "charIndex": 96
+  },
+  {
+    "word": "blame",
+    "start": 7.117,
+    "end": 7.465,
+    "charIndex": 107
+  },
+  {
+    "word": "external",
+    "start": 7.512,
+    "end": 8.011,
+    "charIndex": 113
+  },
+  {
+    "word": "circumstances",
+    "start": 8.069,
+    "end": 8.963,
+    "charIndex": 122
+  },
+  {
+    "word": "or",
+    "start": 9.207,
+    "end": 9.416,
+    "charIndex": 136
+  },
+  {
+    "word": "rush",
+    "start": 9.497,
+    "end": 9.741,
+    "charIndex": 139
+  },
+  {
+    "word": "into",
+    "start": 9.81,
+    "end": 10.019,
+    "charIndex": 144
+  },
+  {
+    "word": "a",
+    "start": 10.101,
+    "end": 10.124,
+    "charIndex": 149
+  },
+  {
+    "word": "solution",
+    "start": 10.182,
+    "end": 10.797,
+    "charIndex": 151
+  },
+  {
+    "word": "Yet",
+    "start": 11.355,
+    "end": 11.656,
+    "charIndex": 162
+  },
+  {
+    "word": "difficult",
+    "start": 11.773,
+    "end": 12.225,
+    "charIndex": 166
+  },
+  {
+    "word": "problems",
+    "start": 12.272,
+    "end": 12.713,
+    "charIndex": 176
+  },
+  {
+    "word": "rarely",
+    "start": 12.806,
+    "end": 13.154,
+    "charIndex": 185
+  },
+  {
+    "word": "disappear",
+    "start": 13.247,
+    "end": 13.944,
+    "charIndex": 192
+  },
+  {
+    "word": "on",
+    "start": 14.06,
+    "end": 14.234,
+    "charIndex": 202
+  },
+  {
+    "word": "their",
+    "start": 14.292,
+    "end": 14.501,
+    "charIndex": 205
+  },
+  {
+    "word": "own",
+    "start": 14.571,
+    "end": 14.942,
+    "charIndex": 211
+  },
+  {
+    "word": "To",
+    "start": 15.604,
+    "end": 15.72,
+    "charIndex": 217
+  },
+  {
+    "word": "deal",
+    "start": 15.778,
+    "end": 15.952,
+    "charIndex": 220
+  },
+  {
+    "word": "with",
+    "start": 15.999,
+    "end": 16.115,
+    "charIndex": 225
+  },
+  {
+    "word": "them",
+    "start": 16.15,
+    "end": 16.266,
+    "charIndex": 230
+  },
+  {
+    "word": "effectively",
+    "start": 16.312,
+    "end": 17.009,
+    "charIndex": 235
+  },
+  {
+    "word": "I",
+    "start": 17.276,
+    "end": 17.334,
+    "charIndex": 248
+  },
+  {
+    "word": "need",
+    "start": 17.415,
+    "end": 17.578,
+    "charIndex": 250
+  },
+  {
+    "word": "to",
+    "start": 17.613,
+    "end": 17.671,
+    "charIndex": 255
+  },
+  {
+    "word": "step",
+    "start": 17.74,
+    "end": 18.031,
+    "charIndex": 258
+  },
+  {
+    "word": "back",
+    "start": 18.112,
+    "end": 18.437,
+    "charIndex": 263
+  },
+  {
+    "word": "identify",
+    "start": 18.797,
+    "end": 19.366,
+    "charIndex": 269
+  },
+  {
+    "word": "the",
+    "start": 19.435,
+    "end": 19.517,
+    "charIndex": 278
+  },
+  {
+    "word": "underlying",
+    "start": 19.598,
+    "end": 20.109,
+    "charIndex": 282
+  },
+  {
+    "word": "cause",
+    "start": 20.19,
+    "end": 20.701,
+    "charIndex": 293
+  },
+  {
+    "word": "and",
+    "start": 20.875,
+    "end": 21.049,
+    "charIndex": 299
+  },
+  {
+    "word": "divide",
+    "start": 21.107,
+    "end": 21.49,
+    "charIndex": 303
+  },
+  {
+    "word": "the",
+    "start": 21.514,
+    "end": 21.583,
+    "charIndex": 310
+  },
+  {
+    "word": "situation",
+    "start": 21.63,
+    "end": 22.28,
+    "charIndex": 314
+  },
+  {
+    "word": "into",
+    "start": 22.326,
+    "end": 22.512,
+    "charIndex": 324
+  },
+  {
+    "word": "manageable",
+    "start": 22.628,
+    "end": 23.174,
+    "charIndex": 329
+  },
+  {
+    "word": "parts",
+    "start": 23.22,
+    "end": 23.754,
+    "charIndex": 340
+  },
+  {
+    "word": "This",
+    "start": 24.312,
+    "end": 24.509,
+    "charIndex": 348
+  },
+  {
+    "word": "does",
+    "start": 24.567,
+    "end": 24.73,
+    "charIndex": 353
+  },
+  {
+    "word": "not",
+    "start": 24.799,
+    "end": 24.962,
+    "charIndex": 358
+  },
+  {
+    "word": "mean",
+    "start": 25.031,
+    "end": 25.217,
+    "charIndex": 362
+  },
+  {
+    "word": "that",
+    "start": 25.275,
+    "end": 25.403,
+    "charIndex": 367
+  },
+  {
+    "word": "disappointment",
+    "start": 25.449,
+    "end": 26.146,
+    "charIndex": 372
+  },
+  {
+    "word": "can",
+    "start": 26.192,
+    "end": 26.32,
+    "charIndex": 387
+  },
+  {
+    "word": "be",
+    "start": 26.367,
+    "end": 26.459,
+    "charIndex": 391
+  },
+  {
+    "word": "switched",
+    "start": 26.518,
+    "end": 26.889,
+    "charIndex": 394
+  },
+  {
+    "word": "off",
+    "start": 26.935,
+    "end": 27.086,
+    "charIndex": 403
+  },
+  {
+    "word": "immediately",
+    "start": 27.144,
+    "end": 27.876,
+    "charIndex": 407
+  }
+]
