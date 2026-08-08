@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
+import { fragmentTranslations as localFragmentTranslations } from '../data/fragmentTranslations';
 import { motion, AnimatePresence, PanInfo } from 'motion/react';
 import {
   Brain,
@@ -137,6 +138,22 @@ export function Memorize() {
     });
   };
 
+  const buildVocabularyHighlights = (translatedText: string): FragmentTranslation['vocabularyHighlights'] => {
+    return lesson.vocabulary
+      .flatMap(item => {
+        const candidates = [
+          item.meaning,
+          ...item.meaning.split(/[;/]/),
+          item.microExampleTranslation,
+        ]
+          .map(value => value.replace(/\([^)]*\)/g, '').trim())
+          .filter(value => value.length >= 4);
+
+        const match = candidates.find(candidate => translatedText.toLowerCase().includes(candidate.toLowerCase()));
+        return match ? [{ expression: item.expression, translation: match }] : [];
+      });
+  };
+
   const toggleFragmentLanguage = async () => {
     if (isReviewMode) return;
 
@@ -147,6 +164,18 @@ export function Memorize() {
 
     setShowSpanishFragment(true);
     if (fragmentTranslations[currentParagraph]) return;
+
+    const localTranslation = localFragmentTranslations[lesson.id]?.[currentParagraph];
+    if (localTranslation) {
+      setFragmentTranslations(prev => ({
+        ...prev,
+        [currentParagraph]: {
+          translatedText: localTranslation,
+          vocabularyHighlights: buildVocabularyHighlights(localTranslation),
+        },
+      }));
+      return;
+    }
 
     setIsTranslatingFragment(true);
     try {

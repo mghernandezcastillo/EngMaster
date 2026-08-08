@@ -36,6 +36,12 @@ export const lessons: Lesson[] = [
         "microExampleTranslation": "Recuerdo esa etapa con gratitud."
       },
       {
+        "expression": "follow through on",
+        "meaning": "cumplir o llevar hasta el final lo prometido",
+        "microExample": "Credibility depends on following through on promises.",
+        "microExampleTranslation": "La credibilidad depende de cumplir las promesas hasta el final."
+      },
+      {
         "expression": "build up",
         "meaning": "desarrollar o acumular gradualmente",
         "microExample": "He built up valuable experience.",
@@ -105,6 +111,18 @@ export const lessons: Lesson[] = [
         "microExampleTranslation": "Manejamos el problema con calma."
       },
       {
+        "expression": "rush into",
+        "meaning": "precipitarse a hacer algo sin pensarlo bien",
+        "microExample": "Do not rush into a decision under pressure.",
+        "microExampleTranslation": "No te precipites a tomar una decisión bajo presión."
+      },
+      {
+        "expression": "step back",
+        "meaning": "tomar distancia para ver una situación con más claridad",
+        "microExample": "I stepped back and looked at the problem calmly.",
+        "microExampleTranslation": "Tomé distancia y miré el problema con calma."
+      },
+      {
         "expression": "bounce back",
         "meaning": "recuperarse después de una dificultad",
         "microExample": "She bounced back after the rejection.",
@@ -121,6 +139,12 @@ export const lessons: Lesson[] = [
         "meaning": "superar emocionalmente o recuperarse",
         "microExample": "It took time to get over the disappointment.",
         "microExampleTranslation": "Tomó tiempo superar la decepción."
+      },
+      {
+        "expression": "switch off",
+        "meaning": "apagarse o desconectarse mental o emocionalmente",
+        "microExample": "It is hard to switch off after a stressful day.",
+        "microExampleTranslation": "Es difícil desconectarse después de un día estresante."
       },
       {
         "expression": "turn around",
@@ -204,6 +228,12 @@ export const lessons: Lesson[] = [
         "microExampleTranslation": "Analiza bien las consecuencias primero."
       },
       {
+        "expression": "go wrong",
+        "meaning": "salir mal o fallar",
+        "microExample": "We considered what could go wrong.",
+        "microExampleTranslation": "Consideramos qué podría salir mal."
+      },
+      {
         "expression": "fall back on",
         "meaning": "recurrir a una alternativa de respaldo",
         "microExample": "We can fall back on the original plan.",
@@ -267,10 +297,22 @@ export const lessons: Lesson[] = [
         "microExampleTranslation": "Ella asumió la responsabilidad durante la crisis."
       },
       {
-        "expression": "follow through",
+        "expression": "follow through on",
         "meaning": "cumplir completamente lo prometido",
         "microExample": "Good leaders follow through on commitments.",
         "microExampleTranslation": "Los buenos líderes cumplen sus compromisos."
+      },
+      {
+        "expression": "take ownership",
+        "meaning": "asumir plena responsabilidad",
+        "microExample": "Strong leaders take ownership when results fall short.",
+        "microExampleTranslation": "Los líderes sólidos asumen plena responsabilidad cuando los resultados se quedan cortos."
+      },
+      {
+        "expression": "fall short",
+        "meaning": "quedarse corto o no alcanzar lo esperado",
+        "microExample": "The results fell short of expectations.",
+        "microExampleTranslation": "Los resultados se quedaron cortos frente a las expectativas."
       },
       {
         "expression": "hand over",

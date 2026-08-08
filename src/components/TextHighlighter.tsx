@@ -102,6 +102,11 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
         // Handle common irregular/regular verbs manually for best accuracy
         const verbMap: Record<string, string> = {
           'take': '(?:take|takes|took|taking|taken)',
+          'follow': '(?:follow|follows|followed|following)',
+          'rush': '(?:rush|rushes|rushed|rushing)',
+          'step': '(?:step|steps|stepped|stepping)',
+          'switch': '(?:switch|switches|switched|switching)',
+          'fall': '(?:fall|falls|fell|fallen|falling)',
           'grow': '(?:grow|grows|grew|growing|grown)',
           'find': '(?:find|finds|found|finding)',
           'stand': '(?:stand|stands|stood|standing)',
