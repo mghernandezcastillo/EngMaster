@@ -44,9 +44,27 @@ export function Memorize() {
   // Ref to prevent rapid-click navigation blocking
   const navigatingRef = useRef(false);
   const reviewScrollRef = useRef<HTMLDivElement>(null);
+  const karaokeBoundaryReceivedRef = useRef(false);
+  const karaokeFallbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const karaokeFallbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const clearKaraokeFallback = () => {
+    if (karaokeFallbackTimeoutRef.current) {
+      clearTimeout(karaokeFallbackTimeoutRef.current);
+      karaokeFallbackTimeoutRef.current = null;
+    }
+
+    if (karaokeFallbackIntervalRef.current) {
+      clearInterval(karaokeFallbackIntervalRef.current);
+      karaokeFallbackIntervalRef.current = null;
+    }
+  };
 
   useEffect(() => {
-    return () => { window.speechSynthesis.cancel(); };
+    return () => {
+      clearKaraokeFallback();
+      window.speechSynthesis.cancel();
+    };
   }, []);
 
   // Cancel fragment audio when paragraph changes
@@ -55,6 +73,7 @@ export function Memorize() {
     setIsPlayingFragment(false);
     setIsPlaying(false);
     setHighlightCharIndex(undefined);
+    clearKaraokeFallback();
     navigatingRef.current = false;
   }, [currentParagraph]);
 
@@ -111,31 +130,65 @@ export function Memorize() {
   // Karaoke for full review
   const toggleKaraoke = () => {
     if (isPlaying) {
+      clearKaraokeFallback();
       window.speechSynthesis.cancel();
       setIsPlaying(false);
       setHighlightCharIndex(undefined);
     } else {
+      clearKaraokeFallback();
       window.speechSynthesis.cancel();
+      karaokeBoundaryReceivedRef.current = false;
       const utterance = new SpeechSynthesisUtterance(lesson.text);
       utterance.lang = 'en-US';
       utterance.rate = 0.88;
 
       utterance.onboundary = (event) => {
         if (typeof event.charIndex === 'number') {
+          karaokeBoundaryReceivedRef.current = true;
+          clearKaraokeFallback();
           setHighlightCharIndex(event.charIndex);
         }
       };
       utterance.onend = () => {
+        clearKaraokeFallback();
         setIsPlaying(false);
         setHighlightCharIndex(undefined);
       };
       utterance.onerror = () => {
+        clearKaraokeFallback();
         setIsPlaying(false);
         setHighlightCharIndex(undefined);
       };
 
       setIsPlaying(true);
+      setHighlightCharIndex(0);
       window.speechSynthesis.speak(utterance);
+
+      karaokeFallbackTimeoutRef.current = setTimeout(() => {
+        if (karaokeBoundaryReceivedRef.current) return;
+
+        const wordMatches = [...lesson.text.matchAll(/\b[\w'-]+\b/g)];
+        if (wordMatches.length === 0) return;
+
+        let wordIndex = 0;
+        const estimatedMsPerWord = Math.max(260, 430 / utterance.rate);
+        setHighlightCharIndex(wordMatches[0].index ?? 0);
+
+        karaokeFallbackIntervalRef.current = setInterval(() => {
+          if (karaokeBoundaryReceivedRef.current) {
+            clearKaraokeFallback();
+            return;
+          }
+
+          wordIndex += 1;
+          if (wordIndex >= wordMatches.length) {
+            clearKaraokeFallback();
+            return;
+          }
+
+          setHighlightCharIndex(wordMatches[wordIndex].index ?? 0);
+        }, estimatedMsPerWord);
+      }, 800);
     }
   };
 
