@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
-import { motion, AnimatePresence } from 'motion/react';
-import { BrainCircuit, ArrowRight, ChevronRight, ChevronLeft, ChevronDown, Cpu, Puzzle, Database, Network, Fingerprint, Sparkles, Activity, Zap, Volume2, VolumeX } from 'lucide-react';
+import { motion, AnimatePresence, PanInfo } from 'motion/react';
+import { BrainCircuit, ArrowRight, ChevronRight, ChevronLeft, ChevronDown, Cpu, Puzzle, Database, Network, Fingerprint, Sparkles, Activity, Zap, Volume2, VolumeX, BookOpen } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export function LessonIntro() {
@@ -13,8 +13,12 @@ export function LessonIntro() {
   
   const [tab, setTab] = useState<'vocab' | 'structures'>('vocab');
   const [vocabIndex, setVocabIndex] = useState(0);
+  const [vocabDirection, setVocabDirection] = useState(0);
   const [expandedStruct, setExpandedStruct] = useState<number | null>(null);
   const [isPlayingVocab, setIsPlayingVocab] = useState(false);
+  const hasMountedVocab = useRef(false);
+
+  const lesson = lessons.find(l => l.id === id);
 
   useEffect(() => {
     return () => { window.speechSynthesis.cancel(); };
@@ -23,18 +27,21 @@ export function LessonIntro() {
   useEffect(() => {
     window.speechSynthesis.cancel();
     setIsPlayingVocab(false);
-  }, [vocabIndex]);
-  
-  const lesson = lessons.find(l => l.id === id);
+
+    if (!lesson || tab !== 'vocab') return;
+
+    if (!hasMountedVocab.current) {
+      hasMountedVocab.current = true;
+      return;
+    }
+
+    playVocabAudio();
+  }, [vocabIndex, lesson, tab]);
 
   if (!lesson) return <div>Lesson not found</div>;
 
-  const speakVocab = () => {
-    if (isPlayingVocab) {
-      window.speechSynthesis.cancel();
-      setIsPlayingVocab(false);
-      return;
-    }
+  const playVocabAudio = () => {
+    if (!lesson) return;
     const vocab = lesson.vocabulary[vocabIndex];
     const text = `${vocab.expression}. ${vocab.microExample}`;
     const utterance = new SpeechSynthesisUtterance(text);
@@ -46,9 +53,49 @@ export function LessonIntro() {
     window.speechSynthesis.speak(utterance);
   };
 
+  const speakVocab = () => {
+    if (isPlayingVocab) {
+      window.speechSynthesis.cancel();
+      setIsPlayingVocab(false);
+      return;
+    }
+
+    playVocabAudio();
+  };
+
   const handleStart = () => {
     updateProgress(lesson.id, 'intro');
     navigate(`/lesson/${lesson.id}/memorize`);
+  };
+
+  const handleKaraokeStart = () => {
+    updateProgress(lesson.id, 'intro');
+    navigate(`/lesson/${lesson.id}/memorize?mode=review`);
+  };
+
+  const paginateVocab = (newDirection: number) => {
+    setVocabDirection(newDirection);
+    setVocabIndex(prev => {
+      let nextIndex = prev + newDirection;
+      if (nextIndex < 0) nextIndex = 0;
+      if (nextIndex >= lesson.vocabulary.length) nextIndex = lesson.vocabulary.length - 1;
+      return nextIndex;
+    });
+  };
+
+  const goToVocab = (newIndex: number) => {
+    if (newIndex === vocabIndex) return;
+    setVocabDirection(newIndex > vocabIndex ? 1 : -1);
+    setVocabIndex(newIndex);
+  };
+
+  const handleVocabDragEnd = (e: any, { offset, velocity }: PanInfo) => {
+    const swipe = Math.abs(offset.x) * velocity.x;
+    if (swipe < -10000 && vocabIndex < lesson.vocabulary.length - 1) {
+      paginateVocab(1);
+    } else if (swipe > 10000 && vocabIndex > 0) {
+      paginateVocab(-1);
+    }
   };
 
   const vocab = lesson.vocabulary[vocabIndex];
@@ -82,7 +129,13 @@ export function LessonIntro() {
               exit={{ opacity: 0, scale: 0.95 }}
               className="absolute inset-0 flex flex-col"
             >
-              <div className="flex-1 bg-gradient-to-b from-slate-800/80 to-slate-900/80 rounded-2xl border border-white/10 p-5 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+              <motion.div
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={handleVocabDragEnd}
+                className="flex-1 bg-gradient-to-b from-slate-800/80 to-slate-900/80 rounded-2xl border border-white/10 p-5 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl cursor-grab active:cursor-grabbing"
+              >
 
                 {/* Spinning roulette rings — same as Memorize.tsx */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
@@ -115,13 +168,14 @@ export function LessonIntro() {
                   <span>DATA_NODE: {vocabIndex + 1}/{lesson.vocabulary.length}</span>
                 </div>
 
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="wait" custom={vocabDirection}>
                   <motion.div
                     key={vocabIndex}
-                    initial={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, y: -10, filter: 'blur(5px)' }}
-                    transition={{ duration: 0.3 }}
+                    custom={vocabDirection}
+                    initial={{ opacity: 0, scale: 0.9, x: vocabDirection === 0 ? 0 : vocabDirection > 0 ? 100 : -100, filter: 'blur(5px)' }}
+                    animate={{ opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, scale: 0.9, x: vocabDirection === 0 ? 0 : vocabDirection > 0 ? -100 : 100, filter: 'blur(5px)' }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     className="text-center w-full space-y-6 z-10"
                   >
                     <div className="flex flex-col items-center justify-center gap-3">
@@ -214,7 +268,7 @@ export function LessonIntro() {
                 <div className="absolute bottom-4 left-0 w-full px-4 flex items-center justify-between gap-2 z-20">
                   <button
                     disabled={vocabIndex === 0}
-                    onClick={(e) => { e.stopPropagation(); setVocabIndex(prev => prev - 1); }}
+                    onClick={(e) => { e.stopPropagation(); paginateVocab(-1); }}
                     onPointerDown={(e) => e.stopPropagation()}
                     className="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-full disabled:opacity-30 border border-white/10 transition-all pointer-events-auto shadow-lg active:scale-90"
                   >
@@ -226,7 +280,7 @@ export function LessonIntro() {
                     {lesson.vocabulary.map((_, i) => (
                       <button
                         key={i}
-                        onClick={(e) => { e.stopPropagation(); setVocabIndex(i); }}
+                        onClick={(e) => { e.stopPropagation(); goToVocab(i); }}
                         onPointerDown={(e) => e.stopPropagation()}
                         className={cn(
                           "h-1.5 rounded-full transition-all duration-300 pointer-events-auto",
@@ -238,7 +292,7 @@ export function LessonIntro() {
 
                   <button
                     disabled={vocabIndex === lesson.vocabulary.length - 1}
-                    onClick={(e) => { e.stopPropagation(); setVocabIndex(prev => prev + 1); }}
+                    onClick={(e) => { e.stopPropagation(); paginateVocab(1); }}
                     onPointerDown={(e) => e.stopPropagation()}
                     className="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-full disabled:opacity-30 border border-white/10 transition-all pointer-events-auto shadow-lg active:scale-90"
                   >
@@ -246,7 +300,7 @@ export function LessonIntro() {
                   </button>
                 </div>
 
-              </div>
+              </motion.div>
             </motion.div>
           ) : (
             <motion.div
@@ -326,7 +380,16 @@ export function LessonIntro() {
         </AnimatePresence>
       </div>
 
-      <div className="flex-none pt-4 pb-2">
+      <div className="flex-none pt-4 pb-2 space-y-2">
+        <button 
+          onClick={handleKaraokeStart}
+          className="w-full relative overflow-hidden group bg-slate-800/80 border border-white/10 hover:border-teal-500/40 hover:bg-slate-700/80 text-teal-300 py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 text-xs"
+        >
+          <BookOpen className="w-4 h-4" />
+          {language === 'es' ? 'Practicar lectura karaoke' : 'Practice karaoke reading'}
+          <Volume2 className="w-4 h-4" />
+        </button>
+
         <button 
           onClick={handleStart}
           className="w-full relative overflow-hidden group bg-teal-600/20 border border-teal-500/50 hover:bg-teal-500/30 text-teal-300 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-[0_0_20px_rgba(20,184,166,0.15)]"

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
 import { motion, AnimatePresence, PanInfo } from 'motion/react';
@@ -24,11 +24,17 @@ import { TextHighlighter } from '../components/TextHighlighter';
 export function Memorize() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { language, updateProgress } = useStore();
 
   const lesson = lessons.find(l => l.id === id);
+  const paragraphs = lesson?.text
+    .match(/[^.?!]+[.?!]+(?:\s+|$)|.+/g)
+    ?.map(s => s.trim())
+    .filter(s => s.length > 0) || [];
+  const startsInReviewMode = searchParams.get('mode') === 'review' && paragraphs.length > 0;
 
-  const [currentParagraph, setCurrentParagraph] = useState(0);
+  const [currentParagraph, setCurrentParagraph] = useState(startsInReviewMode ? paragraphs.length : 0);
   const [direction, setDirection] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -51,11 +57,6 @@ export function Memorize() {
   }, [currentParagraph]);
 
   if (!lesson) return <div>Lesson not found</div>;
-
-  const paragraphs = lesson.text
-    .match(/[^.?!]+[.?!]+(?:\s+|$)|.+/g)
-    ?.map(s => s.trim())
-    .filter(s => s.length > 0) || [lesson.text];
 
   const isReviewMode = currentParagraph === paragraphs.length;
   const currentText = isReviewMode ? lesson.text : paragraphs[currentParagraph];
