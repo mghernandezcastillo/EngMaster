@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { flushSync } from 'react-dom';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
@@ -132,7 +133,7 @@ export function Memorize() {
 
       scrollContainer.scrollTo({
         top: Math.max(0, targetTop),
-        behavior: 'smooth',
+        behavior: 'auto',
       });
     });
   }, [highlightCharIndex]);
@@ -151,7 +152,7 @@ export function Memorize() {
 
       scrollContainer.scrollTo({
         top: Math.max(0, targetTop),
-        behavior: 'smooth',
+        behavior: 'auto',
       });
     });
   }, [cumulativeHighlightCharIndex]);
@@ -306,7 +307,7 @@ export function Memorize() {
         if (typeof event.charIndex === 'number') {
           karaokeBoundaryReceivedRef.current = true;
           clearKaraokeFallback();
-          setHighlightCharIndex(event.charIndex);
+          flushSync(() => setHighlightCharIndex(event.charIndex));
         }
       };
       utterance.onend = () => {
@@ -332,7 +333,7 @@ export function Memorize() {
 
         let wordIndex = 0;
         const estimatedMsPerWord = Math.max(260, 430 / utterance.rate);
-        setHighlightCharIndex(wordMatches[0].index ?? 0);
+        flushSync(() => setHighlightCharIndex(wordMatches[0].index ?? 0));
 
         karaokeFallbackIntervalRef.current = setInterval(() => {
           if (karaokeBoundaryReceivedRef.current) {
@@ -346,7 +347,7 @@ export function Memorize() {
             return;
           }
 
-          setHighlightCharIndex(wordMatches[wordIndex].index ?? 0);
+          flushSync(() => setHighlightCharIndex(wordMatches[wordIndex].index ?? 0));
         }, estimatedMsPerWord);
       }, 800);
     }
@@ -390,7 +391,7 @@ export function Memorize() {
       if (typeof event.charIndex === 'number') {
         cumulativeBoundaryReceivedRef.current = true;
         clearCumulativeFallback();
-        setCumulativeHighlightCharIndex(event.charIndex);
+        flushSync(() => setCumulativeHighlightCharIndex(event.charIndex));
       }
     };
     utterance.onend = () => {
@@ -416,7 +417,7 @@ export function Memorize() {
 
       let wordIndex = 0;
       const estimatedMsPerWord = Math.max(260, 430 / utterance.rate);
-      setCumulativeHighlightCharIndex(wordMatches[0].index ?? 0);
+      flushSync(() => setCumulativeHighlightCharIndex(wordMatches[0].index ?? 0));
 
       cumulativeFallbackIntervalRef.current = setInterval(() => {
         if (cumulativeBoundaryReceivedRef.current) {
@@ -430,7 +431,7 @@ export function Memorize() {
           return;
         }
 
-        setCumulativeHighlightCharIndex(wordMatches[wordIndex].index ?? 0);
+        flushSync(() => setCumulativeHighlightCharIndex(wordMatches[wordIndex].index ?? 0));
       }, estimatedMsPerWord);
     }, 800);
   };
@@ -580,7 +581,7 @@ export function Memorize() {
 
             {/* ── REVIEW MODE ── */}
             {isReviewMode ? (
-              <div ref={reviewScrollRef} className="relative z-10 w-full h-full flex flex-col overflow-y-auto custom-scrollbar p-5 scroll-smooth">
+              <div ref={reviewScrollRef} className="relative z-10 w-full h-full flex flex-col overflow-y-auto custom-scrollbar p-5">
                 <div className="flex items-center justify-between mb-4 sticky top-0 bg-slate-800/95 backdrop-blur pb-2 z-20 border-b border-white/5">
                   <h3 className="text-xs font-bold text-teal-500 uppercase tracking-widest flex items-center gap-1.5">
                     <BookOpen className="w-3 h-3" />
@@ -786,7 +787,7 @@ export function Memorize() {
                   </div>
                   <div
                     ref={cumulativeReviewScrollRef}
-                    className="mt-4 max-h-56 overflow-y-auto custom-scrollbar rounded-xl bg-slate-950/35 p-3 scroll-smooth"
+                    className="mt-4 max-h-56 overflow-y-auto custom-scrollbar rounded-xl bg-slate-950/35 p-3"
                   >
                     <TextHighlighter
                       text={cumulativeReviewText}

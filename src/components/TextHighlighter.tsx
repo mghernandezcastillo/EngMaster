@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Volume2, Loader2, X } from 'lucide-react';
 import { useStore } from '../store/useStore';
@@ -21,15 +21,6 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
   // State for translation
   const [translation, setTranslation] = useState<{ translation: string, phonetics: string } | null>(null);
   const [isTranslating, setIsTranslating] = useState(false);
-
-  useEffect(() => {
-    if (highlightCharIndex !== undefined) {
-      const el = document.getElementById('spoken-word');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-  }, [highlightCharIndex]);
 
   // Play pronunciation using Web Speech API
   const playAudio = (wordText: string) => {
