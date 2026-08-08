@@ -302,7 +302,12 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center border-b border-slate-700 pb-2">
-              <span className="font-bold text-white truncate max-w-[120px]">{activeWord.word}</span>
+              <div className="min-w-0">
+                <span className="block font-bold text-white truncate max-w-[120px]">{activeWord.word}</span>
+                {translation?.phonetics && (
+                  <span className="block text-[11px] text-teal-300/80 font-mono mt-0.5 truncate max-w-[120px]">/{translation.phonetics}/</span>
+                )}
+              </div>
               <button
                 onClick={() => playAudio(activeWord.word)}
                 className="text-teal-400 hover:text-teal-300 p-1 bg-teal-900/30 rounded-full"
@@ -317,9 +322,6 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
               ) : translation ? (
                 <div className="w-full text-center">
                   <div className="text-slate-200 font-medium text-sm">{translation.translation}</div>
-                  {translation.phonetics && (
-                    <div className="text-slate-400 text-xs mt-1 font-mono">/{translation.phonetics}/</div>
-                  )}
                 </div>
               ) : (
                 <div className="text-red-400 text-sm">Error</div>

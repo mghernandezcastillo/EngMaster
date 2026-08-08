@@ -65,7 +65,7 @@ async function startServer() {
       
       Provide a highly concise response formatted in JSON with the keys:
       - translation (string, just the translated word or very short phrase)
-      - phonetics (string, IPA spelling)
+      - phonetics (string, IPA pronunciation of the original English word "${word}", not of the translation)
       `;
       
       const response = await ai.models.generateContent({
@@ -81,6 +81,52 @@ async function startServer() {
     } catch (error) {
       console.error("AI translation error:", error);
       res.status(500).json({ error: "Failed to generate translation" });
+    }
+  });
+
+  // API route for full fragment translation with vocabulary highlight targets
+  app.post("/api/translate-fragment", async (req, res) => {
+    try {
+      const { text, vocabulary } = req.body;
+      if (!text) {
+        return res.status(400).json({ error: "Missing text" });
+      }
+
+      const vocabList = Array.isArray(vocabulary)
+        ? vocabulary.map((item) => `- ${item.expression}: ${item.meaning}`).join("\n")
+        : "";
+
+      const prompt = `
+      Translate this English learning fragment into natural Spanish while preserving the meaning and sentence order.
+
+      English fragment:
+      "${text}"
+
+      Learned vocabulary from the current DATA_NODE lesson:
+      ${vocabList}
+
+      Return JSON only with:
+      - translatedText: string, the full Spanish translation.
+      - vocabularyHighlights: array of objects with:
+        - expression: original English expression.
+        - translation: the exact Spanish word or phrase as it appears in translatedText, if present.
+
+      Only include vocabularyHighlights for vocabulary whose meaning appears in the translatedText.
+      `;
+
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json",
+        }
+      });
+
+      const result = JSON.parse(response.text || "{}");
+      res.json(result);
+    } catch (error) {
+      console.error("AI fragment translation error:", error);
+      res.status(500).json({ error: "Failed to translate fragment" });
     }
   });
 

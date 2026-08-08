@@ -17,9 +17,15 @@ import {
   VolumeX,
   ChevronLeft,
   ChevronRight,
+  Loader2,
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { TextHighlighter } from '../components/TextHighlighter';
+
+type FragmentTranslation = {
+  translatedText: string;
+  vocabularyHighlights: { expression: string; translation: string }[];
+};
 
 export function Memorize() {
   const { id } = useParams();
@@ -40,6 +46,9 @@ export function Memorize() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPlayingFragment, setIsPlayingFragment] = useState(false);
   const [highlightCharIndex, setHighlightCharIndex] = useState<number | undefined>(undefined);
+  const [showSpanishFragment, setShowSpanishFragment] = useState(false);
+  const [isTranslatingFragment, setIsTranslatingFragment] = useState(false);
+  const [fragmentTranslations, setFragmentTranslations] = useState<Record<number, FragmentTranslation>>({});
 
   // Ref to prevent rapid-click navigation blocking
   const navigatingRef = useRef(false);
@@ -73,6 +82,7 @@ export function Memorize() {
     setIsPlayingFragment(false);
     setIsPlaying(false);
     setHighlightCharIndex(undefined);
+    setShowSpanishFragment(false);
     clearKaraokeFallback();
     navigatingRef.current = false;
   }, [currentParagraph]);
@@ -100,6 +110,75 @@ export function Memorize() {
 
   const isReviewMode = currentParagraph === paragraphs.length;
   const currentText = isReviewMode ? lesson.text : paragraphs[currentParagraph];
+  const currentTranslation = fragmentTranslations[currentParagraph];
+
+  const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  const renderTranslatedFragment = (translation: FragmentTranslation) => {
+    const highlights = translation.vocabularyHighlights
+      .map(item => item.translation?.trim())
+      .filter(Boolean)
+      .sort((a, b) => b.length - a.length);
+
+    if (highlights.length === 0) {
+      return translation.translatedText;
+    }
+
+    const regex = new RegExp(`(${highlights.map(escapeRegExp).join('|')})`, 'gi');
+    return translation.translatedText.split(regex).map((part, index) => {
+      const isHighlight = highlights.some(item => item.toLowerCase() === part.toLowerCase());
+      return isHighlight ? (
+        <span key={`${part}-${index}`} className="inline rounded-md bg-amber-400/20 px-1 font-bold text-amber-200 ring-1 ring-amber-300/25">
+          {part}
+        </span>
+      ) : (
+        <span key={`${part}-${index}`}>{part}</span>
+      );
+    });
+  };
+
+  const toggleFragmentLanguage = async () => {
+    if (isReviewMode) return;
+
+    if (showSpanishFragment) {
+      setShowSpanishFragment(false);
+      return;
+    }
+
+    setShowSpanishFragment(true);
+    if (fragmentTranslations[currentParagraph]) return;
+
+    setIsTranslatingFragment(true);
+    try {
+      const response = await fetch('/api/translate-fragment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          text: currentText,
+          vocabulary: lesson.vocabulary,
+        }),
+      });
+      const data = await response.json();
+      setFragmentTranslations(prev => ({
+        ...prev,
+        [currentParagraph]: {
+          translatedText: data.translatedText || currentText,
+          vocabularyHighlights: Array.isArray(data.vocabularyHighlights) ? data.vocabularyHighlights : [],
+        },
+      }));
+    } catch (error) {
+      console.error(error);
+      setFragmentTranslations(prev => ({
+        ...prev,
+        [currentParagraph]: {
+          translatedText: language === 'es' ? 'No se pudo traducir este fragmento.' : 'This fragment could not be translated.',
+          vocabularyHighlights: [],
+        },
+      }));
+    } finally {
+      setIsTranslatingFragment(false);
+    }
+  };
 
   // Debounced paginate — ignore if already navigating
   const paginate = useCallback((newDirection: number) => {
@@ -377,24 +456,56 @@ export function Memorize() {
                   <span className="text-[10px] font-mono text-teal-400/80 uppercase tracking-widest">
                     {language === 'es' ? 'FRAGMENTO' : 'FRAGMENT'} {currentParagraph + 1}
                   </span>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); speakCurrentFragment(); }}
-                    onPointerDown={(e) => e.stopPropagation()}
-                    className={cn(
-                      "flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all border shadow-md active:scale-95 pointer-events-auto",
-                      isPlayingFragment
-                        ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50 shadow-[0_0_12px_rgba(16,185,129,0.3)] animate-pulse"
-                        : "bg-teal-500/15 text-teal-300 border-teal-500/30 hover:bg-teal-500/25"
-                    )}
-                  >
-                    {isPlayingFragment ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
-                    {isPlayingFragment
-                      ? (language === 'es' ? 'Detener' : 'Stop')
-                      : (language === 'es' ? 'Escuchar' : 'Listen')}
-                  </button>
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); toggleFragmentLanguage(); }}
+                      onPointerDown={(e) => e.stopPropagation()}
+                      disabled={isTranslatingFragment}
+                      className={cn(
+                        "flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all border shadow-md active:scale-95 pointer-events-auto disabled:opacity-60",
+                        showSpanishFragment
+                          ? "bg-amber-500/15 text-amber-200 border-amber-400/30 hover:bg-amber-500/25"
+                          : "bg-slate-800/80 text-slate-300 border-white/10 hover:bg-slate-700"
+                      )}
+                    >
+                      {isTranslatingFragment ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Eye className="w-3.5 h-3.5" />}
+                      <span>{showSpanishFragment ? '🇺🇸' : '🇪🇸'}</span>
+                    </button>
+
+                    <button
+                      onClick={(e) => { e.stopPropagation(); speakCurrentFragment(); }}
+                      onPointerDown={(e) => e.stopPropagation()}
+                      className={cn(
+                        "flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all border shadow-md active:scale-95 pointer-events-auto",
+                        isPlayingFragment
+                          ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50 shadow-[0_0_12px_rgba(16,185,129,0.3)] animate-pulse"
+                          : "bg-teal-500/15 text-teal-300 border-teal-500/30 hover:bg-teal-500/25"
+                      )}
+                    >
+                      {isPlayingFragment ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
+                      {isPlayingFragment
+                        ? (language === 'es' ? 'Detener' : 'Stop')
+                        : (language === 'es' ? 'Escuchar' : 'Listen')}
+                    </button>
+                  </div>
                 </div>
                 <div className="my-auto py-4">
-                  <TextHighlighter text={currentText} vocabulary={lesson.vocabulary} />
+                  {showSpanishFragment ? (
+                    <div className="text-lg sm:text-xl leading-loose text-slate-200 font-medium text-center max-w-2xl mx-auto">
+                      {isTranslatingFragment && !currentTranslation ? (
+                        <div className="flex items-center justify-center gap-2 text-sm text-amber-200">
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          {language === 'es' ? 'Traduciendo fragmento...' : 'Translating fragment...'}
+                        </div>
+                      ) : currentTranslation ? (
+                        renderTranslatedFragment(currentTranslation)
+                      ) : (
+                        currentText
+                      )}
+                    </div>
+                  ) : (
+                    <TextHighlighter text={currentText} vocabulary={lesson.vocabulary} />
+                  )}
                 </div>
                 <p className="text-[10px] text-center text-slate-600 font-mono mt-2">
                   {language === 'es' ? 'Desliza o usa las flechas para navegar' : 'Swipe or use arrows to navigate'}

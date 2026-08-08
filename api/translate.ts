@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     
     Provide a highly concise response formatted in JSON with the keys:
     - translation (string, just the translated word or very short phrase)
-    - phonetics (string, IPA spelling)
+    - phonetics (string, IPA pronunciation of the original English word "${word}", not of the translation)
     `;
     
     const response = await ai.models.generateContent({
