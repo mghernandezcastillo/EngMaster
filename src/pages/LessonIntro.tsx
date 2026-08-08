@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
 import { motion, AnimatePresence } from 'motion/react';
-import { BrainCircuit, ArrowRight, ChevronRight, ChevronLeft, ChevronDown, Cpu, Puzzle, Database, Network, Fingerprint, Sparkles, Activity, Zap } from 'lucide-react';
+import { BrainCircuit, ArrowRight, ChevronRight, ChevronLeft, ChevronDown, Cpu, Puzzle, Database, Network, Fingerprint, Sparkles, Activity, Zap, Volume2, VolumeX } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export function LessonIntro() {
@@ -14,10 +14,37 @@ export function LessonIntro() {
   const [tab, setTab] = useState<'vocab' | 'structures'>('vocab');
   const [vocabIndex, setVocabIndex] = useState(0);
   const [expandedStruct, setExpandedStruct] = useState<number | null>(null);
+  const [isPlayingVocab, setIsPlayingVocab] = useState(false);
+
+  useEffect(() => {
+    return () => { window.speechSynthesis.cancel(); };
+  }, []);
+
+  useEffect(() => {
+    window.speechSynthesis.cancel();
+    setIsPlayingVocab(false);
+  }, [vocabIndex]);
   
   const lesson = lessons.find(l => l.id === id);
 
   if (!lesson) return <div>Lesson not found</div>;
+
+  const speakVocab = () => {
+    if (isPlayingVocab) {
+      window.speechSynthesis.cancel();
+      setIsPlayingVocab(false);
+      return;
+    }
+    const vocab = lesson.vocabulary[vocabIndex];
+    const text = `${vocab.expression}. ${vocab.microExample}`;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.88;
+    utterance.onend = () => setIsPlayingVocab(false);
+    utterance.onerror = () => setIsPlayingVocab(false);
+    setIsPlayingVocab(true);
+    window.speechSynthesis.speak(utterance);
+  };
 
   const handleStart = () => {
     updateProgress(lesson.id, 'intro');
@@ -56,7 +83,26 @@ export function LessonIntro() {
               className="absolute inset-0 flex flex-col"
             >
               <div className="flex-1 bg-gradient-to-b from-slate-800/80 to-slate-900/80 rounded-2xl border border-white/10 p-5 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
-                
+
+                {/* Spinning roulette rings — same as Memorize.tsx */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+                  <motion.div
+                    className="absolute top-1/2 left-1/2 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-teal-500/40"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  />
+                  <motion.div
+                    className="absolute top-1/2 left-1/2 w-[360px] h-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-dotted border-teal-400/30"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  />
+                  <motion.div
+                    className="absolute top-1/2 left-1/2 w-[220px] h-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-teal-500/20 shadow-[0_0_30px_rgba(20,184,166,0.1)]"
+                    animate={{ rotate: 360, scale: [1, 1.05, 1] }}
+                    transition={{ rotate: { duration: 22, repeat: Infinity, ease: "linear" }, scale: { duration: 3, repeat: Infinity } }}
+                  />
+                </div>
+
                 {/* AI Scanner line */}
                 <motion.div 
                   className="absolute left-0 right-0 h-[2px] bg-teal-400/50 shadow-[0_0_10px_#2dd4bf]"
@@ -79,41 +125,80 @@ export function LessonIntro() {
                     className="text-center w-full space-y-6 z-10"
                   >
                     <div className="flex flex-col items-center justify-center gap-3">
-                                            <motion.div 
-                        className="w-20 h-20 rounded-2xl flex items-center justify-center border-2 border-teal-500/50 shadow-[0_0_20px_rgba(20,184,166,0.3)] relative overflow-hidden group"
-                        animate={{ y: [-5, 5, -5], rotate: [0, 5, -5, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <div className="absolute inset-0 bg-teal-900/80 z-10 mix-blend-multiply" />
-                        <img 
-                          src={lesson.image} 
-                          alt="Context" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay transition-transform duration-1000 group-hover:scale-110" 
-                          onError={(e) => {
-                            (e.currentTarget as HTMLImageElement).src = '/images/app_logo.jpg';
-                          }}
+                      {/* DATA_NODE icon with spinning roulette rings */}
+                      <div className="relative flex items-center justify-center w-24 h-24">
+                        {/* Spinning ring 1 */}
+                        <motion.div
+                          className="absolute inset-0 rounded-full border border-dashed border-teal-500/40 pointer-events-none"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                         />
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.5),transparent)] opacity-50 mix-blend-screen z-10" />
-                        {(() => {
-                          // Simple semantic icon mapping based on string content
-                          const getSemanticIcon = (word) => {
-                            const str = word.toLowerCase();
-                            if (str.includes('grow') || str.includes('build') || str.includes('up')) return Activity;
-                            if (str.includes('think') || str.includes('mind') || str.includes('aware')) return BrainCircuit;
-                            if (str.includes('connect') || str.includes('network')) return Network;
-                            if (str.includes('find') || str.includes('look') || str.includes('seek')) return Fingerprint;
-                            if (str.includes('new') || str.includes('innovate') || str.includes('create')) return Sparkles;
-                            if (str.includes('power') || str.includes('force') || str.includes('drive')) return Zap;
-                            return Database;
-                          };
-                          const CurrentIcon = getSemanticIcon(vocab.expression);
-                          return <CurrentIcon className="w-8 h-8 text-teal-300 drop-shadow-[0_0_8px_rgba(20,184,166,0.8)] relative z-20" />;
-                        })()}
-                      </motion.div>
+                        {/* Spinning ring 2 */}
+                        <motion.div
+                          className="absolute -inset-3 rounded-full border border-teal-400/20 pointer-events-none"
+                          animate={{ rotate: -360 }}
+                          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                        />
+                        {/* Spinning ring 3 */}
+                        <motion.div
+                          className="absolute -inset-6 rounded-full border border-dotted border-emerald-500/10 pointer-events-none"
+                          animate={{ rotate: 360, scale: [1, 1.04, 1] }}
+                          transition={{ rotate: { duration: 18, repeat: Infinity, ease: "linear" }, scale: { duration: 3, repeat: Infinity } }}
+                        />
+
+                        {/* Icon Container */}
+                        <motion.div
+                          className="w-20 h-20 rounded-2xl flex items-center justify-center border-2 border-teal-500/50 shadow-[0_0_20px_rgba(20,184,166,0.3)] relative overflow-hidden group"
+                          animate={{ y: [-3, 3, -3] }}
+                          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                          <div className="absolute inset-0 bg-teal-900/80 z-10 mix-blend-multiply" />
+                          <img
+                            src={lesson.image}
+                            alt="Context"
+                            className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay transition-transform duration-1000 group-hover:scale-110"
+                            onError={(e) => {
+                              (e.currentTarget as HTMLImageElement).src = '/images/app_logo.jpg';
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.5),transparent)] opacity-50 mix-blend-screen z-10" />
+                          {(() => {
+                            const getSemanticIcon = (word: string) => {
+                              const str = word.toLowerCase();
+                              if (str.includes('grow') || str.includes('build') || str.includes('up')) return Activity;
+                              if (str.includes('think') || str.includes('mind') || str.includes('aware')) return BrainCircuit;
+                              if (str.includes('connect') || str.includes('network')) return Network;
+                              if (str.includes('find') || str.includes('look') || str.includes('seek')) return Fingerprint;
+                              if (str.includes('new') || str.includes('innovate') || str.includes('create')) return Sparkles;
+                              if (str.includes('power') || str.includes('force') || str.includes('drive')) return Zap;
+                              return Database;
+                            };
+                            const CurrentIcon = getSemanticIcon(vocab.expression);
+                            return <CurrentIcon className="w-8 h-8 text-teal-300 drop-shadow-[0_0_8px_rgba(20,184,166,0.8)] relative z-20" />;
+                          })()}
+                        </motion.div>
+                      </div>
                       <h3 className="text-3xl font-bold text-teal-300 tracking-tight drop-shadow-[0_0_8px_rgba(20,184,166,0.5)]">
                         {vocab.expression}
                       </h3>
                     </div>
+
+                {/* Audio listen button */}
+                <button
+                  onClick={(e) => { e.stopPropagation(); speakVocab(); }}
+                  onPointerDown={(e) => e.stopPropagation()}
+                  className={cn(
+                    "flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all border shadow-md active:scale-95 pointer-events-auto",
+                    isPlayingVocab
+                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50 shadow-[0_0_12px_rgba(16,185,129,0.3)] animate-pulse"
+                      : "bg-teal-500/15 text-teal-300 border-teal-500/30 hover:bg-teal-500/25"
+                  )}
+                >
+                  {isPlayingVocab ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
+                  {isPlayingVocab
+                    ? (language === 'es' ? 'Detener' : 'Stop')
+                    : (language === 'es' ? 'Escuchar' : 'Listen')}
+                </button>
 
                 <div className="p-3 bg-black/40 rounded-xl border border-white/5 backdrop-blur-md text-left">
                   <p className="text-sm text-slate-200 font-medium mb-3 border-b border-white/10 pb-2">{vocab.meaning}</p>
@@ -126,20 +211,36 @@ export function LessonIntro() {
                   </motion.div>
                 </AnimatePresence>
 
-                <div className="absolute bottom-4 left-0 w-full px-4 flex justify-between z-20">
-                  <button 
-                    disabled={vocabIndex === 0} 
+                <div className="absolute bottom-4 left-0 w-full px-4 flex items-center justify-between gap-2 z-20">
+                  <button
+                    disabled={vocabIndex === 0}
                     onClick={(e) => { e.stopPropagation(); setVocabIndex(prev => prev - 1); }}
                     onPointerDown={(e) => e.stopPropagation()}
-                    className="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-full disabled:opacity-30 border border-white/10 transition-colors pointer-events-auto shadow-lg"
+                    className="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-full disabled:opacity-30 border border-white/10 transition-all pointer-events-auto shadow-lg active:scale-90"
                   >
                     <ChevronLeft className="w-6 h-6 text-teal-400" />
                   </button>
-                  <button 
-                    disabled={vocabIndex === lesson.vocabulary.length - 1} 
+
+                  {/* Progress dots in the center */}
+                  <div className="flex gap-1 justify-center flex-1">
+                    {lesson.vocabulary.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={(e) => { e.stopPropagation(); setVocabIndex(i); }}
+                        onPointerDown={(e) => e.stopPropagation()}
+                        className={cn(
+                          "h-1.5 rounded-full transition-all duration-300 pointer-events-auto",
+                          i === vocabIndex ? "w-5 bg-teal-400" : "w-1.5 bg-slate-600"
+                        )}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    disabled={vocabIndex === lesson.vocabulary.length - 1}
                     onClick={(e) => { e.stopPropagation(); setVocabIndex(prev => prev + 1); }}
                     onPointerDown={(e) => e.stopPropagation()}
-                    className="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-full disabled:opacity-30 border border-white/10 transition-colors pointer-events-auto shadow-lg"
+                    className="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-full disabled:opacity-30 border border-white/10 transition-all pointer-events-auto shadow-lg active:scale-90"
                   >
                     <ChevronRight className="w-6 h-6 text-teal-400" />
                   </button>
