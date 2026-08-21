@@ -54,13 +54,29 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
       const res = await fetch('/api/translate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ word, context: text, language })
+        body: JSON.stringify({ word, context: text, language: language || 'es' })
       });
-      const data = await res.json();
-      setTranslation(data);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.translation) {
+          setTranslation(data);
+          setIsTranslating(false);
+          return;
+        }
+      }
+      throw new Error('API returned invalid response');
     } catch (err) {
-      console.error(err);
-      setTranslation({ translation: 'Error', phonetics: '' });
+      try {
+        const fallbackRes = await fetch(
+          `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=es&dt=t&q=${encodeURIComponent(word)}`
+        );
+        const fallbackData = await fallbackRes.json();
+        const translated = fallbackData?.[0]?.[0]?.[0] || word;
+        setTranslation({ translation: translated, phonetics: '' });
+      } catch (fallbackErr) {
+        console.error(fallbackErr);
+        setTranslation({ translation: 'Traducción no disponible', phonetics: '' });
+      }
     } finally {
       setIsTranslating(false);
     }
@@ -285,42 +301,43 @@ export function TextHighlighter({ text, vocabulary, highlightCharIndex }: TextHi
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
-            // We use fixed positioning to avoid overflow clipping issues, but absolute works if parent isn't overflow-hidden.
-            // Let's just center it at the bottom of the screen for mobile friendliness, or try to position near the word.
-            // For simplicity and mobile friendliness, a fixed bottom sheet or a fixed floating tooltip at the bottom is often better,
-            // but let's try a fixed position near the click.
             style={{
               position: 'fixed',
-              top: activeWord.rect.bottom + 10,
-              left: Math.max(10, Math.min(window.innerWidth - 200, activeWord.rect.left - 100 + (activeWord.rect.width / 2))),
+              top: activeWord.rect.bottom + 10 > window.innerHeight - 110
+                ? Math.max(10, activeWord.rect.top - 100)
+                : activeWord.rect.bottom + 10,
+              left: Math.max(10, Math.min(window.innerWidth - 220, activeWord.rect.left - 100 + (activeWord.rect.width / 2))),
             }}
-            className="w-48 z-50 bg-slate-800 border border-slate-600 rounded-xl shadow-xl p-3 flex flex-col gap-2"
+            className="w-52 z-50 bg-slate-900/95 border border-teal-500/30 backdrop-blur-md rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.5)] p-3.5 flex flex-col gap-2"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center border-b border-slate-700 pb-2">
-              <div className="min-w-0">
-                <span className="block font-bold text-white truncate max-w-[120px]">{activeWord.word}</span>
+            <div className="flex justify-between items-center border-b border-white/10 pb-2">
+              <div className="min-w-0 flex-1 mr-2">
+                <span className="block font-bold text-white text-base truncate">{activeWord.word}</span>
                 {translation?.phonetics && (
-                  <span className="block text-[11px] text-teal-300/80 font-mono mt-0.5 truncate max-w-[120px]">/{translation.phonetics}/</span>
+                  <span className="block text-[11px] text-teal-300/80 font-mono mt-0.5 truncate">/{translation.phonetics}/</span>
                 )}
               </div>
               <button
                 onClick={() => playAudio(activeWord.word)}
-                className="text-teal-400 hover:text-teal-300 p-1 bg-teal-900/30 rounded-full"
+                className="text-teal-400 hover:text-teal-300 p-1.5 bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/30 rounded-xl transition-all active:scale-90"
               >
                 <Volume2 className="w-4 h-4" />
               </button>
             </div>
             
-            <div className="min-h-[40px] flex items-center justify-center">
+            <div className="min-h-[36px] flex items-center justify-center py-1">
               {isTranslating ? (
-                <Loader2 className="w-5 h-5 text-teal-500 animate-spin" />
+                <div className="flex items-center gap-2 text-xs text-teal-400">
+                  <Loader2 className="w-4 h-4 text-teal-400 animate-spin" />
+                  <span>{language === 'es' ? 'Traduciendo...' : 'Translating...'}</span>
+                </div>
               ) : translation ? (
                 <div className="w-full text-center">
-                  <div className="text-slate-200 font-medium text-sm">{translation.translation}</div>
+                  <div className="text-teal-300 font-semibold text-sm capitalize">{translation.translation}</div>
                 </div>
               ) : (
-                <div className="text-red-400 text-sm">Error</div>
+                <div className="text-red-400 text-xs">Error</div>
               )}
             </div>
           </motion.div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
@@ -10,8 +10,26 @@ export function Dashboard() {
   const navigate = useNavigate();
   const { progress, language } = useStore();
   
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // Find first incomplete lesson
+  const getFirstIncompleteIndex = (currentProgress: typeof progress) => {
+    const index = lessons.findIndex(l => currentProgress[l.id]?.stage !== 'completed');
+    return index !== -1 ? index : 0;
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(() => getFirstIncompleteIndex(progress));
   const [direction, setDirection] = useState(0);
+  const hasAutoNavigatedRef = useRef(false);
+
+  useEffect(() => {
+    if (!hasAutoNavigatedRef.current && Object.keys(progress).length > 0) {
+      const targetIndex = getFirstIncompleteIndex(progress);
+      if (targetIndex !== currentIndex) {
+        setDirection(targetIndex > currentIndex ? 1 : -1);
+        setCurrentIndex(targetIndex);
+      }
+      hasAutoNavigatedRef.current = true;
+    }
+  }, [progress]);
   
   const lesson = lessons[currentIndex];
   const status = progress[lesson?.id];
